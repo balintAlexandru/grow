@@ -9,7 +9,11 @@
 const WORKFLOWS = { learning: 'learning-daily.yml', events: 'events-refresh.yml' } as const
 type Task = keyof typeof WORKFLOWS
 
-type Run = { status: string; conclusion: string | null; created_at: string; html_url: string }
+type Run = { id: number; status: string; conclusion: string | null; created_at: string; html_url: string }
+type Job = { steps?: { name: string; conclusion: string | null }[] }
+
+/** Must match the step name in .github/workflows/run-skill.yml. */
+const PUBLISH_STEP = 'Publish new content'
 
 const isTask = (value: unknown): value is Task => typeof value === 'string' && value in WORKFLOWS
 
@@ -35,8 +39,20 @@ async function latestRun(task: Task): Promise<Run | null> {
   return data.workflow_runs[0] ?? null
 }
 
-const toJson = (run: Run | null) =>
-  run ? { status: run.status, conclusion: run.conclusion, createdAt: run.created_at, url: run.html_url } : { status: 'none' }
+/** Whether a finished run committed new content; the publish step is skipped when nothing changed. */
+async function published(run: Run) {
+  const res = await github(`/actions/runs/${run.id}/jobs`)
+  if (!res.ok) return undefined
+  const { jobs } = (await res.json()) as { jobs: Job[] }
+  const step = jobs.flatMap((j) => j.steps ?? []).find((s) => s.name === PUBLISH_STEP)
+  return step ? step.conclusion === 'success' : undefined
+}
+
+async function toJson(run: Run | null) {
+  if (!run) return { status: 'none' }
+  const base = { status: run.status, conclusion: run.conclusion, createdAt: run.created_at, url: run.html_url }
+  return run.status === 'completed' && run.conclusion === 'success' ? { ...base, published: await published(run) } : base
+}
 
 const fail = (error: unknown, status = 500) => Response.json({ error: error instanceof Error ? error.message : String(error) }, { status })
 
@@ -44,7 +60,7 @@ export async function GET(request: Request) {
   const task = new URL(request.url).searchParams.get('task')
   if (!isTask(task)) return fail('task trebuie să fie learning sau events', 400)
   try {
-    return Response.json(toJson(await latestRun(task)), { headers: { 'Cache-Control': 'no-store' } })
+    return Response.json(await toJson(await latestRun(task)), { headers: { 'Cache-Control': 'no-store' } })
   } catch (error) {
     return fail(error)
   }
@@ -55,7 +71,7 @@ export async function POST(request: Request) {
   if (!isTask(body.task)) return fail('task trebuie să fie learning sau events', 400)
   try {
     const current = await latestRun(body.task)
-    if (current && current.status !== 'completed') return Response.json(toJson(current), { status: 409 })
+    if (current && current.status !== 'completed') return Response.json(await toJson(current), { status: 409 })
 
     const res = await github(`/actions/workflows/${WORKFLOWS[body.task]}/dispatches`, {
       method: 'POST',

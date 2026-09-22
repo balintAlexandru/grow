@@ -26,7 +26,10 @@ Cu argument (`/learning-daily nutrition`): rescrii doar lecția acelei arii din 
 - **Titluri deja folosite:** cele din toate fișierele `app/src/content/learning/days/*.json`, din `library.json` și din `history.json`. Nu le repeta și nu scrie despre aceeași idee sub alt titlu.
 - **Treapta socială:** găsește ultima lecție `social` cu `step` (cea mai nouă zi). Rămâi pe aceeași treaptă 3 zile la rând, apoi urci una. Prima lecție pornește de la treapta 1. După treapta 6, alternează treptele 4–6 cu variații noi.
 - **Evenimente:** citește `app/src/content/events/events.json`. Dacă în următoarele 7 zile e un eveniment potrivit (o alergare în grup, o seară de șah sau board games, Toastmasters), leagă de el misiunea `social` de la treapta 3 în sus sau misiunea `body` și pune în `eventTitle` titlul și ziua („Runners of Bucharest, miercuri 19:00”).
-- Data de azi (YYYY-MM-DD) e numele fișierului. Dacă `days/<azi>.json` există deja și nu ai argument, nu îl rescrie: spune că planul de azi e gata.
+- Data de azi (YYYY-MM-DD) e numele fișierului. **Dacă `days/<azi>.json` există deja și nu ai argument, scrii un plan nou care îl înlocuiește** (așa funcționează butonul de pe site):
+  1. Muți lecțiile vechi, neschimbate (cu tot cu `id`), la finalul listei `lessons` din `app/src/content/learning/library.json`. Așa rămân în Explorează și bifele lor rămân valabile.
+  2. Scrii 3 lecții noi, pe aceleași arii (sloturile zilei), cu titluri noi. La `social` păstrezi **aceeași treaptă** ca lecția socială veche: înlocuirea nu urcă treapta.
+  3. În fișierul zilei pui `"version"` = versiunea veche + 1 (lipsește = 1). Scriptul folosește versiunea în id-uri, ca să nu se ciocnească de lecțiile mutate.
 
 ## 3. Ce conține fiecare arie
 
@@ -91,7 +94,7 @@ Scrii `app/src/content/learning/days/<azi>.json`:
 }
 ```
 
-`id` și `readingMinutes` le calculează scriptul. Zilele mai vechi de 60 de zile sunt arhivate automat în `history.json`.
+`id` și `readingMinutes` le calculează scriptul (cu `version`, dacă există). Zilele mai vechi de 60 de zile sunt arhivate automat în `history.json`.
 
 ## 7. Verifică și termină
 

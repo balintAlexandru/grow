@@ -3,11 +3,11 @@ import { ExternalLink, Loader2, RefreshCw, Sparkles } from 'lucide-react'
 import './GenerateButton.css'
 
 type Task = 'learning' | 'events'
-type RunInfo = { status: string; conclusion?: string | null; createdAt?: string; url?: string }
+type RunInfo = { status: string; conclusion?: string | null; createdAt?: string; url?: string; published?: boolean }
 type State =
   | { kind: 'idle' }
   | { kind: 'running'; url?: string }
-  | { kind: 'done'; ok: boolean; url?: string }
+  | { kind: 'done'; ok: boolean; published?: boolean; url?: string }
   | { kind: 'error'; message: string }
 
 const POLL_MS = 15_000
@@ -36,7 +36,7 @@ export default function GenerateButton({ task, label }: { task: Task; label: str
       const created = run.createdAt ? Date.parse(run.createdAt) : 0
       const ours = requestedAt.current !== null && created >= requestedAt.current - CLOCK_SLACK_MS
       if (run.status !== 'completed' && run.status !== 'none') setState({ kind: 'running', url: run.url })
-      else if (ours) setState({ kind: 'done', ok: run.conclusion === 'success', url: run.url })
+      else if (ours) setState({ kind: 'done', ok: run.conclusion === 'success', published: run.published, url: run.url })
       else if (requestedAt.current === null) setState({ kind: 'idle' })
       // otherwise the dispatched run is not listed yet: stay "running" and poll again
     } catch (error) {
@@ -102,7 +102,7 @@ export default function GenerateButton({ task, label }: { task: Task; label: str
         <button className="button" disabled>
           <Loader2 size={18} className="generate__spin" /> Se generează…
         </button>
-      ) : state.kind === 'done' && state.ok ? (
+      ) : state.kind === 'done' && state.ok && state.published !== false ? (
         <button className="button" onClick={() => location.reload()}>
           <RefreshCw size={18} /> Reîncarcă pagina
         </button>
@@ -113,7 +113,8 @@ export default function GenerateButton({ task, label }: { task: Task; label: str
       )}
       <p className="generate__status" role="status">
         {state.kind === 'running' && 'Claude lucrează, durează cam 10 minute. Poți închide pagina.'}
-        {state.kind === 'done' && state.ok && 'Gata. Site-ul se reconstruiește în 1–2 minute, apoi reîncarcă.'}
+        {state.kind === 'done' && state.ok && state.published !== false && 'Gata. Site-ul se reconstruiește în 1–2 minute, apoi reîncarcă.'}
+        {state.kind === 'done' && state.ok && state.published === false && 'Rularea s-a terminat, dar n-a apărut nimic nou de publicat.'}
         {state.kind === 'done' && !state.ok && 'Rularea a eșuat. '}
         {state.kind === 'error' && `Nu am putut porni: ${state.message}`}
         {'url' in state && state.url && (state.kind === 'running' || (state.kind === 'done' && !state.ok)) && (

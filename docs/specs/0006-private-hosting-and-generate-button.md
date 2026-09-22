@@ -14,6 +14,7 @@ The site lives on Vercel behind a password only the owner knows. On Learning and
 - **Button → run**: `app/api/generate.ts` (Vercel Function) dispatches `.github/workflows/learning-daily.yml` or `events-refresh.yml` and reports the latest run; `GenerateButton` polls it every 15 s.
 - **Run**: `run-skill.yml` → `docker/run-skill.sh`: `npm ci`, `claude -p "/<skill>"` with only the tools the skill needs, then `--fix` check and build. Only the section's content folder is committed, so nothing else the agent touches can be published.
 - **Claude auth**: `CLAUDE_CODE_OAUTH_TOKEN` from `claude setup-token`, i.e. the owner's Pro plan; each run uses plan usage, not billed API.
+- **Learning button replaces today's plan** (owner's choice): the old lessons move to `library.json`, the new plan gets `version` + 1 (ids `<date>-<area>-<version>`), and the social step stays the same. When a run changes nothing (e.g. no new events), the publish step is skipped and the button says so.
 - **Docker**: `docker/Dockerfile` runs the same script locally; it does not commit.
 
 ## One-time setup (owner)
@@ -28,6 +29,7 @@ The site lives on Vercel behind a password only the owner knows. On Learning and
 ## Build plan
 
 - [x] Middleware, API, button, workflows, Docker script (tested: middleware cases, types, lint, build)
-- [ ] Private repo pushed
-- [ ] Vercel project, env vars, GitHub secret
+- [x] Private repo pushed
+- [x] Vercel project, env vars, GitHub secret
+- [x] First button run: chain works (plan already existed, nothing published) → button now replaces the plan
 - [ ] First run from the button, end to end

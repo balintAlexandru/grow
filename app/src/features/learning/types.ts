@@ -38,7 +38,12 @@ export type Lesson = {
 }
 
 /** One day's plan: 3 lessons, 10–15 minutes in total. */
-export type LearningDay = { date: string; lessons: Lesson[] }
+export type LearningDay = {
+  date: string
+  /** 2+ when the plan was replaced from the site's button; the old lessons moved to the library. */
+  version?: number
+  lessons: Lesson[]
+}
 
 /** Evergreen lessons kept from before the daily plan, browsable by area. */
 export type LearningLibrary = { lessons: Lesson[] }

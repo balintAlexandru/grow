@@ -139,9 +139,12 @@ for (const file of dayFiles) {
   if (!Array.isArray(day.lessons) || day.lessons.length !== LESSONS_PER_DAY) errors.push(`${where}: trebuie exact ${LESSONS_PER_DAY} lecții`)
   const areas = (day.lessons ?? []).map((l) => l.areaId)
   if (new Set(areas).size !== areas.length) errors.push(`${where}: fiecare lecție dintr-o zi e din altă arie`)
-  await Promise.all((day.lessons ?? []).map((l, i) => checkLesson(l, `${where} lecția ${i + 1}`, { id: `${day.date}-${l.areaId}`, strictLength: true })))
+  if (day.version !== undefined && (!Number.isInteger(day.version) || day.version < 1)) errors.push(`${where}: version trebuie să fie un întreg ≥ 1`)
+  // A replaced plan (version 2+) gets new ids, so it never collides with the lessons it moved to the library.
+  const suffix = day.version > 1 ? `-${day.version}` : ''
+  await Promise.all((day.lessons ?? []).map((l, i) => checkLesson(l, `${where} lecția ${i + 1}`, { id: `${day.date}-${l.areaId}${suffix}`, strictLength: true })))
   ;(day.lessons ?? []).forEach((l, i) => seenTitle(l.title, `${where} lecția ${i + 1}`))
-  if (FIX) writeJson(path, { date: day.date, lessons: day.lessons.map(ordered) })
+  if (FIX) writeJson(path, { date: day.date, ...(day.version > 1 && { version: day.version }), lessons: day.lessons.map(ordered) })
 }
 
 // Library: evergreen lessons, ids kept as they are.
@@ -152,6 +155,11 @@ if (existsSync(libraryPath)) {
     if (!Array.isArray(library.lessons)) errors.push('library.json: lessons trebuie să fie o listă')
     await Promise.all((library.lessons ?? []).map((l, i) => checkLesson(l, `library.json lecția ${i + 1}`, { id: l.id ?? `library-${l.areaId}-${i + 1}`, strictLength: false })))
     ;(library.lessons ?? []).forEach((l, i) => seenTitle(l.title, `library.json lecția ${i + 1}`))
+    const ids = new Set()
+    for (const l of library.lessons ?? []) {
+      if (ids.has(l.id)) errors.push(`library.json: id repetat ${l.id}`)
+      ids.add(l.id)
+    }
     if (FIX) writeJson(libraryPath, { lessons: library.lessons.map(ordered) })
   }
 }

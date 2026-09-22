@@ -42,16 +42,25 @@ jobs:
         run: bash docker/run-skill.sh "$SKILL"
 
       # Anything the agent touched outside the content folder is dropped: only content is published.
-      - name: Commit and push the new content
+      - name: Detect new content
+        id: changes
         env:
-          SKILL: ${{ inputs.skill }}
           CONTENT: ${{ inputs.content }}
         run: |
           git add -- "$CONTENT"
           if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "Nimic nou, nu public nimic."
-            exit 0
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
+
+      # The site's button reads whether this step ran or was skipped (app/api/generate.ts).
+      - name: Publish new content
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          SKILL: ${{ inputs.skill }}
+        run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "content: $SKILL $(TZ=Europe/Bucharest date +%F)"
