@@ -1,0 +1,23 @@
+name: check
+
+on:
+  push:
+    branches: [main]
+    # Content commits from the skills do not touch what this checks.
+    paths-ignore: ['app/src/content/**']
+  pull_request:
+
+jobs:
+  portability:
+    name: Portability and budgets
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # No dependencies to install: the checker is zero-dependency, stdlib only.
+      - name: Run the portability and budget check
+        run: npm run check

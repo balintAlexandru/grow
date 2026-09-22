@@ -1,0 +1,50 @@
+/* Design tokens: starter theme until the design system is decided (`/architect design system & UI foundation`). */
+:root {
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  --color-bg: #f6f6fb;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f0f0f7;
+  --color-border: #e6e6ef;
+  --color-text: #17172b;
+  --color-text-muted: #6b6b84;
+  --color-primary: #6d5dfc;
+  --color-primary-soft: #efedff;
+  --color-success: #0f766e;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+
+  --shadow-sm: 0 1px 2px rgb(23 23 43 / 0.06);
+  --shadow-md: 0 8px 24px rgb(23 23 43 / 0.08);
+
+  --sidebar-width: 264px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  --transition: 160ms ease;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #0f0f1a;
+    --color-surface: #17172a;
+    --color-surface-muted: #1f1f35;
+    --color-border: #2a2a44;
+    --color-text: #ececf6;
+    --color-text-muted: #9a9ab5;
+    --color-primary: #8b7dff;
+    --color-primary-soft: #26234a;
+    --color-success: #5eead4;
+    --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+    --shadow-md: 0 8px 24px rgb(0 0 0 / 0.35);
+    color-scheme: dark;
+  }
+}

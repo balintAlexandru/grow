@@ -1,0 +1,19 @@
+# Started by the button on the site (POST /api/generate), or by hand from the Actions tab.
+name: events-refresh
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: content-events
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    permissions:
+      contents: write
+    uses: ./.github/workflows/run-skill.yml
+    with:
+      skill: events-refresh
+      content: app/src/content/events
+    secrets: inherit

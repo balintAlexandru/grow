@@ -1,0 +1,123 @@
+{
+  "date": "2026-09-22",
+  "lessons": [
+    {
+      "id": "2026-09-22-social",
+      "areaId": "social",
+      "title": "Efectul reflectorului: nimeni nu te privește cât crezi",
+      "hook": "În 2000, niște studenți au intrat într-o sală purtând un tricou jenant cu Barry Manilow. Credeau că îl observase jumătate din sală. Realitatea a fost cu totul alta.",
+      "coreIdea": "Supraestimezi constant cât te observă și te judecă ceilalți, iar dacă știi asta, primii pași sociali devin mult mai ușori.",
+      "sections": [
+        {
+          "heading": "Creierul tău pune reflectorul pe tine",
+          "body": "Psihologii Thomas Gilovich, Victoria Medvec și Kenneth Savitsky au rugat studenți să intre într-o sală cu un tricou stânjenitor. Purtătorii au estimat că aproape jumătate dintre cei prezenți l-au observat. În realitate, sub un sfert. Efectul a apărut și cu tricouri neutre. Motivul: tu îți trăiești fiecare gest din interior, iar ceilalți sunt ocupați cu propriul reflector."
+        },
+        {
+          "heading": "Nu ai nevoie de curaj, ci de pași foarte mici",
+          "body": "Timiditatea se hrănește din impresia că orice gest mic, o privire sau un zâmbet, va fi analizat. De fapt, cei din jur abia îl înregistrează. Nu trebuie să te simți încrezător ca să începi. Faci un gest atât de mic încât riscul real e aproape zero, apoi îl repeți. Asta e expunerea graduală: fiecare treaptă îi arată creierului că nu s-a întâmplat nimic rău."
+        }
+      ],
+      "example": "Mâine dimineață iei cafeaua. Te uiți la barista două secunde și zâmbești. În mintea ta e un moment mare. Pentru ea ești al patruzecilea client, iar zâmbetul tău e partea plăcută a dimineții.",
+      "takeaways": [
+        "Oamenii te observă mult mai puțin decât îți spune anxietatea.",
+        "Un gest social mic are un risc real aproape zero, chiar dacă pare mare.",
+        "Încrederea vine după gesturi repetate, nu înaintea lor."
+      ],
+      "tryToday": "Treapta 1: fă contact vizual două secunde și zâmbește la 3 oameni azi (barista, casiera, un coleg). Seara, notează câți au reacționat negativ. Dacă azi e prea mult: o singură persoană.",
+      "quiz": {
+        "question": "De ce un zâmbet către un necunoscut pare mai riscant decât este?",
+        "answer": "Din cauza efectului reflectorului: supraestimezi cât te observă ceilalți, pentru că tu îți trăiești fiecare gest din interior, iar ei sunt concentrați pe ei înșiși."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "Gilovich, Medvec, Savitsky (2000), The Spotlight Effect in Social Judgment",
+          "url": "https://www.researchgate.net/publication/12609065_The_Spotlight_Effect_in_Social_Judgment_An_Egocentric_Bias_in_Estimates_of_the_Salience_of_One%27s_Own_Actions_and_Appearance"
+        },
+        {
+          "title": "Spotlight effect (Wikipedia)",
+          "url": "https://en.wikipedia.org/wiki/Spotlight_effect"
+        }
+      ],
+      "readingMinutes": 2,
+      "step": 1
+    },
+    {
+      "id": "2026-09-22-ai-engineer",
+      "areaId": "ai-engineer",
+      "title": "Tool use: cum îi dai unui LLM butoane de apăsat",
+      "hook": "Un LLM nu vede baza ta de date și nu poate apăsa niciun buton. Totuși, agenții AI caută comenzi și trimit email-uri. Cum?",
+      "coreIdea": "Prin tool use, modelul nu execută nimic: cere apelarea unei funcții definite de tine, codul tău o rulează și îi trimite rezultatul înapoi.",
+      "sections": [
+        {
+          "heading": "Modelul cere, codul tău execută",
+          "body": "Definești o unealtă (tool) cu trei câmpuri: name, description și input_schema, un JSON Schema care descrie argumentele, cam ca un tip TypeScript. Când întrebarea se potrivește, Claude răspunde cu stop_reason \"tool_use\" și un bloc tool_use cu numele și argumentele. Tu rulezi funcția și trimiți rezultatul într-un bloc tool_result, cu același id."
+        },
+        {
+          "heading": "Ca un onClick, doar că modelul apasă",
+          "body": "Pentru un frontend developer e ca un event handler: tu scrii handlerul, altcineva decide când se apasă butonul. Aici butonul îl apasă modelul, iar descrierea uneltei e singura documentație pe care o citește. O descriere vagă înseamnă apeluri greșite. Un agent e doar bucla asta, repetată până când modelul nu mai cere unelte.",
+          "code": "const tools: Anthropic.Tool[] = [{\n  name: 'get_weather',\n  description: 'Vremea curentă într-un oraș',\n  input_schema: { type: 'object', properties: { city: { type: 'string' } }, required: ['city'] },\n}]\nconst messages: Anthropic.MessageParam[] = [{ role: 'user', content: 'Plouă în Cluj?' }]\nconst res = await client.messages.create({ model: 'claude-opus-5', max_tokens: 16000, tools, messages })\nif (res.stop_reason === 'tool_use') {\n  messages.push({ role: 'assistant', content: res.content })\n  const results: Anthropic.ToolResultBlockParam[] = []\n  for (const b of res.content)\n    if (b.type === 'tool_use') results.push({ type: 'tool_result', tool_use_id: b.id, content: await getWeather(b.input) })\n  messages.push({ role: 'user', content: results }) // apoi încă un create(): modelul scrie răspunsul\n}"
+        }
+      ],
+      "example": "La un interviu pentru AI engineer te pot întreba: „Cum ai lega un chatbot de API-ul de comenzi al unui magazin?”. Răspunsul bun: o unealtă get_order cu orderId în input_schema, validarea argumentelor în codul tău și rezultatul trimis înapoi ca tool_result.",
+      "takeaways": [
+        "Descrierea uneltei contează cât implementarea: e promptul pe care îl citește modelul.",
+        "Codul tău decide dacă și cum rulează o unealtă, deci validarea și permisiunile sunt treaba ta.",
+        "Un agent înseamnă cereri de unelte și rezultate trimise înapoi, în buclă."
+      ],
+      "tryToday": "În 15 minute, scrie definiția unei unelte pentru un proiect de-al tău (de exemplu search_products): name, o descriere de două propoziții și input_schema cu câmpurile obligatorii. Nu trebuie să o rulezi, exersezi designul.",
+      "quiz": {
+        "question": "Cine execută funcția atunci când Claude răspunde cu un bloc tool_use?",
+        "answer": "Aplicația ta. Modelul doar cere apelul, cu nume și argumente; codul tău îl rulează și trimite rezultatul într-un bloc tool_result cu același tool_use_id."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "Tool use with Claude (Claude Platform Docs)",
+          "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview"
+        },
+        {
+          "title": "How tool use works (Claude Platform Docs)",
+          "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/how-tool-use-works"
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "id": "2026-09-22-nutrition",
+      "areaId": "nutrition",
+      "title": "De câte proteine ai nevoie, de fapt: ce arată o meta-analiză",
+      "hook": "Pe internet circulă cifre de la 0,8 la 3 grame de proteine pe kilogram. Cea mai citată meta-analiză pe tema asta a găsit un prag mult mai clar.",
+      "coreIdea": "Pentru cine face antrenament de forță, câștigul de masă musculară adus de proteine se oprește, în medie, în jur de 1,6 g pe kilogram corp pe zi.",
+      "sections": [
+        {
+          "heading": "Ce au măsurat",
+          "body": "Robert Morton și colegii au adunat 49 de studii cu 1.863 de adulți sănătoși, într-o meta-analiză publicată în British Journal of Sports Medicine în 2018. Toți făceau antrenament de forță, unii cu proteine în plus, alții fără. Proteina suplimentară a crescut câștigurile de forță și de masă musculară, dar efectul pe masa slabă s-a oprit în jur de 1,62 g/kg/zi."
+        },
+        {
+          "heading": "Cât de solidă e dovada și ce nu spune",
+          "body": "O meta-analiză mare e un nivel bun de dovadă, dar 1,6 e o medie. Intervalul de încredere ajunge până pe la 2,2 g/kg, de aceea 2,2 e des citat ca limită superioară rezonabilă. Studiul nu spune că pudra e necesară: contează totalul din zi, din orice sursă. Și rezultatul privește oamenii care fac antrenament de forță."
+        }
+      ],
+      "example": "Dacă ai 75 kg și faci forță de 2–3 ori pe săptămână, pragul mediu e în jur de 120 g de proteine pe zi (75 × 1,6). Nu contează dacă vin din mâncare sau dintr-un shake, ci suma.",
+      "takeaways": [
+        "Pragul mediu pentru masă musculară e în jur de 1,6 g/kg/zi, nu 3 g.",
+        "Contează totalul din zi, nu forma în care vin proteinele.",
+        "O meta-analiză arată o medie: e un punct de pornire, nu o regulă exactă pentru tine."
+      ],
+      "tryToday": "Calculează-ți pragul (greutatea × 1,6). Apoi, doar pentru azi, notează proteinele din ce mănânci, citind etichetele. Seara compari totalul cu pragul. Nu schimbi nimic, doar observi.",
+      "quiz": {
+        "question": "Dacă cineva ia 3 g/kg de proteine în loc de 1,6, va câștiga aproape dublu masă musculară?",
+        "answer": "Nu. În meta-analiza lui Morton, câștigul de masă slabă nu a mai crescut peste aproximativ 1,62 g/kg/zi."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "Morton et al. (2018), meta-analiză despre proteine și antrenamentul de forță (PubMed)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28698222/"
+        }
+      ],
+      "readingMinutes": 2
+    }
+  ]
+}

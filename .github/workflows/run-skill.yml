@@ -1,0 +1,60 @@
+# Runs one content skill with Claude Code and commits only its content folder (spec 0006).
+# Called by learning-daily.yml and events-refresh.yml, which the site's buttons start through /api/generate.
+# Uses the owner's Claude Pro plan via CLAUDE_CODE_OAUTH_TOKEN (from `claude setup-token`), not a paid API key.
+name: run-skill
+
+on:
+  workflow_call:
+    inputs:
+      skill:
+        required: true
+        type: string
+      content:
+        description: The only folder that gets committed
+        required: true
+        type: string
+    secrets:
+      CLAUDE_CODE_OAUTH_TOKEN:
+        required: true
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+
+      - name: Install Claude Code
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Run /${{ inputs.skill }}
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          SKILL: ${{ inputs.skill }}
+        run: bash docker/run-skill.sh "$SKILL"
+
+      # Anything the agent touched outside the content folder is dropped: only content is published.
+      - name: Commit and push the new content
+        env:
+          SKILL: ${{ inputs.skill }}
+          CONTENT: ${{ inputs.content }}
+        run: |
+          git add -- "$CONTENT"
+          if git diff --cached --quiet; then
+            echo "Nimic nou, nu public nimic."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "content: $SKILL $(TZ=Europe/Bucharest date +%F)"
+          git stash --include-untracked --quiet || true
+          git pull --rebase --quiet
+          git push

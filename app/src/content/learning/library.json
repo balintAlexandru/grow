@@ -1,0 +1,767 @@
+{
+  "lessons": [
+    {
+      "id": "ai-engineering-2026-09-22-1",
+      "areaId": "ai-engineer",
+      "title": "RAG pe înțelesul unui frontend developer",
+      "hook": "Un model de limbaj nu știe nimic despre documentația firmei tale. RAG rezolvă asta cu o idee pe care o folosești deja: cauți întâi datele relevante, apoi le afișezi, doar că aici „afișezi” în prompt.",
+      "coreIdea": "RAG înseamnă să cauți bucățile de text relevante pentru o întrebare și să i le dai modelului în prompt, ca să răspundă pe baza lor, nu din memorie.",
+      "sections": [
+        {
+          "heading": "Textul devine vectori",
+          "body": "Documentele sunt împărțite în bucăți (chunks), iar fiecare bucată e transformată de un model de embeddings într-un vector, o listă de numere care îi descrie sensul. Textele cu sens apropiat au vectori apropiați. Întrebarea utilizatorului e transformată la fel."
+        },
+        {
+          "heading": "Căutarea e o comparație de vectori",
+          "body": "Găsești bucățile cele mai apropiate de întrebare cu o măsură numită similaritate cosinus și le iei pe primele k. Asta e tot „retrieval-ul”, restul e să pui textele găsite în prompt înainte de întrebare.",
+          "code": "const dot = (a: number[], b: number[]) => a.reduce((s, x, i) => s + x * b[i], 0)\nconst cosine = (a: number[], b: number[]) =>\n  dot(a, b) / Math.sqrt(dot(a, a) * dot(b, b))\n\ntype Chunk = { text: string; vector: number[] }\n\nfunction topK(query: number[], chunks: Chunk[], k = 3) {\n  return chunks\n    .map((c) => ({ ...c, score: cosine(query, c.vector) }))\n    .sort((a, b) => b.score - a.score)\n    .slice(0, k)\n}"
+        },
+        {
+          "heading": "Unde greșește de obicei",
+          "body": "Cele mai multe probleme apar la căutare, nu la model: o bucată scoasă din context nu mai spune despre ce document e vorba. Anthropic a arătat că dacă adaugi fiecărei bucăți un scurt context despre documentul din care vine, căutările ratate scad cu 49%, iar cu reranking (reordonarea rezultatelor) cu 67%."
+        }
+      ],
+      "example": "Un utilizator întreabă „Cât durează returul?”. Căutarea găsește bucata „Returul se face în 30 de zile de la livrare” din pagina de termeni. Promptul devine: „Răspunde doar pe baza textului: [bucata găsită]. Întrebare: Cât durează returul?”. Modelul nu mai are ce inventa.",
+      "takeaways": [
+        "RAG = caută, apoi pune ce ai găsit în prompt.",
+        "Căutarea semantică e o comparație între vectori, nu între cuvinte exacte.",
+        "Când RAG răspunde greșit, verifică întâi ce a găsit căutarea."
+      ],
+      "tryToday": "Copiază funcția topK într-un fișier TypeScript și testeaz-o cu trei vectori scriși de mână (de exemplu [1, 0], [0, 1], [0.9, 0.1]) și întrebarea [1, 0]. Verifică dacă ordinea rezultatelor are sens.",
+      "quiz": {
+        "question": "De ce ajută adăugarea unui context scurt fiecărei bucăți de text?",
+        "answer": "Pentru că o bucată scoasă din document își pierde contextul, iar căutarea o găsește mai greu; contextul adăugat face vectorul mai precis, iar căutările ratate scad."
+      },
+      "videos": [
+        {
+          "videoId": "T-D1OfcDW1M",
+          "title": "What is Retrieval-Augmented Generation (RAG)?",
+          "channel": "IBM Technology"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Anthropic: Contextual Retrieval in AI Systems",
+          "url": "https://www.anthropic.com/engineering/contextual-retrieval"
+        },
+        {
+          "title": "Wikipedia: Retrieval-augmented generation",
+          "url": "https://en.wikipedia.org/wiki/Retrieval-augmented_generation"
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "id": "ai-engineering-2026-09-22-2",
+      "areaId": "ai-engineer",
+      "title": "Evals: teste unitare pentru prompturi",
+      "hook": "Schimbi o frază în prompt și răspunsurile par mai bune. Dar sunt mai bune pentru toate cazurile sau doar pentru cele trei pe care le-ai încercat? Fără evals, nu ai de unde să știi.",
+      "coreIdea": "Un eval e un set de exemple cu rezultat așteptat și o notare automată, care îți spune dacă o schimbare de prompt sau de model a îmbunătățit sau a stricat sistemul.",
+      "sections": [
+        {
+          "heading": "Exemple reale, notate automat",
+          "body": "Documentația Anthropic recomandă evals care seamănă cu utilizarea reală, inclusiv cazuri limită, și care pot fi notate automat: potrivire exactă de text, verificare prin cod sau notare de către un alt model. Mai multe întrebări cu notare automată valorează mai mult decât câteva notate manual.",
+          "code": "const cases = [\n  { input: 'Cât costă livrarea?', mustInclude: '15 lei' },\n  { input: 'Aveți retur?', mustInclude: '30 de zile' },\n]\n\nlet passed = 0\nfor (const c of cases) {\n  const answer = await askBot(c.input) // funcția ta care cheamă modelul\n  if (answer.includes(c.mustInclude)) passed++\n}\nconsole.log(`${passed}/${cases.length} teste trecute`)"
+        },
+        {
+          "heading": "Când notează un model",
+          "body": "Pentru răspunsuri libere, poți folosi un alt model ca evaluator (LLM-as-judge). Fii specific: cere-i doar „corect” sau „incorect”, sau o notă de la 1 la 5, după o grilă clară. Rezultatele sunt mai bune dacă îl lași să raționeze înainte de notă și apoi păstrezi doar nota."
+        },
+        {
+          "heading": "Rulează-le la fiecare schimbare",
+          "body": "Valoarea vine din comparație: rulezi același set înainte și după fiecare modificare de prompt sau de model. Dacă scorul scade, ai prins o regresie înainte să ajungă la utilizatori, exact ca un test care pică în CI."
+        }
+      ],
+      "example": "Treci chatbotul de suport pe un model mai ieftin. Evalul arată 18/20 înainte și 14/20 după, iar cele 4 cazuri picate sunt toate despre retur. Acum știi exact ce parte a promptului trebuie întărită înainte de schimbare.",
+      "takeaways": [
+        "Un eval e un test automat pentru calitatea răspunsurilor AI.",
+        "Multe cazuri notate automat bat puține cazuri notate manual.",
+        "Rulează evalul înainte și după fiecare schimbare de prompt sau model."
+      ],
+      "tryToday": "Scrie 10 întrebări pe care le-ar pune un utilizator unui chatbot pe care îl folosești sau îl construiești, fiecare cu un cuvânt-cheie care trebuie să apară în răspuns. Ai scris primul tău set de eval.",
+      "quiz": {
+        "question": "De ce e util să ceri evaluatorului AI doar „corect/incorect” sau o notă de la 1 la 5?",
+        "answer": "Pentru că evaluările calitative libere sunt greu de comparat rapid și la scară, iar un format fix permite notare automată și comparații între versiuni."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "Claude Docs: Create strong empirical evaluations",
+          "url": "https://docs.claude.com/en/docs/test-and-evaluate/develop-tests"
+        },
+        {
+          "title": "Anthropic: Demystifying evals for AI agents",
+          "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents"
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "id": "ai-engineering-2026-09-22-3",
+      "areaId": "ai-engineer",
+      "title": "Streaming: cum faci răspunsul AI să apară cuvânt cu cuvânt",
+      "hook": "Un răspuns AI poate dura 10 secunde. Dacă utilizatorul privește un spinner tot acest timp, pare stricat. Dacă textul apare pe măsură ce e generat, pare rapid, deși durează la fel.",
+      "coreIdea": "Cu Streams API din browser citești răspunsul serverului bucată cu bucată și actualizezi interfața la fiecare bucată, fără să aștepți finalul.",
+      "sections": [
+        {
+          "heading": "Răspunsul e un stream",
+          "body": "La un fetch, response.body e un ReadableStream (un flux de date care sosesc treptat). Cu getReader() obții un cititor, iar read() îți dă pe rând bucăți de bytes, până când done devine true. TextDecoder transformă bytes-ii în text, iar opțiunea stream: true tratează corect caracterele împărțite între bucăți, cum sunt diacriticele.",
+          "code": "const res = await fetch('/api/chat', { method: 'POST', body: JSON.stringify({ prompt }) })\nconst reader = res.body!.getReader()\nconst decoder = new TextDecoder()\nlet text = ''\n\nwhile (true) {\n  const { done, value } = await reader.read()\n  if (done) break\n  text += decoder.decode(value, { stream: true })\n  setAnswer(text) // React redesenează la fiecare bucată\n}"
+        },
+        {
+          "heading": "De ce e treaba ta, ca frontend developer",
+          "body": "Aici se vede diferența dintre un demo și un produs: indicatorul de „scrie…”, butonul de oprire, păstrarea textului parțial dacă conexiunea cade, scroll-ul care urmărește textul. Sunt exact lucrurile la care un frontend developer e deja bun și pe care multe echipe de AI le neglijează."
+        },
+        {
+          "heading": "Serverul trebuie să trimită treptat",
+          "body": "Streaming-ul funcționează doar dacă și serverul trimite bucățile pe măsură ce le primește de la model. API-urile de modele au un mod de streaming, iar serverul tău trebuie să le transmită mai departe fără să aștepte răspunsul complet."
+        }
+      ],
+      "example": "Într-o aplicație de rezumat, primul rând al rezumatului apare după o secundă, în loc ca tot textul să apară după opt. Utilizatorul începe să citească imediat, iar aplicația pare de câteva ori mai rapidă, fără nicio schimbare la model.",
+      "takeaways": [
+        "response.body este un ReadableStream pe care îl citești bucată cu bucată.",
+        "TextDecoder cu stream: true evită caracterele stricate între bucăți.",
+        "Experiența de streaming e un avantaj real al profilului tău de frontend."
+      ],
+      "tryToday": "Deschide consola browserului pe orice site și rulează un fetch către pagina curentă (location.href), citind response.body cu getReader() și afișând lungimea fiecărei bucăți. Vei vedea cum sosesc datele treptat.",
+      "quiz": {
+        "question": "Ce problemă rezolvă opțiunea { stream: true } la TextDecoder?",
+        "answer": "Un caracter pe mai mulți bytes, de exemplu o literă cu diacritice, poate fi împărțit între două bucăți; cu stream: true decodorul așteaptă restul caracterului în loc să-l strice."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "MDN: Using readable streams",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Using_readable_streams"
+        },
+        {
+          "title": "MDN: Response.body",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Response/body"
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "id": "ai-career-2026-09-22-1",
+      "areaId": "ai-engineer",
+      "title": "Jobul de „prompt engineer” dispare. Skill-ul nu",
+      "hook": "În 2023, „prompt engineer” era cel mai căutat titlu din AI. În 2026, anunțurile cu acest titlu sunt tot mai rare, dar cererea pentru abilitatea de a scrie prompturi bune a crescut.",
+      "coreIdea": "Prompt engineering-ul a devenit o abilitate de bază în rolurile de AI engineer, nu un job separat, așa că merită să ținti titlul de AI engineer.",
+      "sections": [
+        {
+          "heading": "Ce spun cifrele",
+          "body": "Anunțurile care folosesc „prompt engineer” ca titlu de sine stătător au scăzut, după surse, cu aproximativ 30–40% față de vârful din 2023. În același timp, rolurile care cer abilități de prompt engineering, indiferent de titlu, s-au triplat între 2024 și 2026."
+        },
+        {
+          "heading": "Unde s-a mutat munca",
+          "body": "Munca a intrat în roluri precum AI engineer, applied AI engineer, agent engineer sau context engineer. Pe măsură ce modelele au devenit mai bune, trucurile de formulare au contat tot mai puțin, iar munca s-a mutat spre orchestrare: conectarea mai multor pași, gestionarea erorilor, verificări și sisteme care rulează în producție."
+        },
+        {
+          "heading": "Ce înseamnă pentru tine",
+          "body": "Ca frontend developer, nu trebuie să alegi între „prompt engineer” și programare. Combinația e exact ce se caută: cineva care scrie prompturi bune și construiește în jurul lor un produs care funcționează, cu interfață, erori tratate și rezultate verificate."
+        }
+      ],
+      "example": "Două CV-uri: unul spune „Prompt engineer, am scris prompturi pentru ChatGPT”. Altul spune „Am construit un asistent de suport în React, cu RAG pe documentația firmei și teste automate pentru răspunsuri”. Al doilea descrie rolul pe care îl caută azi angajatorii.",
+      "takeaways": [
+        "Titlul de prompt engineer e în scădere, abilitatea e în creștere.",
+        "Angajatorii caută oameni care construiesc sisteme AI complete, nu doar prompturi.",
+        "Pentru un developer, ținta realistă e „AI engineer”, nu „prompt engineer”."
+      ],
+      "tryToday": "Caută pe LinkedIn „AI engineer” și „prompt engineer” în orașul tău sau remote în Europa. Compară numărul de rezultate și notează 5 cerințe care apar des.",
+      "quiz": {
+        "question": "De ce au contat tot mai puțin trucurile de formulare a prompturilor?",
+        "answer": "Pentru că modelele au devenit mai bune la înțelegerea cererilor, iar valoarea s-a mutat spre construirea de sisteme care orchestrează, verifică și rulează fiabil în producție."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "The AI Career Lab: What Happened to the Prompt Engineer? (2026)",
+          "url": "https://theaicareerlab.com/careers/what-happened-to-the-prompt-engineer"
+        },
+        {
+          "title": "PE Collective: Is Prompt Engineering a Real Career in 2026?",
+          "url": "https://pecollective.com/blog/is-prompt-engineering-a-real-career/"
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "id": "ai-career-2026-09-22-2",
+      "areaId": "ai-engineer",
+      "title": "Ce cer de fapt 198 de companii de la un AI engineer",
+      "hook": "O analiză a 3.647 de anunțuri de job de la 198 de companii arată ce apare cel mai des în cerințe. Un skill pe care puțini developeri îl au apare la două treimi dintre companii.",
+      "coreIdea": "Pe lângă Python și experiența cu LLM-uri, cel mai des cerut skill distinctiv e evaluarea sistematică a rezultatelor (evals), urmată de RAG și construirea de agenți.",
+      "sections": [
+        {
+          "heading": "Python și LLM-uri sunt baza",
+          "body": "Python și experiența cu LLM-uri (modele mari de limbaj) apar fiecare la 83% dintre cele 198 de companii analizate, nu doar la laboratoarele de AI, ci și în fintech, robotică sau produse de consum. TypeScript nu apare printre cerințele de top, deci Python e prima investiție de făcut."
+        },
+        {
+          "heading": "Evals: skill-ul subestimat",
+          "body": "Evaluarea și benchmarking-ul apar la 68% dintre companii. Evals înseamnă să testezi sistematic dacă răspunsurile unui sistem AI sunt bune, cu seturi de exemple și scoruri, la fel cum scrii teste pentru cod. Multe tutoriale sar peste acest pas, de aceea e un diferențiator."
+        },
+        {
+          "heading": "RAG și agenți",
+          "body": "RAG (modelul primește documente relevante înainte să răspundă) apare la 40% dintre companii și e considerat standard pentru date private. Construirea de agenți, backend și API-uri, observabilitatea și optimizarea costurilor completează lista."
+        }
+      ],
+      "example": "Dacă ai un proiect cu un chatbot, adaugă un fișier cu 20 de întrebări și răspunsurile așteptate și un script care calculează câte trec. În interviu, poți spune „am crescut scorul de la 12/20 la 18/20 schimbând strategia de căutare”, o frază pe care puțini candidați o pot spune.",
+      "takeaways": [
+        "Python rămâne limbajul cerut în AI engineering, chiar și pentru developeri web.",
+        "Evals apar la două treimi dintre companii și te diferențiază.",
+        "RAG e considerat standard, nu un bonus."
+      ],
+      "tryToday": "Instalează Python dacă nu îl ai și rulează un script de 10 linii care citește un fișier JSON și afișează câte elemente are. E primul pas mic spre stack-ul cerut.",
+      "quiz": {
+        "question": "De ce sunt evals un diferențiator în CV?",
+        "answer": "Pentru că apar la aproximativ 68% dintre companii, dar puțini candidați au experiență reală cu măsurarea sistematică a calității răspunsurilor unui sistem AI."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "AI Job Prep: AI Engineer Skills 2026, What 198 Top AI Companies Actually Want",
+          "url": "https://aijobprep.app/ai-engineer-skills"
+        },
+        {
+          "title": "TripleTen: The 11 Most In-Demand AI Skills",
+          "url": "https://tripleten.com/blog/posts/ai-skills"
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "id": "ai-career-2026-09-22-3",
+      "areaId": "ai-engineer",
+      "title": "Portofoliul care te duce din frontend în AI engineering",
+      "hook": "Un wrapper peste ChatGPT nu mai impresionează pe nimeni. Dar un frontend developer are un avantaj pe care mulți ingineri de machine learning nu îl au: știe să construiască interfețe pe care oamenii chiar le folosesc.",
+      "coreIdea": "Cele mai bune proiecte pentru tranziția ta combină un sistem AI real (RAG, agenți) cu o interfață de calitate de producție, iar 3 proiecte bine făcute bat 10 superficiale.",
+      "sections": [
+        {
+          "heading": "Ce caută recrutorii",
+          "body": "Recrutorii caută semne de producție: cum tratezi erorile, cum structurezi datele, cum conectezi sisteme și dacă livrezi software care funcționează. Diferența importantă e între un wrapper, adică o interfață peste un chatbot, și o aplicație în care AI-ul e folosit inteligent și non-trivial."
+        },
+        {
+          "heading": "Trei proiecte potrivite pentru profilul tău",
+          "body": "Ghidurile de tranziție din frontend recomandă: o interfață de chat cu răspunsuri afișate în timp real (streaming) și RAG în spate; un instrument de code review cu AI și dashboard în React; un sistem cu mai mulți agenți și vizualizarea pașilor lor în timp real. Fiecare arată și profunzime AI, și UI bun."
+        },
+        {
+          "heading": "Cât durează",
+          "body": "Estimările pentru tranziția unui frontend developer sunt de 9–12 luni, pentru că sari peste partea de programare de bază, dar tot ai de învățat Python, concepte de machine learning și uneltele AI. Recomandarea generală e 3–5 proiecte bine documentate."
+        }
+      ],
+      "example": "În loc de „chat cu PDF-ul”, construiește un asistent pentru documentația unei biblioteci pe care o folosești, cu surse citate sub fiecare răspuns, un indicator de încredere în UI și un set de teste. Diferența se vede din primul screenshot din README.",
+      "takeaways": [
+        "Wrapper-ele simple nu mai contează ca portofoliu.",
+        "Avantajul tău e combinația dintre AI și o interfață de producție.",
+        "Trei proiecte solide și documentate valorează mai mult decât zece demo-uri."
+      ],
+      "tryToday": "Scrie în 5 rânduri ideea primului tău proiect AI de portofoliu: ce problemă rezolvă, pentru cine, ce parte AI are și ce parte de UI arăți. Păstrează fișierul, îl vei folosi ca README.",
+      "quiz": {
+        "question": "Ce diferențiază un proiect de portofoliu bun de un wrapper?",
+        "answer": "Folosește AI-ul într-un mod util și non-trivial (de exemplu RAG sau agenți) și arată semne de producție: erori tratate, date structurate, sisteme conectate și un produs care funcționează."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "MyEngineeringPath: Frontend Developer to AI Engineer, Skills Transfer Guide (2026)",
+          "url": "https://myengineeringpath.dev/genai-engineer/frontend-to-ai-engineer/"
+        },
+        {
+          "title": "DEV Community: 5 AI Portfolio Projects That Actually Get You Hired in 2026",
+          "url": "https://dev.to/klement_gunndu/5-ai-portfolio-projects-that-actually-get-you-hired-in-2026-5bpl"
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "id": "humor-charisma-2026-09-22-1",
+      "areaId": "social",
+      "title": "De ce râdem: formula „încălcării benigne”",
+      "hook": "O glumă despre șeful tău te amuză la bere cu colegii, dar nu și la ședință, în fața lui. Nu s-a schimbat gluma, ci distanța. Cercetătorii au o formulă pentru asta.",
+      "coreIdea": "Ceva e amuzant când pare în același timp greșit (o încălcare) și totuși în regulă (benign), iar cele două percepții apar simultan.",
+      "sections": [
+        {
+          "heading": "Teoria încălcării benigne",
+          "body": "Psihologii Peter McGraw și Caleb Warren au propus în 2010 că umorul apare doar când sunt îndeplinite trei condiții: situația încalcă o regulă sau o așteptare, situația e totuși inofensivă, iar cele două impresii apar în același timp. Prea multă încălcare jignește, prea puțină plictisește."
+        },
+        {
+          "heading": "Ce face o încălcare „benignă”",
+          "body": "Studiile lor arată trei lucruri care fac o încălcare acceptabilă: o normă alternativă care o justifică, un atașament slab față de regula încălcată și distanța psihologică, adică timp, spațiu sau faptul că i se întâmplă altcuiva."
+        },
+        {
+          "heading": "Cum folosești asta",
+          "body": "Cel mai sigur umor e autoironia: încalci o așteptare (îți recunoști o gafă), dar e benign pentru că ești tu ținta. Când nu ești sigur că o glumă e inofensivă pentru toată lumea din cameră, crește distanța sau renunță la ea."
+        }
+      ],
+      "example": "„Am scris azi un bug atât de elegant, încât aproape mi-a părut rău să-l repar.” Încălcarea: un programator își laudă greșeala. Benignă: e despre tine, iar bug-ul e deja reparat.",
+      "takeaways": [
+        "Umorul apare când ceva e simultan greșit și inofensiv.",
+        "Distanța (de timp, spațiu sau persoană) transformă o încălcare în ceva amuzant.",
+        "Autoironia e cea mai sigură formă de umor, pentru că ești tu ținta."
+      ],
+      "tryToday": "Transformă azi o mică gafă de-a ta într-o poveste amuzantă de o propoziție și spune-o unui coleg sau prieten. Observă dacă reacția confirmă formula.",
+      "quiz": {
+        "question": "De ce o glumă despre o întâmplare jenantă de acum 10 ani e mai amuzantă decât una de azi-dimineață?",
+        "answer": "Pentru că distanța psihologică, în acest caz timpul, face încălcarea mai benignă, deci mai ușor de perceput ca amuzantă."
+      },
+      "videos": [
+        {
+          "videoId": "ysSgG5V-R3U",
+          "title": "What makes things funny | Peter McGraw | TEDxBoulder",
+          "channel": "TEDx Talks"
+        }
+      ],
+      "sources": [
+        {
+          "title": "McGraw & Warren (2010): Benign Violations, Psychological Science",
+          "url": "https://journals.sagepub.com/doi/abs/10.1177/0956797610376073"
+        },
+        {
+          "title": "Peter McGraw: A brief introduction to the benign violation theory of humor",
+          "url": "https://petermcgraw.org/a-brief-introduction-to-the-benign-violation-theory-of-humor/"
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "id": "humor-charisma-2026-09-22-2",
+      "areaId": "social",
+      "title": "Întrebarea de continuare: trucul simplu care te face plăcut",
+      "hook": "Crezi că oamenii te plac mai mult când spui povești bune. Un studiu de la Harvard, făcut inclusiv la speed dating, arată că ceva mult mai simplu contează mai mult.",
+      "coreIdea": "Oamenii care pun mai multe întrebări, mai ales de continuare, sunt plăcuți mai mult, pentru că ceilalți se simt ascultați și înțeleși.",
+      "sections": [
+        {
+          "heading": "Ce au descoperit cercetătorii",
+          "body": "În trei studii cu conversații reale între două persoane, publicate în 2017, Karen Huang și colegii ei de la Harvard au găsit o legătură constantă: cine pune mai multe întrebări e plăcut mai mult de partenerul de conversație. Efectul e cel mai puternic la întrebările de continuare."
+        },
+        {
+          "heading": "Chiar și la întâlniri",
+          "body": "În datele de la speed dating, participanții care puneau mai multe întrebări de continuare aveau mai multe șanse ca partenerii să accepte o a doua întâlnire. E un semnal comportamental, nu doar o impresie declarată."
+        },
+        {
+          "heading": "De ce funcționează",
+          "body": "Când cineva e instruit să pună mai multe întrebări, e perceput ca mai receptiv: ascultă, înțelege, validează și îi pasă. Această receptivitate explică efectul. O întrebare de continuare arată că ai ascultat ce s-a spus, nu că aștepți să vorbești tu."
+        }
+      ],
+      "example": "Un coleg spune: „Am fost în weekend la munte.” Răspunsul obișnuit: „Fain, și eu am fost acum o lună.” Întrebarea de continuare: „Ce te-a tras acolo, drumeția sau liniștea?” Prima variantă mută discuția la tine, a doua o duce mai adânc.",
+      "takeaways": [
+        "Întrebările de continuare cresc simpatia mai mult decât poveștile tale.",
+        "Efectul a fost confirmat și în comportamentul real, la speed dating.",
+        "Cheia e receptivitatea: să arăți că ai ascultat."
+      ],
+      "tryToday": "În următoarea conversație de azi, pune cel puțin două întrebări de continuare la rând, pornind de la un detaliu spus de celălalt, înainte să vorbești despre tine.",
+      "quiz": {
+        "question": "Ce mecanism explică de ce întrebările cresc simpatia, conform studiului?",
+        "answer": "Receptivitatea percepută: cel care întreabă pare că ascultă, înțelege, validează și îi pasă de celălalt."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "Huang et al. (2017): It Doesn't Hurt to Ask, Question-Asking Increases Liking",
+          "url": "https://www.hbs.edu/ris/Publication%20Files/Huang%20et%20al%202017_6945bc5e-3b3e-4c0a-addd-254c9e603c60.pdf"
+        },
+        {
+          "title": "HBS Working Knowledge: Asking Questions Can Get You a Better Job or a Second Date",
+          "url": "https://www.library.hbs.edu/working-knowledge/asking-questions-can-get-you-a-better-job-or-a-second-date"
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "id": "humor-charisma-2026-09-22-3",
+      "areaId": "social",
+      "title": "„Liking gap”: oamenii te plac mai mult decât crezi",
+      "hook": "Ieși dintr-o conversație cu cineva nou și începi analiza: am vorbit prea mult? A fost ciudată pauza aia? Cercetările spun că, aproape sigur, celălalt te-a plăcut mai mult decât crezi.",
+      "coreIdea": "După o conversație, oamenii subestimează sistematic cât de mult i-a plăcut partenerul de discuție, pentru că gândurile de după sunt centrate pe ei și negative.",
+      "sections": [
+        {
+          "heading": "Studiul",
+          "body": "În 2018, Erica Boothby și colegii ei au publicat în Psychological Science mai multe studii despre acest efect. Au urmărit necunoscuți care se cunoșteau în laborator, participanți la un workshop de dezvoltare personală și studenți din anul întâi care au împărțit camera un an întreg."
+        },
+        {
+          "heading": "Rezultatul, peste tot la fel",
+          "body": "În toate situațiile, oamenii au crezut că sunt plăcuți mai puțin decât erau în realitate. Partenerii lor trimiteau semnale clare de simpatie, dar acestea erau ignorate. Efectul a primit numele de „liking gap”, adică decalajul de simpatie."
+        },
+        {
+          "heading": "De ce se întâmplă",
+          "body": "După o interacțiune socială, gândurile noastre sunt disproporționat despre noi și negative: ne amintim gafele, nu zâmbetele celuilalt. Cercetări ulterioare au găsit același decalaj în grupuri, echipe și conversații online."
+        }
+      ],
+      "example": "La un meetup de developeri, vorbești zece minute cu cineva despre React și pleci convins că ai fost plictisitor. Studiile spun că, probabil, omul ar fi bucuros să continue discuția. Un mesaj pe LinkedIn a doua zi are șanse mult mai bune decât crezi.",
+      "takeaways": [
+        "Oamenii ne plac, în medie, mai mult decât estimăm după o conversație.",
+        "Gândurile de după sunt centrate pe noi și negative, deci distorsionate.",
+        "Efectul apare și în echipe, și online, nu doar la prima întâlnire."
+      ],
+      "tryToday": "Trimite azi un mesaj scurt cuiva cu care ai avut recent o conversație bună, dar pe care n-ai continuat-o de teamă că „nu a mers”. Folosește un detaliu din discuția voastră.",
+      "quiz": {
+        "question": "De ce subestimăm cât de mult ne-a plăcut partenerul de conversație?",
+        "answer": "Pentru că după interacțiune ne concentrăm pe noi și pe greșelile noastre, iar semnalele de simpatie ale celuilalt sunt ignorate."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "Boothby et al. (2018): The Liking Gap in Conversations, Psychological Science",
+          "url": "https://journals.sagepub.com/doi/abs/10.1177/0956797618783714"
+        },
+        {
+          "title": "ScienceDirect: The liking gap in groups and teams",
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S074959782030399X"
+        },
+        {
+          "title": "ScienceDirect: The liking gap online, people like us more than we think",
+          "url": "https://www.sciencedirect.com/science/article/pii/S245195882400215X"
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "id": "library-body-10",
+      "areaId": "body",
+      "title": "Minimul OMS: 150 de minute și două zile de forță",
+      "hook": "Câtă mișcare îți trebuie ca să conteze pentru sănătate? Organizația Mondială a Sănătății a pus un număr pe asta, și e mai realizabil decât crezi.",
+      "coreIdea": "Ghidurile OMS din 2020 cer adulților 150–300 de minute de efort moderat pe săptămână, plus exerciții de forță pentru toate grupele mari de mușchi, de cel puțin două ori.",
+      "sections": [
+        {
+          "heading": "Cardio: 150 de minute înseamnă cam 22 pe zi",
+          "body": "OMS recomandă adulților între 18 și 64 de ani cel puțin 150–300 de minute de efort aerob moderat pe săptămână, sau 75–150 de minute de efort intens, ori o combinație a celor două. Moderat înseamnă că respiri mai repede, dar încă poți vorbi. Împărțit la 7 zile, minimul e cam 22 de minute pe zi: un mers alert până la birou și înapoi."
+        },
+        {
+          "heading": "Forța nu e opțională",
+          "body": "Aceleași ghiduri cer exerciții de forță de intensitate moderată sau mai mare, pentru toate grupele mari de mușchi, în cel puțin două zile pe săptămână. Pentru cine stă mult la birou, asta e partea sărită cel mai des. Nu ai nevoie de sală: flotările, genuflexiunile și ramatul cu o bandă elastică lucrează tot corpul."
+        }
+      ],
+      "example": "Săptămâna ta ar putea arăta așa: alergarea în grup de miercuri (45 de minute), două plimbări alerte de 30 de minute, o tură de bicicletă în weekend și două seri cu 20 de minute de forță acasă. Acoperi minimul fără nicio zi de sală.",
+      "takeaways": [
+        "Ținta de bază e 150 de minute de efort moderat pe săptămână, nu un antrenament zilnic epuizant.",
+        "Efortul moderat se simte: respiri mai repede, dar încă poți vorbi.",
+        "Două sesiuni de forță pe săptămână contează la fel de mult ca cardio-ul."
+      ],
+      "tryToday": "Deschide calendarul și planifică săptămâna viitoare: unde intră cele 150 de minute de mișcare și care sunt cele două zile de forță. Scrie-le ca întâlniri, cu oră.",
+      "quiz": {
+        "question": "Câte zile pe săptămână de exerciții de forță recomandă OMS adulților?",
+        "answer": "Cel puțin două, pentru toate grupele mari de mușchi, la intensitate moderată sau mai mare."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "WHO Guidelines on Physical Activity and Sedentary Behaviour: Recommendations (NCBI)",
+          "url": "https://www.ncbi.nlm.nih.gov/books/NBK566046/"
+        },
+        {
+          "title": "World Health Organization 2020 guidelines on physical activity and sedentary behaviour (PubMed)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33239350/"
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "id": "library-body-11",
+      "areaId": "body",
+      "title": "Supraîncărcarea progresivă: mușchii cresc doar când le ceri ceva nou",
+      "hook": "Poți face 20 de flotări în fiecare zi timp de un an și să nu devii mai puternic. Explicația e un principiu simplu din fiziologie.",
+      "coreIdea": "Corpul se adaptează doar dacă îi ceri treptat mai mult: mai multe repetări, mai multă greutate sau un exercițiu mai greu.",
+      "sections": [
+        {
+          "heading": "Adaptarea are nevoie de un motiv",
+          "body": "Poziția oficială a American College of Sports Medicine (ACSM) despre antrenamentul de forță descrie supraîncărcarea progresivă ca pe o creștere treptată a solicitării. Corpul se adaptează doar când e chemat să producă mai multă forță decât e obișnuit. Dacă antrenamentul rămâne identic, corpul nu mai are motiv să se schimbe: menții, dar nu mai construiești."
+        },
+        {
+          "heading": "Cum arată pentru un începător",
+          "body": "Pentru începători, ACSM recomandă 8–12 repetări la 60–70% din greutatea maximă pe care o poți ridica o singură dată, de 2–3 ori pe săptămână. Acasă, fără greutăți, progresezi altfel: adaugi o repetare, cobori mai încet sau treci la o variantă mai grea, de exemplu de la flotări pe genunchi la flotări complete."
+        }
+      ],
+      "example": "Săptămâna asta faci 3 serii de 8 genuflexiuni. Săptămâna viitoare, 3 serii de 10. Când ajungi la 3 × 12 fără efort, pui în spate un rucsac cu cărți și reîncepi de la 8.",
+      "takeaways": [
+        "Același antrenament repetat la nesfârșit menține, dar nu mai construiește.",
+        "Progresul poate însemna repetări, greutate, tempo sau un exercițiu mai greu.",
+        "Pentru un începător, 8–12 repetări de 2–3 ori pe săptămână sunt un punct de pornire solid."
+      ],
+      "tryToday": "Fă un test de bază: câte flotări (sau flotări pe genunchi) și câte genuflexiuni poți face corect, fără pauză. Notează numerele. De la ele îți măsori progresul.",
+      "quiz": {
+        "question": "De ce 20 de flotări pe zi, mereu la fel, nu te mai fac mai puternic după o vreme?",
+        "answer": "Pentru că solicitarea nu mai crește: corpul s-a adaptat la ea și nu mai are motiv să construiască forță nouă."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "ACSM position stand: Progression models in resistance training for healthy adults (PubMed)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/19204579/"
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "id": "library-mind-12",
+      "areaId": "mind",
+      "title": "Obiceiuri mici: rețeta „După ce…, voi…” a lui BJ Fogg",
+      "hook": "Ți-ai propus să citești 30 de minute pe zi și ai rezistat trei zile? Un cercetător de la Stanford spune că problema a fost mărimea obiceiului, nu voința.",
+      "coreIdea": "Un comportament apare când motivația, abilitatea și un declanșator se întâlnesc, așa că un obicei nou prinde cel mai bine când e minuscul și legat de ceva ce faci deja.",
+      "sections": [
+        {
+          "heading": "B = MAP",
+          "body": "BJ Fogg, cercetător la Stanford, descrie comportamentul ca întâlnirea a trei lucruri: motivație (Motivation), abilitate (Ability) și un declanșator (Prompt). Dacă lipsește unul, comportamentul nu apare. Motivația fluctuează, deci nu te poți baza pe ea. În schimb, poți face gestul atât de ușor încât îl faci și în zilele proaste."
+        },
+        {
+          "heading": "Rețeta în trei părți",
+          "body": "Metoda Tiny Habits are o formulă: „După ce [ancoră], voi [comportament mic], apoi sărbătoresc.” Ancora e ceva ce faci deja zilnic, cum ar fi cafeaua de dimineață, și joacă rolul de declanșator. Comportamentul e minuscul, ca să nu ceară abilitate. Sărbătoarea, un „Da!” în gând, adaugă emoția pozitivă care hrănește motivația."
+        }
+      ],
+      "example": "„După ce îmi torn cafeaua, deschid lecția de azi din Grow și citesc titlul.” Atât. În unele zile citești doar titlul, în majoritatea citești toată lecția, pentru că ai început deja.",
+      "takeaways": [
+        "Motivația vine și pleacă; un obicei minuscul supraviețuiește zilelor proaste.",
+        "Cel mai bun declanșator e un gest pe care îl faci deja în fiecare zi.",
+        "Începi cu o versiune atât de mică încât pare ridicolă și o lași să crească."
+      ],
+      "tryToday": "Scrie o rețetă pentru un obicei pe care îl vrei: „După ce …, voi …”. Comportamentul trebuie să dureze câteva secunde (de exemplu, o flotare după ce te speli pe dinți). Fă-l azi o dată și spune-ți „Da!”.",
+      "quiz": {
+        "question": "Ce trei elemente trebuie să se întâlnească pentru ca un comportament să apară, după modelul lui Fogg?",
+        "answer": "Motivația, abilitatea și un declanșator (prompt). Dacă lipsește unul, comportamentul nu se produce."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "The Fogg Behavior Model: B = MAP (The Behavioral Scientist)",
+          "url": "https://www.thebehavioralscientist.com/articles/fogg-behavior-model"
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "id": "library-mind-13",
+      "areaId": "mind",
+      "title": "Pune emoția în cuvinte și o vei simți mai slab",
+      "hook": "Înainte să intri într-o sală plină de necunoscuți, stomacul se strânge. Există un gest de trei secunde care, măsurat în scanner, calmează zona creierului care dă alarma.",
+      "coreIdea": "Când numești o emoție („am emoții”), reacția amigdalei scade, iar emoția devine mai ușor de gestionat.",
+      "sections": [
+        {
+          "heading": "Ce a arătat scannerul",
+          "body": "În 2007, echipa lui Matthew Lieberman de la UCLA a publicat în Psychological Science un studiu cu fMRI: participanții vedeau imagini încărcate emoțional. Când alegeau un cuvânt care numea emoția, răspunsul amigdalei și al altor zone limbice scădea, comparat cu alte moduri de a procesa imaginea. În același timp creștea activitatea unei zone din cortexul prefrontal drept."
+        },
+        {
+          "heading": "De ce ajută înainte de o conversație",
+          "body": "Emoția nu dispare, dar nu mai conduce ea. Numind-o, treci din reacție în observație: nu mai ești frica, ești cineva care observă că îi e frică. Nu trebuie s-o spui cu voce tare. O propoziție scurtă, în gând, e suficientă. E unul dintre cele mai simple instrumente de reglare emoțională pe care le poți folosi oriunde."
+        }
+      ],
+      "example": "Ești la intrarea în seara de board games. Înainte să deschizi ușa, îți spui în gând: „Am emoții pentru că nu cunosc pe nimeni.” Apoi intri. Emoția e tot acolo, dar tu ții volanul.",
+      "takeaways": [
+        "Să numești o emoție nu e slăbiciune, e un instrument de reglare cu dovezi în spate.",
+        "Numirea nu șterge emoția, dar îi scade intensitatea.",
+        "O propoziție în gând e suficientă, nu trebuie s-o spui cuiva."
+      ],
+      "tryToday": "Azi, de trei ori, când simți o emoție puternică (stres, iritare, emoții înainte de o întâlnire), oprește-te și spune-ți în gând: „Simt … pentru că …”. Seara notează dacă intensitatea s-a schimbat.",
+      "quiz": {
+        "question": "Ce s-a întâmplat în creier când participanții au numit emoția?",
+        "answer": "Răspunsul amigdalei și al altor zone limbice a scăzut, iar activitatea unei zone din cortexul prefrontal drept a crescut."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "Lieberman et al. (2007), Putting Feelings Into Words, Psychological Science",
+          "url": "https://journals.sagepub.com/doi/10.1111/j.1467-9280.2007.01916.x"
+        },
+        {
+          "title": "UCLA Health: Putting feelings into words produces therapeutic effects in the brain",
+          "url": "https://www.uclahealth.org/news/release/putting-feelings-into-words-produces-therapeutic-effects-in-the-brain-ucla-neuroimaging-study-supports-ancient-buddhist-teachings"
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "id": "library-money-14",
+      "areaId": "money",
+      "title": "Negocierea salariului: prima cifră trage totul după ea",
+      "hook": "Când recruiterul te întreabă „Ce așteptări salariale ai?”, instinctul e să lași cealaltă parte să spună prima cifră. Cercetarea sugerează opusul.",
+      "coreIdea": "Prima ofertă dintr-o negociere funcționează ca o ancoră: cine o face tinde să obțină un rezultat mai bun, mai ales când cifra e bine documentată.",
+      "sections": [
+        {
+          "heading": "Ce au arătat experimentele",
+          "body": "Adam Galinsky și Thomas Mussweiler au publicat în 2001, în Journal of Personality and Social Psychology, trei experimente de negociere. În toate trei, partea care a făcut prima ofertă, fie cumpărător, fie vânzător, a obținut un rezultat mai bun. Într-unul dintre studii, corelația dintre prima ofertă și prețul final a fost de 0,85."
+        },
+        {
+          "heading": "Ancora trebuie să fie credibilă",
+          "body": "Prima cifră funcționează pentru că cealaltă parte ajustează pornind de la ea. O cifră aruncată la întâmplare te costă însă credibilitate. O ancoră bună e documentată: salarii publicate pentru rol, date de piață, ce aduci concret. Studiul a arătat și partea cealaltă: ancora slăbește când negociatorul se gândește la alternativele și argumentele proprii."
+        }
+      ],
+      "example": "La un interviu pentru un rol de AI engineer, în loc de „Cât oferiți?”, spui: „Pe baza rolurilor similare din București și a proiectelor mele cu LLM-uri, mă uit la un interval de X–Y lei net.” Ai pus ancora, cu argumente.",
+      "takeaways": [
+        "Prima cifră dintr-o negociere influențează puternic rezultatul final.",
+        "O ancoră bună e ambițioasă, dar sprijinită pe date.",
+        "Cine își cunoaște piața și alternativele poate ancora cu încredere și rezistă mai bine ancorelor celorlalți."
+      ],
+      "tryToday": "Caută 3 surse de salarii pentru AI engineer sau LLM engineer în România (anunțuri cu salariu, rapoarte salariale) și notează un interval realist. E ancora ta pentru următorul interviu.",
+      "quiz": {
+        "question": "În experimentele lui Galinsky și Mussweiler, cine obținea de obicei un rezultat mai bun?",
+        "answer": "Partea care făcea prima ofertă, fie că era cumpărătorul, fie vânzătorul."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "Galinsky & Mussweiler (2001), First offers as anchors (PubMed)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/11642352/"
+        },
+        {
+          "title": "First offers as anchors (Columbia Business School)",
+          "url": "https://business.columbia.edu/faculty/research/first-offers-anchors-role-perspective-taking-and-negotiator-focus"
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "id": "library-money-15",
+      "areaId": "money",
+      "title": "Fondul de urgență: primul pas înainte de orice investiție",
+      "hook": "Laptopul moare, pierzi jobul sau apare o factură mare la dentist. Diferența dintre o problemă și o criză e, de multe ori, un cont cu câteva luni de cheltuieli.",
+      "coreIdea": "Recomandarea obișnuită e un fond care acoperă 3–6 luni de cheltuieli esențiale, mai mult dacă venitul e nesigur.",
+      "sections": [
+        {
+          "heading": "Cât de mare",
+          "body": "Majoritatea specialiștilor citați în presa financiară din România recomandă un fond de urgență de 3–6 luni de cheltuieli esențiale. Pentru freelanceri, antreprenori sau cei cu venituri care variază, recomandarea urcă la 6–12 luni. Îl calculezi din cheltuieli, nu din salariu: chirie, mâncare, facturi, transport."
+        },
+        {
+          "heading": "De ce contează când îți schimbi cariera",
+          "body": "Trecerea spre un rol în AI poate însemna un curs, câteva luni de căutare sau o pauză între joburi. Fondul de urgență îți dă libertatea să alegi jobul potrivit, nu primul care apare. Ține banii într-un loc sigur și ușor de accesat, cum ar fi un cont de economii, nu în investiții a căror valoare poate scădea exact când ai nevoie de ei."
+        }
+      ],
+      "example": "Dacă ai cheltuieli esențiale de 4.500 de lei pe lună, un fond de 3 luni înseamnă 13.500 de lei. Punând deoparte 1.000 de lei pe lună, ajungi acolo în ceva mai mult de un an.",
+      "takeaways": [
+        "Fondul se calculează din cheltuielile esențiale, nu din salariu.",
+        "3–6 luni e ținta obișnuită; mai mult dacă venitul e nesigur.",
+        "Banii din fond stau în siguranță și la îndemână, nu în investiții volatile."
+      ],
+      "tryToday": "Adună cheltuielile tale esențiale dintr-o lună (chirie, mâncare, facturi, transport) și înmulțește cu 3. Acesta e primul tău obiectiv de fond de urgență.",
+      "quiz": {
+        "question": "De ce nu ții fondul de urgență în investiții la bursă?",
+        "answer": "Pentru că valoarea lor poate scădea exact când ai nevoie de bani; fondul trebuie să fie sigur și accesibil rapid."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "Fond de urgență: cât trebuie să ai pus deoparte (money.ro)",
+          "url": "https://www.money.ro/stiri/fond-de-urgenta-cat-trebuie-sa-ai-pus-deoparte-msdilkpq"
+        },
+        {
+          "title": "Fondul de urgență: ce este și când ai nevoie de el (NN)",
+          "url": "https://nn.ro/newsroom/ce-este-un-fond-de-urgenta"
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "id": "library-nutrition-16",
+      "areaId": "nutrition",
+      "title": "Fibrele: nutrientul pe care aproape nimeni nu-l numără",
+      "hook": "Toată lumea numără proteinele. O analiză uriașă publicată în The Lancet sugerează că fibrele merită cel puțin aceeași atenție.",
+      "coreIdea": "În studii foarte mari, cei care mănâncă 25–29 g de fibre pe zi au un risc mai mic de boli cardiovasculare, diabet de tip 2 și cancer colorectal decât cei care mănâncă foarte puține.",
+      "sections": [
+        {
+          "heading": "Ce au analizat",
+          "body": "În 2019, o echipă condusă de Andrew Reynolds a publicat în The Lancet o serie de meta-analize: 185 de studii prospective, cu aproape 135 de milioane de ani-persoană de date, și 58 de studii clinice. Cei care mâncau cele mai multe fibre aveau o mortalitate cu 15–30% mai mică decât cei care mâncau cele mai puține. Boala coronariană, accidentul vascular, diabetul de tip 2 și cancerul colorectal apăreau cu 16–24% mai rar."
+        },
+        {
+          "heading": "Cât de solidă e dovada",
+          "body": "Mare parte din date vin din studii observaționale, care arată o asociere, nu o cauză sigură: cei care mănâncă multe fibre pot avea și alte obiceiuri sănătoase. Totuși, mărimea analizei și relația doză-răspuns o fac una dintre concluziile solide din nutriție. Cel mai mare beneficiu a apărut între 25 și 29 g pe zi, iar datele sugerează un plus și peste 30 g."
+        }
+      ],
+      "example": "Un mic dejun cu fulgi de ovăz, leguminoase la prânz și un fruct la birou te apropie de țintă. Fibrele vin din plante: legume, leguminoase, cereale integrale, fructe, semințe.",
+      "takeaways": [
+        "Ținta asociată cu cele mai bune rezultate în analiza din The Lancet e 25–29 g de fibre pe zi.",
+        "Datele sunt în mare parte observaționale: o asociere puternică, nu o dovadă de cauzalitate.",
+        "Fibrele vin doar din plante, deci le obții mâncând mai multe plante variate."
+      ],
+      "tryToday": "Azi, la fiecare masă, adaugă o sursă de fibre (o legumă, o mână de nuci, pâine integrală în loc de albă). Pe etichete, caută rândul „fibre” și notează totalul zilei.",
+      "quiz": {
+        "question": "De ce nu putem spune sigur că fibrele sunt cauza riscului mai mic de boală?",
+        "answer": "Pentru că multe date vin din studii observaționale, care arată o asociere: cei care mănâncă multe fibre pot avea și alte obiceiuri sănătoase."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "Reynolds et al. (2019), Carbohydrate quality and human health, The Lancet",
+          "url": "https://www.thelancet.com/article/S0140-6736(18)31809-9/fulltext"
+        },
+        {
+          "title": "ScienceDaily: High intake of dietary fiber and whole grains associated with reduced risk of non-communicable diseases",
+          "url": "https://www.sciencedaily.com/releases/2019/01/190110184737.htm"
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "id": "library-ai-news-17",
+      "areaId": "ai-news",
+      "title": "Sakana Fugu Max: un „model” care e de fapt un router",
+      "hook": "Pe 11 septembrie, Sakana AI a lansat Fugu Max. Pe OpenRouter arată ca un model obișnuit, dar în spate e o echipă de modele coordonată de un alt model.",
+      "coreIdea": "Fugu Max e un sistem antrenat să împartă sarcinile între modele open-weight, un exemplu de routing între modele folosit ca alternativă la un singur model de frontieră.",
+      "sections": [
+        {
+          "heading": "Ce s-a lansat",
+          "body": "Sakana AI a lansat pe 11 septembrie 2026 Fugu Max și Fugu Ultra v2. Fugu nu e un singur model mare, ci un model antrenat să trimită sarcini către un grup fix de modele open-weight și specializate, inclusiv familia Nemotron de la NVIDIA, și să se apeleze recursiv pe sine. Prețul e de 2 dolari pe milion de tokeni de intrare și 6 dolari pe milion de ieșire, indiferent de lungimea contextului."
+        },
+        {
+          "heading": "Anunțat contra demonstrat",
+          "body": "Sakana spune că prețul e cu 40–60% sub costul de ieșire al unor modele precum Sonnet 5, iar comparațiile de performanță vin tot de la companie. Până la evaluări independente, sunt promisiuni. Pentru tine contează arhitectura: multe aplicații AI nu au nevoie de cel mai scump model la fiecare pas, ci de o rutare bună între modele."
+        }
+      ],
+      "example": "Într-un chatbot de suport, întrebările simple („care e programul?”) pot merge la un model mic și ieftin, iar cele complicate la unul mare. Fie scrii tu logica de rutare, fie folosești un serviciu care o face, cum încearcă Fugu.",
+      "takeaways": [
+        "Un „model” dintr-un API poate fi de fapt un sistem de modele coordonate.",
+        "Cifrele de performanță raportate de companie trebuie confirmate independent.",
+        "Routing-ul între modele e o tehnică de cost pe care un AI engineer trebuie s-o știe."
+      ],
+      "tryToday": "Alege o aplicație AI pe care ai vrea s-o construiești și scrie 3 tipuri de cereri: una simplă, una medie, una grea. Pentru fiecare, notează ce model ai folosi și de ce. E schița unei strategii de rutare.",
+      "quiz": {
+        "question": "Prin ce diferă Fugu Max de un model de limbaj obișnuit?",
+        "answer": "E un model antrenat să orchestreze alte modele: împarte sarcinile între modele open-weight și specializate și se poate apela recursiv pe sine."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "Sakana AI Fugu Max and Fugu Ultra v2 (DataNorth)",
+          "url": "https://datanorth.ai/news/sakana-ai-launches-fugu-max-and-fugu-ultra-v2"
+        },
+        {
+          "title": "Fugu Max: API Pricing & Providers (OpenRouter)",
+          "url": "https://openrouter.ai/sakana/fugu-max"
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "id": "library-ai-news-18",
+      "areaId": "ai-news",
+      "title": "Când AI-ul scrie 80% din cod, testele devin blocajul",
+      "hook": "Pe 14 septembrie, Anthropic a povestit ce se întâmplă cu infrastructura când un model scrie majoritatea codului. Problema n-a fost scrierea, ci verificarea.",
+      "coreIdea": "Cu agenți de cod, volumul crește atât de mult încât rularea testelor devine gâtuirea, iar soluția Anthropic a fost să ruleze doar testele relevante pentru fiecare schimbare.",
+      "sections": [
+        {
+          "heading": "Cifrele",
+          "body": "Într-un articol publicat pe blogul Claude pe 14 septembrie 2026, Anthropic spune că inginerii săi livrează pe trimestru de 8 ori mai mult cod decât în 2021–2025, iar Claude scrie 80% din el. Numărul de teste a crescut de 10 ori, iar joburile de CI de 25 de ori în șase luni, cu aproximativ același număr de ingineri. Sunt cifre despre propria echipă, nu un standard al industriei."
+        },
+        {
+          "heading": "Soluția: test impact analysis",
+          "body": "În loc să ruleze toate testele la fiecare PR, Anthropic a construit un serviciu în două părți: un „listener” care înregistrează rezultatele fiecărei rulări de CI și un „selector” care alege ce teste rulează pe un PR, după istoric și după pachetele atinse. Înainte de reproiectare, trei soluții temporare (o mașină mai mare, sharding, restarturi zilnice) au rezistat tot mai puțin."
+        }
+      ],
+      "example": "Când vei lucra cu agenți de cod, întrebarea de la interviu nu va mai fi doar „știi să scrii cod?”, ci „cum te asiguri repede că ce a generat agentul e corect?”. Testele, CI-ul și evals devin partea ta de valoare.",
+      "takeaways": [
+        "Agenții de cod mută blocajul de la scrierea codului la verificarea lui.",
+        "Test impact analysis rulează doar testele relevante pentru o schimbare, pe baza istoricului.",
+        "Cifrele sunt raportate de Anthropic despre propria echipă."
+      ],
+      "tryToday": "Deschide un proiect de-al tău și cronometrează cât durează toată suita de teste. Apoi notează: dacă ai modifica un singur fișier, care teste ar trebui de fapt să ruleze?",
+      "quiz": {
+        "question": "De ce au crescut joburile de CI ale Anthropic de 25 de ori în șase luni?",
+        "answer": "Pentru că, cu Claude scriind 80% din cod, inginerii livrau mult mai mult cod, iar numărul de teste și de rulări a crescut odată cu el."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "Agentic coding is straining CI. Here’s how we scaled test impact analysis at Anthropic (Claude blog)",
+          "url": "https://claude.com/blog/agentic-coding-is-straining-ci-heres-how-we-scaled-test-impact-analysis-at-anthropic"
+        }
+      ],
+      "readingMinutes": 2
+    }
+  ]
+}

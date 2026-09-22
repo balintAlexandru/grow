@@ -1,0 +1,59 @@
+.item-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.item-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.item-card__meta {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent, var(--color-primary));
+}
+
+.item-card h3 {
+  font-size: 16px;
+}
+
+.item-card__note {
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.item-card__progress {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: auto;
+  padding-top: var(--space-2);
+}
+
+.item-card__bar {
+  flex: 1;
+  height: 6px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: var(--color-surface-muted);
+}
+
+.item-card__bar span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--accent, var(--color-primary));
+}
+
+.item-card__progress small {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}

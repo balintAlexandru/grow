@@ -1,0 +1,41 @@
+.generate {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-1);
+  max-width: 280px;
+}
+
+.generate__status {
+  font-size: 12px;
+  text-align: right;
+  color: var(--color-text-muted);
+}
+
+.generate__status a {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  color: var(--accent);
+}
+
+.generate__spin {
+  animation: generate-spin 1s linear infinite;
+}
+
+@keyframes generate-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .generate {
+    align-items: flex-start;
+    max-width: none;
+  }
+
+  .generate__status {
+    text-align: left;
+  }
+}
