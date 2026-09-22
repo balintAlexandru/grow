@@ -13,6 +13,11 @@ on:
         description: The only folder that gets committed
         required: true
         type: string
+      args:
+        description: Arguments passed to the skill
+        required: false
+        type: string
+        default: ''
     secrets:
       CLAUDE_CODE_OAUTH_TOKEN:
         required: true
@@ -20,7 +25,7 @@ on:
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 60
     permissions:
       contents: write
     steps:
@@ -39,7 +44,8 @@ jobs:
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           SKILL: ${{ inputs.skill }}
-        run: bash docker/run-skill.sh "$SKILL"
+          ARGS: ${{ inputs.args }}
+        run: bash docker/run-skill.sh "$SKILL" "$ARGS"
 
       # Anything the agent touched outside the content folder is dropped: only content is published.
       - name: Detect new content

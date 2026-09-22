@@ -1,7 +1,7 @@
 ---
 name: learning-daily
-description: Scrie planul zilnic din secțiunea Learning a aplicației Grow, 3 lecții scurte, verificate, fiecare cu o misiune concretă: încredere în conversații (în fiecare zi), drumul spre AI engineer (în fiecare zi) și, pe rând, sport, nutriție, minte, bani sau noutăți din AI. Scrie în app/src/content/learning/days/<data>.json. Rulează /learning-daily pentru ziua de azi sau /learning-daily <arie> ca să rescrii doar lecția acelei arii.
-argument-hint: "[id-arie]"
+description: Scrie planul zilnic din secțiunea Learning a aplicației Grow, 3 lecții scurte, verificate, fiecare cu o misiune concretă: încredere în conversații (în fiecare zi), drumul spre AI engineer (în fiecare zi) și, pe rând, sport, nutriție, minte, bani sau noutăți din AI. Scrie în app/src/content/learning/days/<data>.json. Rulează /learning-daily pentru ziua de azi, /learning-daily tot pentru planul de azi plus câte o lecție nouă în fiecare arie (butonul de pe site), sau /learning-daily <arie> ca să rescrii doar lecția acelei arii.
+argument-hint: "[tot | id-arie]"
 ---
 
 # /learning-daily
@@ -19,6 +19,8 @@ Scrii planul de azi: 3 lecții de câte 3–4 minute, fiecare cu **o misiune mic
 | 3 | după ziua săptămânii: luni `body`, marți `nutrition`, miercuri `mind`, joi `money`, vineri `body`, sâmbătă `ai-news`, duminică `mind` | O zi pe săptămână pentru fiecare arie, două pentru `body` și `mind`. |
 
 Cu argument (`/learning-daily nutrition`): rescrii doar lecția acelei arii din ziua de azi și lași celelalte neschimbate.
+
+Cu argumentul `tot` (butonul de pe site): scrii (sau rescrii) planul de azi, apoi adaugi **câte o lecție nouă pentru fiecare arie care nu e în planul de azi** (4 lecții) la finalul listei `lessons` din `app/src/content/learning/library.json`. Așa fiecare arie din Explorează primește ceva nou la fiecare apăsare. Lecțiile din bibliotecă urmează aceleași reguli (secțiunile 3–5), fără `step` și fără `eventTitle`; la `ai-news` alegi o noutate din ultimele 14 zile, alta decât cele deja scrise.
 
 ## 2. Pregătire
 

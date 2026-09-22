@@ -16,4 +16,6 @@ jobs:
     with:
       skill: learning-daily
       content: app/src/content/learning
+      # Today's plan plus a new lesson in every other area (spec 0006).
+      args: tot
     secrets: inherit

@@ -56,7 +56,7 @@ export default function LearningPage({ section }: { section: Section }) {
             <GraduationCap size={26} />
           </span>
         }
-        action={<GenerateButton task="learning" label="Generează lecțiile de azi" />}
+        action={<GenerateButton task="learning" label="Generează lecții noi" duration="20–30 de minute" />}
         eyebrow={section.tagline}
         title={section.label}
         description="10–15 minute pe zi: 3 lecții scurte, fiecare cu o misiune concretă. Încredere în conversații, drumul spre AI engineer și, pe rând, sport, nutriție, minte și bani."

@@ -26,7 +26,9 @@ async function fetchRun(task: Task): Promise<RunInfo> {
  * When it finishes, the new content is committed, Vercel rebuilds, and a reload shows it.
  * Only works on the deployed site; `npm run dev` has no /api.
  */
-export default function GenerateButton({ task, label }: { task: Task; label: string }) {
+type GenerateButtonProps = { task: Task; label: string; /** Shown while the run works, e.g. "20–30 de minute". */ duration: string }
+
+export default function GenerateButton({ task, label, duration }: GenerateButtonProps) {
   const [state, setState] = useState<State>({ kind: 'idle' })
   const requestedAt = useRef<number | null>(null)
 
@@ -112,7 +114,7 @@ export default function GenerateButton({ task, label }: { task: Task; label: str
         </button>
       )}
       <p className="generate__status" role="status">
-        {state.kind === 'running' && 'Claude lucrează, durează cam 10 minute. Poți închide pagina.'}
+        {state.kind === 'running' && `Claude lucrează, durează cam ${duration}. Poți închide pagina.`}
         {state.kind === 'done' && state.ok && state.published !== false && 'Gata. Site-ul se reconstruiește în 1–2 minute, apoi reîncarcă.'}
         {state.kind === 'done' && state.ok && state.published === false && 'Rularea s-a terminat, dar n-a apărut nimic nou de publicat.'}
         {state.kind === 'done' && !state.ok && 'Rularea a eșuat. '}

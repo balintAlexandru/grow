@@ -6,8 +6,8 @@ const libraryFile = import.meta.glob<LearningLibrary>('../../content/learning/li
 /** Newest first. */
 export const learningDays = Object.values(dayFiles).sort((a, b) => b.date.localeCompare(a.date))
 
-/** Every lesson, newest first, then the library. */
-export const allLessons: Lesson[] = [...learningDays.flatMap((d) => d.lessons), ...Object.values(libraryFile).flatMap((l) => l.lessons)]
+/** Every lesson, newest first: the days, then the library (appended over time, so read backwards). */
+export const allLessons: Lesson[] = [...learningDays.flatMap((d) => d.lessons), ...Object.values(libraryFile).flatMap((l) => l.lessons).reverse()]
 
 export const lessonsInArea = (areaId: string) => allLessons.filter((l) => l.areaId === areaId)
 

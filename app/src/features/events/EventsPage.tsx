@@ -62,7 +62,7 @@ export default function EventsPage({ section }: { section: Section }) {
             <CalendarDays size={26} />
           </span>
         }
-        action={<GenerateButton task="events" label="Caută evenimente noi" />}
+        action={<GenerateButton task="events" label="Caută evenimente noi" duration="10–15 minute" />}
         eyebrow={section.tagline}
         title={section.label}
         description={`Ce se întâmplă în ${monthName} în București: bouldering, șah, board games, teatru, muzică clasică, artă, dezvoltare personală și sport în grup.`}
