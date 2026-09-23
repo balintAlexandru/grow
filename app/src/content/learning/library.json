@@ -1031,6 +1031,162 @@
         }
       ],
       "readingMinutes": 3
+    },
+    {
+      "id": "library-body-26",
+      "areaId": "body",
+      "title": "De ce o noapte proastă strică mai mult decât o zi de sală ratată",
+      "hook": "Sari peste o zi de sală și te simți vinovat. Dormi 5 ore în loc de 7-8 și nu te gândești de două ori. Un studiu de laborator arată că ai grijile inversate.",
+      "coreIdea": "O singură noapte de privare totală de somn a redus sinteza proteică musculară cu 18% într-un studiu controlat, iar somnul insuficient repetat scade forța și crește riscul de accidentare mai mult decât un antrenament ratat.",
+      "sections": [
+        {
+          "heading": "Ce se întâmplă în mușchi peste noapte",
+          "body": "Într-un studiu controlat pe 13 adulți sănătoși, o singură noapte de privare totală de somn a redus sinteza proteică musculară, procesul prin care corpul repară și construiește fibre musculare, cu 18% a doua zi. Somnul insuficient crește și markerii inflamatori care încetinesc diferențierea celulelor musculare și regenerarea țesutului, exact mecanismul pe care te bazezi după un antrenament de forță."
+        },
+        {
+          "heading": "Forța rezistă o vreme, apoi cedează",
+          "body": "O meta-analiză din 2022 arată o scădere medie de aproximativ 7,6% a performanței fizice după privare acută de somn, pe toate categoriile de exerciții testate. Forța maximă la o singură ridicare rezistă relativ bine după o singură noapte proastă, dar nopțile de somn redus, repetate, scad forța la mișcări complexe, cresc oboseala și afectează coordonarea neuromusculară, exact riscurile pe care vrei să le eviți la exerciții de bază."
+        }
+      ],
+      "example": "Ai avut o zi grea de picioare ieri și azi ai dormit 5 ore în loc de 8. Corpul tău nu e „încă un pic în urmă cu recuperarea”, ci activ dezavantajat: sinteza proteică e mai mică decât ar fi fost cu un somn normal, exact în ziua în care mușchii au nevoie să repare ce ai stricat la sală.",
+      "takeaways": [
+        "O singură noapte de somn insuficient scade sinteza proteică musculară, nu doar energia de a te antrena.",
+        "Performanța fizică scade, în medie, cu aproape 8% după privare acută de somn.",
+        "Nopțile repetate de somn redus afectează forța și coordonarea mai mult decât o singură noapte proastă."
+      ],
+      "tryToday": "Diseară, pune-ți o alarmă de culcare (nu doar de trezire), cu 30 de minute mai devreme decât de obicei. Notează mâine dimineață, pe o scală de la 1 la 5, cât de refăcut te simți față de o zi normală.",
+      "quiz": {
+        "question": "Ce se întâmplă concret în mușchii tăi după o singură noapte de privare totală de somn?",
+        "answer": "Sinteza proteică musculară, procesul prin care corpul repară și construiește fibre musculare, scade, iar markerii inflamatori cresc, ambele încetinind recuperarea și regenerarea țesutului muscular."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "Inadequate sleep and muscle strength: Implications for resistance training (PubMed)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29422383/"
+        },
+        {
+          "title": "Effects of Acute Sleep Loss on Physical Performance: A Systematic and Meta-Analytical Review (PMC)",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9584849/"
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "id": "library-nutrition-27",
+      "areaId": "nutrition",
+      "title": "Carbohidrații seara: mitul care nu rezistă la cifre",
+      "hook": "„Nu mânca paste după ora 18, se depun direct ca grăsime.” Ai auzit varianta asta de la cineva. Comparațiile controlate spun altceva.",
+      "coreIdea": "Când caloriile și macronutrienții totali sunt egale, ora la care mănânci carbohidrați nu schimbă semnificativ cât de multă grăsime pierzi sau câștigi; ceea ce contează cu adevărat e totalul zilei, nu ceasul.",
+      "sections": [
+        {
+          "heading": "Corpul nu are un „comutator de îngrășare” la ora 18",
+          "body": "O trecere în revistă a studiilor despre sincronizarea meselor arată că, la calorii totale egale, distribuția lor pe parcursul zilei nu produce diferențe mari și consistente în greutatea sau grăsimea pierdută. Ideea că același aliment „se comportă diferit” metabolic dimineața față de seara, fără nicio altă schimbare, nu e susținută de comparațiile directe."
+        },
+        {
+          "heading": "Nuanța reală: sensibilitatea la insulină, nu ora în sine",
+          "body": "Sensibilitatea la insulină e, în medie, puțin mai scăzută seara, deci o masă mare, săracă în fibre, poate produce un vârf de glicemie mai mare la aceeași persoană, seara față de dimineață. Unele analize observaționale asociază o distribuție calorică mai mare devreme în zi cu o scădere ceva mai bună în greutate, dar diferența ține probabil de tipare generale de alimentație și de aderență, nu de un mecanism special al „carbohidraților de seară”."
+        }
+      ],
+      "example": "Un coleg refuză orezul la cină, dar mănâncă o gogoașă la ora 10 dimineața fără nicio grijă. Din perspectiva bilanțului caloric zilnic, gogoașa de dimineață contează la fel de mult ca orezul de seară ar fi contat.",
+      "takeaways": [
+        "La calorii totale egale, ora la care mănânci carbohidrați nu schimbă semnificativ grăsimea pierdută sau câștigată.",
+        "Sensibilitatea la insulină e puțin mai mică seara, dar asta afectează glicemia momentană, nu neapărat greutatea pe termen lung.",
+        "Ce contează e totalul caloric și calitatea dietei din întreaga zi, nu ceasul la care apar carbohidrații."
+      ],
+      "tryToday": "Azi, indiferent de oră, notează carbohidrații din fiecare masă, citind eticheta sau estimând porția. Seara adună totalul, fără să elimini nimic doar pentru că e „prea târziu”.",
+      "quiz": {
+        "question": "De ce o masă mare cu carbohidrați seara poate da un vârf de glicemie mai mare decât aceeași masă dimineața?",
+        "answer": "Pentru că sensibilitatea la insulină e, în medie, puțin mai scăzută seara la aceeași persoană, nu pentru că organismul „stochează automat” carbohidrații ca grăsime după o anumită oră."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "The Impact of Meal Timing on Risk of Weight Gain and Development of Obesity (PMC)",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9010393/"
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "id": "library-money-28",
+      "areaId": "money",
+      "title": "Pilonul III: statul îți dă înapoi 10% din ce economisești",
+      "hook": "Citești despre taxe și pare complicat. De fapt, unul dintre puținele instrumente în care statul îți întoarce bani direct e la un clic distanță: Pilonul III.",
+      "coreIdea": "Contribuțiile la Pilonul III, pensia privată facultativă, sunt deductibile din venitul impozabil până la 400 EUR pe an, iar la o cotă de impozitare de 10%, asta înseamnă că statul îți „întoarce” efectiv 10% din suma contribuită, prin taxe mai mici plătite.",
+      "sections": [
+        {
+          "heading": "Cum funcționează deducerea, concret",
+          "body": "Poți contribui lunar la un fond de Pilon III, cu minimum 35–100 lei și maximum 15% din venitul brut. Contribuțiile tale sunt deductibile din baza de calcul a impozitului pe venit, până la echivalentul a 400 EUR pe an, iar dacă și angajatorul contribuie, beneficiază de aceeași deducere, separat, până la un total de 800 EUR pe an. Practic, pentru fiecare leu contribuit, plătești cu 10 bani mai puțin impozit pe venit, în limita plafonului."
+        },
+        {
+          "heading": "Banii rămân blocați până la 60 de ani",
+          "body": "Retragerea integrală se poate face la 60 de ani, cu condiția să fi plătit minimum 90 de contribuții lunare; la retragere se impozitează doar câștigul din investiții, nu sumele depuse de tine. Poți întrerupe sau relua contribuțiile oricând, fără penalizări, iar banii rămân investiți și continuă să genereze randament până la retragere. Tocmai de aceea, Pilonul III vine după fondul de urgență, nu în locul lui: e pentru bani pe care nu vrei să-i atingi ani de zile."
+        }
+      ],
+      "example": "Contribui 150 lei pe lună la Pilon III, adică 1.800 lei pe an, sub plafonul de aproximativ 2.020 lei. Toată suma e deductibilă, iar impozitul pe venit pe care îl plătești scade cu 180 lei în acel an, bani pe care altfel i-ai fi dat oricum statului.",
+      "takeaways": [
+        "Contribuțiile la Pilonul III sunt deductibile din impozitul pe venit până la aproximativ 2.020 lei (400 EUR) pe an.",
+        "La o cotă de impozit de 10%, deducerea înseamnă efectiv 10% din suma contribuită, întoarsă prin taxe mai mici.",
+        "Banii se retrag abia la 60 de ani, deci Pilonul III vine după fondul de urgență, nu în locul lui."
+      ],
+      "tryToday": "Calculează cât ai contribui lunar ca să rămâi sub plafonul de aproximativ 2.020 lei pe an (cam 168 lei pe lună) și cât ai economisi la impozit într-un an întreg, la 10%. Nu deschide un cont azi, doar află cifrele.",
+      "quiz": {
+        "question": "De ce contribuțiile la Pilonul III „îți dau bani înapoi” prin impozit, și nu sunt doar economii obișnuite?",
+        "answer": "Pentru că se scad din venitul impozabil, până la plafonul anual, iar la o cotă de impozit de 10% asta înseamnă că plătești efectiv cu 10% mai puțin impozit pe venit pentru suma contribuită."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "Pilonul 3 facultativ (APAPR)",
+          "url": "https://apapr.ro/pilonul-3-facultativ/"
+        },
+        {
+          "title": "Pilonul III – Pensia Facultativă: Ghidul complet pentru 2026 (Financial Market)",
+          "url": "https://financialmarket.ro/finante-personale/educatie-financiara/pilonul-iii-pensia-facultativa-ghidul-complet-pentru-2026-deductibilitate-randamente-si-cum-iti-construiesti-singur-o-batranete-fara-griji/"
+        }
+      ],
+      "readingMinutes": 3
+    },
+    {
+      "id": "library-ai-news-29",
+      "areaId": "ai-news",
+      "title": "Claude Opus 5.5: mai ieftin cu până la 40%, lansat pe 22 septembrie",
+      "hook": "Pe 22 septembrie, Anthropic a lansat Opus 5.5. A doua zi, OpenAI a răspuns cu modele mai ieftine. Pentru cineva care construiește pe aceste API-uri, cursa asta de prețuri chiar contează la factură.",
+      "coreIdea": "Anthropic spune că Opus 5.5 costă cu 40% mai puțin de rulat decât Opus 5, la un preț listat mai mic pe token, și că egalează performanța lui Fable 5.1 pe majoritatea sarcinilor, iar câteva zile mai târziu OpenAI a lansat modele GPT-6 la jumătate din prețul generației anterioare.",
+      "sections": [
+        {
+          "heading": "Ce a anunțat Anthropic",
+          "body": "Pe 22 septembrie 2026, Anthropic a lansat Claude Opus 5.5, prețuit la 4 dolari pe milion de tokeni de intrare și 20 de dolari pe milion de ieșire. Compania spune că modelul costă cu 40% mai puțin de rulat decât Opus 5 și că, pe muncă reală, ajunge la aceleași rezultate cu mai puțini tokeni și răspunde cu peste 30% mai rapid. Citirea din cache a scăzut cu 60%, la 20 de cenți pe milion de tokeni. Cifrele de performanță vin din testele proprii ale Anthropic, deci sunt anunțate, nu confirmate independent încă."
+        },
+        {
+          "heading": "Contextul: o cursă a prețurilor",
+          "body": "În aceeași săptămână, OpenAI a lansat GPT-6 Sol și Luna, la jumătate din prețul nivelului GPT-5.6 anterior, iar Google și Amazon au anunțat investiții de zeci de miliarde de dolari în infrastructură pentru Anthropic. Pentru un AI engineer, tendința contează mai mult decât un singur preț: costul pe token scade rapid la toate laboratoarele mari, ceea ce schimbă ce modele merită folosite pentru fiecare parte a unei aplicații."
+        }
+      ],
+      "example": "Un pas de raționament complex dintr-un agent al tău, care rula pe Opus 5, costă acum cu până la 40% mai puțin dacă treci la Opus 5.5, fără să schimbi nimic altceva în cod, doar numele modelului din request.",
+      "takeaways": [
+        "Opus 5.5 a fost lansat pe 22 septembrie 2026, cu un preț listat mai mic și, spune Anthropic, cu 40% mai puțin cost real de rulare.",
+        "OpenAI a răspuns în aceeași săptămână cu modele GPT-6 la jumătate din prețul anterior.",
+        "Cifrele de performanță ale unui lansator vin din testele proprii ale companiei, până la verificări independente."
+      ],
+      "tryToday": "Deschide pagina de prețuri a API-ului pe care îl folosești (platform.claude.com/docs sau echivalent) și compară costul modelului tău curent cu al celei mai noi variante, pentru un volum lunar estimat al unui proiect de-al tău.",
+      "quiz": {
+        "question": "De ce afirmația „Opus 5.5 e cu 40% mai ieftin de rulat” trebuie citită ca „anunțat de Anthropic”, nu ca fapt verificat independent?",
+        "answer": "Pentru că cifra vine din testele și benchmarkurile proprii ale companiei care lansează modelul; ca orice cifră de performanță anunțată de un laborator despre propriul produs, are nevoie de confirmare din surse independente înainte să fie tratată ca un fapt stabilit."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "Introducing Claude Opus 5.5 (Anthropic)",
+          "url": "https://www.anthropic.com/claude-opus-5-5"
+        },
+        {
+          "title": "Anthropic releases Claude Opus 5.5 and OpenAI counters with two cheaper GPT-6 models (SiliconANGLE)",
+          "url": "https://siliconangle.com/2026/09/22/anthropic-releases-claude-opus-5-5-and-openai-counters-with-two-cheaper-gpt-6-models/"
+        }
+      ],
+      "readingMinutes": 3
     }
   ]
 }

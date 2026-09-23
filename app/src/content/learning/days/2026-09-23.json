@@ -1,0 +1,127 @@
+{
+  "date": "2026-09-23",
+  "lessons": [
+    {
+      "id": "2026-09-23-social",
+      "areaId": "social",
+      "title": "Decatastrofizarea: o întrebare care dezumflă frica",
+      "hook": "Mâine dimineață vrei să zâmbești unui necunoscut, dar mintea sare direct la scenariul cel mai rău: „O să pară ciudat, o să mă respingă.” Psihologii au un nume pentru bias-ul ăsta și, mai important, un exercițiu de trei întrebări care îl dezumflă.",
+      "coreIdea": "Anxietatea socială vine adesea din supraestimarea probabilității și a costului unui eșec social, iar decatastrofizarea, o tehnică CBT, corectează amândouă cu întrebări simple, scrise, nu doar gândite.",
+      "sections": [
+        {
+          "heading": "Două bias-uri, nu unul",
+          "body": "Cercetarea arată că oamenii cu anxietate socială supraestimează atât probabilitatea unui eveniment negativ (crede că va fi respins sau judecat), cât și costul lui (crede că reacția celorlalți va fi mult mai gravă decât e de fapt). Un program recent de terapie combinată, mindfulness și restructurare cognitivă, a redus semnificativ ambele bias-uri, cu efecte mari, măsurate înainte și după tratament și la reevaluare."
+        },
+        {
+          "heading": "Trei întrebări, scrise, nu doar gândite",
+          "body": "Decatastrofizarea cere trei răspunsuri concrete: Care e, de fapt, cel mai rău lucru care s-ar putea întâmpla? Dacă s-ar întâmpla, cât de groaznic ar fi, realist, nu în cea mai neagră variantă? Cât de probabil e, de fapt, pe o scală de la 0 la 100? Scrisul contează: gândul rămâne vag și amenințător, răspunsul scris devine concret și, de obicei, mult mai mic decât frica inițială."
+        }
+      ],
+      "example": "Înainte să zâmbești baristei, mintea spune „o să creadă că sunt ciudat”. Scris: cel mai rău caz, ea nu răspunde la zâmbet; groaznic ar fi la 2 din 10; probabilitatea reală, sub 10%. Zâmbești oricum, pentru că acum știi la ce te expui de fapt.",
+      "takeaways": [
+        "Anxietatea socială exagerează atât șansa unui eșec, cât și cât de grav ar fi el.",
+        "Decatastrofizarea răspunde în scris la trei întrebări: ce, cât de grav, cât de probabil.",
+        "Un gând scris devine concret; unul doar gândit rămâne amenințător și vag."
+      ],
+      "tryToday": "Înainte să faci contact vizual și să zâmbești la 3 oameni azi, scrie pe telefon cele trei răspunsuri de decatastrofizare pentru acel moment. Apoi fă gestul. Dacă azi e prea mult: scrie doar răspunsurile, fără să faci gestul încă.",
+      "quiz": {
+        "question": "De ce contează să scrii răspunsurile decatastrofizării, nu doar să te gândești la ele?",
+        "answer": "Pentru că un gând nescris rămâne vag și se simte amenințător, în timp ce un răspuns scris devine concret și arată, de obicei, că riscul real e mult mai mic decât frica inițială."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "Reducing cost and probability biases in social anxiety, mindfulness-CBT study (PMC)",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12681992/"
+        },
+        {
+          "title": "Decatastrophizing (Psychology Tools)",
+          "url": "https://www.psychologytools.com/resource/decatastrophizing"
+        }
+      ],
+      "readingMinutes": 2,
+      "step": 1
+    },
+    {
+      "id": "2026-09-23-ai-engineer",
+      "areaId": "ai-engineer",
+      "title": "MCP: portul USB-C care leagă modelele de uneltele tale",
+      "hook": "Ai construit deja o unealtă (tool) pentru Claude, cu input_schema și un handler. Acum o vrei și în Cursor, și în ChatGPT, și în VS Code. Trebuie s-o rescrii de trei ori? MCP există exact ca să nu fie nevoie.",
+      "coreIdea": "Model Context Protocol e un standard deschis, cu arhitectură client-server, care lasă orice aplicație AI să se conecteze la orice server de unelte și date fără o integrare custom pentru fiecare pereche.",
+      "sections": [
+        {
+          "heading": "Problema N×M pe care o rezolvă",
+          "body": "Înainte de MCP, fiecare aplicație AI care voia acces la, să zicem, Google Calendar sau o bază de date, trebuia să scrie propria integrare. N aplicații ori M unelte însemnau N×M bucăți de cod de întreținut. Anthropic a introdus MCP în 2024 ca protocol comun: aplicația (clientul MCP, cum e Claude sau Cursor) vorbește cu un server MCP care expune unelte, resurse și prompturi printr-un singur format. Scrii integrarea o dată, ca dezvoltator de server, și orice client MCP o poate folosi."
+        },
+        {
+          "heading": "Diferă de tool use prin cine scrie codul",
+          "body": "Ieri ai văzut tool use direct: tu definești unealta în codul tău, pentru cererea curentă. MCP mută acea definiție într-un server separat, reutilizabil. Sub capotă, sintaxa seamănă: server.registerTool primește un nume, o descriere și un schema de intrare, plus funcția care rulează.",
+          "code": "import { McpServer } from \"@modelcontextprotocol/server\"\nimport { z } from \"zod\"\n\nconst server = new McpServer({ name: \"orders\", version: \"1.0.0\" })\n\nserver.registerTool(\n  \"get_order\",\n  {\n    description: \"Detaliile unei comenzi după id\",\n    inputSchema: z.object({ orderId: z.string() }),\n  },\n  async ({ orderId }) => ({\n    content: [{ type: \"text\", text: await fetchOrder(orderId) }],\n  }),\n)"
+        }
+      ],
+      "example": "Vrei să conectezi Claude la baza de date de comenzi a magazinului tău. În loc să scrii integrare separată pentru fiecare aplicație AI cu care lucrezi, scrii un singur server MCP cu unealta get_order, iar Claude, Cursor sau orice alt client MCP se conectează la el.",
+      "takeaways": [
+        "MCP rezolvă problema N×M: o integrare per server, nu una per pereche aplicație-unealtă.",
+        "Un server MCP expune unelte, resurse și prompturi printr-un format standard, nu prin cod custom pentru fiecare client.",
+        "MCP e acum guvernat de o fundație neutră (Linux Foundation), nu doar de Anthropic, deci ecosistemul crește independent."
+      ],
+      "tryToday": "Deschide github.com/modelcontextprotocol/servers și alege un server existent (de exemplu filesystem sau GitHub) relevant pentru un proiect de-al tău. Notează ce unelte expune și dacă te-ar scuti de cod pe care l-ai scrie oricum.",
+      "quiz": {
+        "question": "Ce rezolvă MCP față de a scrie tool use direct în codul tău?",
+        "answer": "Mută definiția uneltei într-un server separat și reutilizabil, la care orice aplicație AI compatibilă cu MCP se poate conecta, în loc s-o rescrii pentru fiecare aplicație."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "Introducing the Model Context Protocol (Anthropic)",
+          "url": "https://www.anthropic.com/news/model-context-protocol"
+        },
+        {
+          "title": "What is the Model Context Protocol? (MCP Docs)",
+          "url": "https://modelcontextprotocol.io/introduction"
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "id": "2026-09-23-mind",
+      "areaId": "mind",
+      "title": "Reziduul atenției: de ce schimbi task-ul, dar mintea rămâne acolo",
+      "hook": "Închizi laptopul de la job cu un mesaj pe jumătate scris și deschizi lecția de azi din Grow. Zece minute mai târziu tot nu ai citit nimic cu adevărat. Nu ești obosit, mintea ta e încă la mesajul neterminat.",
+      "coreIdea": "Când întrerupi un task neterminat, o parte din atenție rămâne blocată acolo, un efect numit reziduul atenției, iar un plan scurt scris înainte de a comuta task-ul reduce efectul și îți protejează concentrarea pe ce urmează.",
+      "sections": [
+        {
+          "heading": "Ce a găsit Sophie Leroy",
+          "body": "Într-un experiment din 2009, participanții lucrau la puzzle-uri de cuvinte; unora li s-a permis să termine, alții au fost întrerupți la mijloc și mutați direct la o sarcină diferită (evaluarea unor CV-uri). Cei întrerupți înainte să termine au avut performanțe clar mai slabe la sarcina următoare decât cei care terminaseră. Efectul nu a dispărut în câteva secunde: scăderea de performanță a persistat pe toată durata sarcinii următoare."
+        },
+        {
+          "heading": "Planul „gata să revin” repară asta",
+          "body": "Leroy și Glomb au arătat, în patru studii publicate în 2018, inclusiv unul de teren cu 202 profesioniști, că un plan scurt de reluare, câteva propoziții despre unde ai rămas și ce faci mai departe, scrise înainte să comuți task-ul, reduce reziduul atenției și protejează performanța pe sarcina următoare. Mintea se liniștește pentru că nu mai are nevoie să țină task-ul deschis „în fundal”: l-ai închis printr-o decizie, nu prin abandon."
+        }
+      ],
+      "example": "Înainte să închizi laptopul de la job și să deschizi Grow, scrii o propoziție: „Revin mâine la 9:00 la mesajul lui X, îi răspund cu varianta B.” Abia apoi deschizi lecția. Diferența se simte în cât de repede intri de fapt în text.",
+      "takeaways": [
+        "Un task întrerupt neterminat lasă o parte din atenție blocată acolo, nu doar în primele secunde.",
+        "Efectul, numit reziduul atenției, a fost măsurat direct: scade performanța pe sarcina următoare.",
+        "Un plan scurt de reluare, scris înainte să comuți, reduce reziduul și protejează concentrarea."
+      ],
+      "tryToday": "Înainte de următoarea comutare de task de azi (de la job la lecția din Grow, sau între două task-uri de la birou), scrie o propoziție „gata să revin”: unde ai rămas, ce faci mai departe. Observă dacă intri mai repede în task-ul nou.",
+      "quiz": {
+        "question": "De ce nu ajută doar să te oprești din task-ul vechi, fără niciun plan, înainte să treci la altul?",
+        "answer": "Pentru că mintea ține task-ul neterminat „deschis”, ca reziduu al atenției; abia un plan scurt de reluare oferă o închidere reală, care reduce reziduul și protejează performanța pe task-ul următor."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "Why is it so Hard to do My Work? The Challenge of Attention Residue (Leroy, 2009)",
+          "url": "https://www.researchgate.net/publication/46489122_Why_is_it_so_Hard_to_do_My_Work_The_Challenge_of_Attention_Residue_when_Switching_Between_Work_Tasks"
+        },
+        {
+          "title": "Tasks Interrupted: How a 'Ready-to-Resume' Plan Mitigates Attention Residue (Leroy & Glomb, 2018, Organization Science)",
+          "url": "https://dl.acm.org/doi/abs/10.1287/orsc.2017.1184"
+        }
+      ],
+      "readingMinutes": 3
+    }
+  ]
+}
