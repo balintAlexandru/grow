@@ -11,7 +11,8 @@
     "content:check": "node scripts/check-content.mjs",
     "events:check": "node scripts/check-events.mjs",
     "fashion:check": "node scripts/check-fashion.mjs",
-    "psychology:check": "node scripts/check-psychology.mjs"
+    "psychology:check": "node scripts/check-psychology.mjs",
+    "culture:check": "node scripts/check-culture.mjs"
   },
   "dependencies": {
     "@vercel/functions": "^3.9.9",

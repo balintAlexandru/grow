@@ -59,7 +59,7 @@ export const sections: Section[] = [
     path: '/culture',
     icon: Landmark,
     accent: '#f59e0b',
-    tagline: 'Artă, istorie și idei',
-    description: 'Filme, expoziții, muzică și locuri care îți lărgesc orizontul.',
+    tagline: 'Ce merită văzut și spus',
+    description: 'Filme, cărți și muzică alese, povești bune de spus și locurile din București unde le găsești.',
   },
 ]

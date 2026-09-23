@@ -1,6 +1,7 @@
 import type { ComponentType } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { sections, type Section } from './config/sections'
+import CulturePage from './features/culture/CulturePage'
 import EventsPage from './features/events/EventsPage'
 import FashionPage from './features/fashion/FashionPage'
 import LearningPage from './features/learning/LearningPage'
@@ -12,6 +13,7 @@ import SectionPage from './pages/SectionPage'
 
 /** Sections with their own page; every other section uses the generic `SectionPage`. */
 const customPages: Record<string, ComponentType<{ section: Section }>> = {
+  culture: CulturePage,
   events: EventsPage,
   fashion: FashionPage,
   learning: LearningPage,

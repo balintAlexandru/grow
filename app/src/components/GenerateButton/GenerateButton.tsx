@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { ExternalLink, Loader2, RefreshCw, Sparkles } from 'lucide-react'
 import './GenerateButton.css'
 
-type Task = 'learning' | 'events' | 'fashion' | 'psychology'
+type Task = 'learning' | 'events' | 'fashion' | 'psychology' | 'culture'
 type RunInfo = { status: string; conclusion?: string | null; createdAt?: string; url?: string; published?: boolean }
 type State =
   | { kind: 'idle' }

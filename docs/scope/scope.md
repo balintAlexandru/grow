@@ -19,7 +19,7 @@ _These are recommendations to keep your build orderly, not requirements. Skip an
 | 6 | Learning page | Phase 1 | in-progress |
 | 7 | Fashion page | Phase 1 | in-progress |
 | 8 | Psychology page | Phase 1 | in-progress |
-| 9 | Culture page | Phase 1 | planned |
+| 9 | Culture page | Phase 1 | in-progress |
 | 10 | Data model & local persistence | Phase 2 | planned |
 | 11 | Add and edit items | Phase 2 | planned |
 | 12 | Home overview | Phase 2 | planned |
@@ -104,10 +104,15 @@ Daily check-in (mood, gratitude, free writing), the whole journal with search, g
    - [ ] Token gets Contents: read and write, then the first real save
 Spec [0008](../specs/0008-psychology-journal-and-tools.md) · code in `app/src/features/psychology/`, `app/api/journal.ts`, `.claude/skills/psychology-refresh/`
 
-### 9. Culture page · needs a decision
-Films, exhibitions, music, books, and places that widen your horizon, as lists you work through.
-**Done when:** items are grouped by kind (film, exhibition, and so on), done ones are marked, and an empty state renders.
-- [ ] Design it (spec): `/architect culture page`
+### 9. Culture page · in-progress
+Films, books, music, documentaries and podcasts worth his time, each with what to say about it; true stories with sources and a 30 second version; and the cultural places of București. What he marks („vreau”, „făcut”) is kept in the repo. The „Adu lucruri noi” button runs `/culture-refresh`.
+**Done when:** each tab renders from JSON, marks survive a reload and land in the repo, and the button publishes new recommendations.
+- [x] Design it (spec): `/architect culture page`
+- [ ] Build it: `/develop culture page`
+   - [x] Page, marks through `/api/store`, `npm run culture:check`, `/culture-refresh`, workflow
+   - [x] First content: 12 recommendations, 4 stories, 9 places
+   - [ ] First run from the button
+Spec [0009](../specs/0009-culture-section.md) · code in `app/src/features/culture/`, `app/src/content/culture/`, `.claude/skills/culture-refresh/`
 
 ## Phase 2: Wire real data
 

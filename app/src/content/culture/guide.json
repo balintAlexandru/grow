@@ -1,0 +1,297 @@
+{
+  "generatedAt": "2026-09-23",
+  "recommendations": [
+    {
+      "kind": "film",
+      "title": "4 luni, 3 săptămâni și 2 zile",
+      "author": "Cristian Mungiu",
+      "year": 2007,
+      "why": "Palme d’Or la Cannes și filmul care a pus Noul Val Românesc pe hartă. O zi din 1987, filmată aproape fără muzică și fără tăieturi vizibile.",
+      "talkingPoint": "Filmul are foarte puține cadre, unele de zece minute. Tensiunea vine din ce nu se vede și nu se aude.",
+      "length": "1h 53min",
+      "whereToFind": "HBO Max, Netflix, cinemateca",
+      "url": "https://en.wikipedia.org/wiki/4_Months,_3_Weeks_and_2_Days",
+      "id": "film-4-luni-3-saptamani-si-2-zile"
+    },
+    {
+      "kind": "film",
+      "title": "Aferim!",
+      "author": "Radu Jude",
+      "year": 2015,
+      "why": "Un western românesc alb-negru despre robia romilor în 1835. Istorie pe care școala o trece în două rânduri.",
+      "talkingPoint": "E filmat ca un western, cu doi călăreți prin câmpie, dar replicile sunt luate din documente de epocă.",
+      "length": "1h 48min",
+      "whereToFind": "HBO Max, Cinemateca Eforie",
+      "url": "https://en.wikipedia.org/wiki/Aferim!",
+      "id": "film-aferim"
+    },
+    {
+      "kind": "film",
+      "title": "Colectiv",
+      "author": "Alexander Nanau",
+      "year": 2019,
+      "why": "Un documentar despre incendiul din clubul Colectiv și ce a urmat în spitale. E felul cel mai direct de a înțelege România ultimilor zece ani.",
+      "talkingPoint": "Ideea care rămâne: oamenii n-au murit în incendiu, ci după, din infecții în spitale. Un jurnalist sportiv a scos asta la iveală.",
+      "length": "1h 49min",
+      "whereToFind": "Netflix, HBO Max, uneori la Cinemateca Eforie",
+      "url": "https://en.wikipedia.org/wiki/Collective_(2019_film)",
+      "id": "film-colectiv"
+    },
+    {
+      "kind": "carte",
+      "title": "Cartea șoaptelor",
+      "author": "Varujan Vosganian",
+      "year": 2009,
+      "why": "Istoria armenilor din România, povestită prin familia autorului. Una dintre cele mai bune cărți românești din ultimii 20 de ani.",
+      "talkingPoint": "E scrisă din poveștile bunicilor din Focșani, iar autorul a fost, în paralel, ministru de finanțe.",
+      "length": "Aproximativ 500 de pagini",
+      "whereToFind": "Librării, Polirom",
+      "url": "https://ro.wikipedia.org/wiki/Cartea_%C8%99oaptelor",
+      "id": "carte-cartea-soaptelor"
+    },
+    {
+      "kind": "carte",
+      "title": "Educație",
+      "author": "Tara Westover",
+      "year": 2018,
+      "why": "O femeie crescută de părinți care refuzau școala și spitalele ajunge doctor la Cambridge. Despre ce înseamnă să îți schimbi viața și ce te costă.",
+      "talkingPoint": "Nu a intrat într-o sală de clasă până la 17 ani. A învățat singură cât să dea examenul de admitere.",
+      "length": "Aproximativ 350 de pagini",
+      "whereToFind": "Librării, Litera, audiobook",
+      "url": "https://en.wikipedia.org/wiki/Educated",
+      "id": "carte-educatie"
+    },
+    {
+      "kind": "carte",
+      "title": "Meditații",
+      "author": "Marcus Aurelius",
+      "year": 180,
+      "why": "Jurnalul privat al unui împărat roman, scris pentru el însuși. Practic, nu filosofic: cum să nu te enervezi, cum să-ți faci treaba.",
+      "talkingPoint": "Nu a fost scrisă ca să fie citită de nimeni. E jurnalul celui mai puternic om din lume, care își scria singur reproșuri.",
+      "length": "Aproximativ 250 de pagini",
+      "whereToFind": "Librării, ediții online gratuite",
+      "url": "https://en.wikipedia.org/wiki/Meditations",
+      "id": "carte-meditatii"
+    },
+    {
+      "kind": "carte",
+      "title": "Omul în căutarea sensului",
+      "author": "Viktor Frankl",
+      "year": 1946,
+      "why": "Psihiatru supraviețuitor al lagărelor, scrie despre ce îi ține pe oameni în viață. Se citește într-un weekend și se ține minte ani.",
+      "talkingPoint": "Ideea centrală: nu poți controla ce ți se întâmplă, dar poți alege atitudinea față de ce ți se întâmplă. A scris-o în nouă zile.",
+      "length": "Aproximativ 200 de pagini",
+      "whereToFind": "Librării, Humanitas, biblioteci",
+      "url": "https://en.wikipedia.org/wiki/Man%27s_Search_for_Meaning",
+      "id": "carte-omul-in-cautarea-sensului"
+    },
+    {
+      "kind": "album",
+      "title": "Kind of Blue",
+      "author": "Miles Davis",
+      "year": 1959,
+      "why": "Cel mai vândut album de jazz din toate timpurile și cea mai simplă ușă de intrare în jazz. Bun de pus fondal când lucrezi.",
+      "talkingPoint": "Muzicienii au primit doar câteva schițe, nu partituri, și au înregistrat aproape totul din prima.",
+      "length": "45 de minute",
+      "whereToFind": "Spotify, YouTube, vinil",
+      "url": "https://en.wikipedia.org/wiki/Kind_of_Blue",
+      "id": "album-kind-of-blue"
+    },
+    {
+      "kind": "album",
+      "title": "OK Computer",
+      "author": "Radiohead",
+      "year": 1997,
+      "why": "Album despre alienare și tehnologie, scris înainte de internetul de azi. Se ascultă cap-coadă, nu pe shuffle.",
+      "talkingPoint": "A fost înregistrat într-un conac din secolul XV, iar vocea robotizată din „Fitter Happier” a fost generată de un Mac vechi.",
+      "length": "53 de minute",
+      "whereToFind": "Spotify, YouTube",
+      "url": "https://en.wikipedia.org/wiki/OK_Computer",
+      "id": "album-ok-computer"
+    },
+    {
+      "kind": "album",
+      "title": "Rodion G.A.: The Lost Tapes",
+      "author": "Rodion Roșca",
+      "year": 2013,
+      "why": "Muzică electronică făcută la Cluj în anii ’70, cu aparate improvizate, descoperită abia peste 30 de ani. Sună ca un Kraftwerk românesc.",
+      "talkingPoint": "Înregistrările au stat pe benzi din anii ’80 până când o casă de discuri din Londra le-a scos în 2013, la 30 de ani după ce au fost făcute în Cluj, cu magnetofoane modificate.",
+      "length": "Aproximativ 70 de minute",
+      "whereToFind": "Spotify, Bandcamp",
+      "url": "https://strut-records.co.uk/products/rodion-the-lost-tapes",
+      "id": "album-rodion-g-a-the-lost-tapes"
+    },
+    {
+      "kind": "documentar",
+      "title": "Chuck Norris vs. Communism",
+      "author": "Ilinca Călugăreanu",
+      "year": 2015,
+      "why": "Cum au ajuns filmele americane pe casete VHS în România anilor ’80 și ce a însemnat asta pentru oameni.",
+      "talkingPoint": "Toate filmele erau traduse de aceeași femeie, Irina Margareta Nistor. Vocea ei era cunoscută de o țară întreagă, dar fața nu.",
+      "length": "1h 18min",
+      "whereToFind": "Netflix, YouTube, HBO Max",
+      "url": "https://en.wikipedia.org/wiki/Chuck_Norris_vs_Communism",
+      "id": "documentar-chuck-norris-vs-communism"
+    },
+    {
+      "kind": "podcast",
+      "title": "In Our Time",
+      "author": "BBC Radio 4",
+      "year": 1998,
+      "why": "Patruzeci de minute în care trei profesori explică un subiect, de la găurile negre la Imperiul Bizantin. Fără reclame și fără glume forțate.",
+      "talkingPoint": "Are peste 1.000 de episoade, iar arhiva e organizată pe teme: istorie, filosofie, știință, cultură.",
+      "length": "Aproximativ 50 de minute pe episod",
+      "whereToFind": "BBC Sounds, Spotify, Apple Podcasts",
+      "url": "https://www.bbc.co.uk/programmes/b006qykl",
+      "id": "podcast-in-our-time"
+    }
+  ],
+  "stories": [
+    {
+      "title": "Brâncuși a dat statul american în judecată ca să demonstreze că sculptura lui e artă",
+      "body": "În 1926, Brâncuși a trimis „Pasăre în spațiu” la o expoziție la New York. Legea americană lăsa operele de artă să intre fără taxe, dar vameșii au refuzat să considere obiectul artă: era o formă lustruită, fără cap și fără aripi. L-au încadrat la categoria „ustensile de bucătărie și materiale sanitare” și au cerut taxă de 40% din valoare. Brâncuși a dat în judecată Statele Unite. Procesul a început în 1927, iar la proces au depus mărturie artiști și directori de muzeu. În 1928, instanța a decis că lucrarea e artă, chiar dacă nu seamănă cu o pasăre: era originală, făcută de un sculptor profesionist și, spuneau judecătorii, plăcută la privit. Decizia a schimbat felul în care legea americană definește arta modernă.",
+      "tellIt": "Întrebi pe cineva: cine decide ce e artă? Apoi spui povestea: un vameș american a vrut să taxeze un Brâncuși ca pe o tigaie, iar sculptorul a dat statul în judecată. Și a câștigat.",
+      "sources": [
+        {
+          "title": "MoMA: „But Is It Art?” Constantin Brancusi vs. the United States",
+          "url": "https://www.moma.org/explore/inside_out/2014/07/24/but-is-it-art-constantin-brancusi-vs-the-united-states/"
+        },
+        {
+          "title": "Bird in Space (Wikipedia)",
+          "url": "https://en.wikipedia.org/wiki/Bird_in_Space"
+        }
+      ],
+      "id": "brancusi-a-dat-statul-american-in-judecata-ca-sa-d"
+    },
+    {
+      "title": "Clădirea în care intri gratis o dată pe lună e cea mai grea din lume",
+      "body": "Palatul Parlamentului din București deține recordul Guinness pentru cea mai grea clădire din lume: aproximativ 4,1 milioane de tone. E și cea mai mare clădire administrativă din lume folosită în scopuri civile, după Pentagon. Guinness listează materialele: 700.000 de tone de oțel și bronz, un milion de metri cubi de marmură, 3.500 de tone de sticlă de cristal. Are peste 1.000 de camere și mii de candelabre, cel mai greu cântărind câteva tone. Construcția a pornit după cutremurul din 1977, când Ceaușescu a decis să reconstruiască centrul orașului, și a durat ani de zile, cu un cartier întreg demolat pentru ea. Astăzi, o aripă de sticlă a clădirii găzduiește Muzeul Național de Artă Contemporană.",
+      "tellIt": "Când treci cu cineva pe lângă Casa Poporului: „știai că e cea mai grea clădire din lume? Are record Guinness, patru milioane de tone. Iar în spate, în aripa de sticlă, e muzeul de artă contemporană.”",
+      "sources": [
+        {
+          "title": "Palace of the Parliament (Wikipedia)",
+          "url": "https://en.wikipedia.org/wiki/Palace_of_the_Parliament"
+        },
+        {
+          "title": "Sacyr: the mysteries of the world’s heaviest building",
+          "url": "https://sacyr.com/en/-/los-misterios-del-edificio-mas-pesado-del-mundo"
+        }
+      ],
+      "id": "cladirea-in-care-intri-gratis-o-data-pe-luna-e-cea"
+    },
+    {
+      "title": "O singură femeie a dublat mii de filme interzise, iar o țară întreagă i-a recunoscut vocea",
+      "body": "În anii ’80, filmele străine ajungeau în România pe casete VHS aduse ilegal și copiate în apartamente. Aproape toate erau traduse de aceeași persoană: Irina Margareta Nistor, traducătoare la Televiziunea Română. A dublat mii de filme, vorbind peste toate personajele, bărbați și femei. Oamenii se strângeau în case, plăteau ca să vadă un film și îi știau vocea, fără să îi știe fața. Documentarul „Chuck Norris vs. Communism” spune povestea asta prin oamenii care erau atunci copii și prin cel care aducea casetele în țară. E una dintre cele mai bune explicații despre ce înseamnă cultura când e interzisă: nu divertisment, ci o fereastră. Traducerea se făcea pe loc, fără scenariu și fără a doua încercare, iar casetele treceau din mână în mână până se uzau. Pentru mulți copii de atunci, filmele acelea au fost prima imagine a lumii de dincolo de graniță: mașini, supermarketuri, case. Documentarul arată și cealaltă parte: Securitatea știa de rețea, dar a lăsat-o să funcționeze.",
+      "tellIt": "Începi cu întrebarea: „știi cum se uitau părinții noștri la filme americane înainte de ’89?”. Apoi povestea: o singură femeie traducea totul, cu aceeași voce, și nimeni nu știa cum arată.",
+      "sources": [
+        {
+          "title": "Chuck Norris vs. Communism (Wikipedia)",
+          "url": "https://en.wikipedia.org/wiki/Chuck_Norris_vs_Communism"
+        },
+        {
+          "title": "Irina Margareta Nistor (Wikipedia)",
+          "url": "https://en.wikipedia.org/wiki/Irina_Margareta_Nistor"
+        }
+      ],
+      "id": "o-singura-femeie-a-dublat-mii-de-filme-interzise-i"
+    },
+    {
+      "title": "Un colecționar și-a transformat casa în muzeu și a donat-o statului",
+      "body": "Krikor Zambaccian a fost un colecționar armean din România care a adunat, între războaie, una dintre cele mai bune colecții private de artă din țară: Grigorescu, Luchian, Pallady, Tonitza, dar și Cézanne, Matisse, Picasso. În 1947 a donat colecția statului român, împreună cu casa în care locuia, cu condiția ca acolo să funcționeze un muzeu. Casa e și azi muzeu, pe o stradă liniștită din Dorobanți, iar lucrările sunt expuse cam cum le ținea el, în camere de locuit, nu în săli mari. E unul dintre cele mai puțin aglomerate muzee bune din București: poți sta singur într-o cameră cu un Pallady. Zambaccian a fost negustor, nu artist, și a cumpărat lucrările direct de la pictorii pe care îi cunoștea personal, mulți dintre ei prieteni. A scris și o carte despre întâlnirile cu ei. Muzeul a fost închis în perioada comunistă și redeschis abia în 1991, cu aceleași lucrări pe pereți.",
+      "tellIt": "Recomandarea sună așa: „e un muzeu într-o casă, cu Pallady și un Cézanne, unde de obicei nu e nimeni. Omul a donat totul, cu tot cu casă, în 1947.”",
+      "sources": [
+        {
+          "title": "Zambaccian Museum (Wikipedia)",
+          "url": "https://en.wikipedia.org/wiki/Zambaccian_Museum"
+        },
+        {
+          "title": "Muzeul Zambaccian (MNAR)",
+          "url": "https://mnar.ro/"
+        }
+      ],
+      "id": "un-colectionar-si-a-transformat-casa-in-muzeu-si-a"
+    }
+  ],
+  "places": [
+    {
+      "name": "Muzeul Național de Artă al României",
+      "kind": "muzeu",
+      "address": "Calea Victoriei 49-53",
+      "what": "Galeria de artă românească veche și modernă, plus arta europeană, în fostul palat regal. Cel mai bun punct de pornire dacă intri rar în muzee.",
+      "practical": "Expoziții temporare importante pe tot parcursul anului",
+      "url": "https://mnar.ro/",
+      "id": "muzeul-national-de-arta-al-romaniei"
+    },
+    {
+      "name": "Muzeul Național de Artă Contemporană (MNAC)",
+      "kind": "muzeu",
+      "address": "Palatul Parlamentului, Calea 13 Septembrie 1-3, intrarea E1",
+      "what": "Peste 7.000 de lucrări de după al Doilea Război Mondial, în aripa de sticlă a Palatului Parlamentului. Merită și pentru clădire.",
+      "practical": "Intri prin poarta B3, ia buletinul la tine",
+      "url": "https://mnac.ro/",
+      "id": "muzeul-national-de-arta-contemporana-mnac"
+    },
+    {
+      "name": "Muzeul Zambaccian",
+      "kind": "muzeu",
+      "address": "Str. Muzeul Zambaccian 21A",
+      "what": "Colecția unui singur om, într-o casă: Pallady, Luchian, Tonitza, plus câteva lucrări franceze. Aproape gol în timpul săptămânii.",
+      "practical": "Miercuri–vineri 10:00–18:00, sâmbătă și duminică 11:00–19:00; luni și marți închis",
+      "url": "https://en.wikipedia.org/wiki/Zambaccian_Museum",
+      "id": "muzeul-zambaccian"
+    },
+    {
+      "name": "Palatul Suțu (Muzeul Municipiului București)",
+      "kind": "muzeu",
+      "address": "Bd. I.C. Brătianu 2",
+      "what": "Istoria orașului într-un palat din secolul XIX, cu expoziția permanentă „Timpul orașului”. Bun ca să înțelegi ce era aici înainte de blocuri.",
+      "practical": "Intrare gratuită în prima miercuri din lună",
+      "url": "https://muzeulbucurestiului.ro/palatul-sutu.html",
+      "id": "palatul-sutu-muzeul-municipiului-bucuresti"
+    },
+    {
+      "name": "Cinemateca Eforie",
+      "kind": "cinema",
+      "address": "Str. Eforie 2",
+      "what": "Singurul cinematograf de arhivă din România: filme vechi, retrospective, copii pe peliculă. Bilet ieftin, sală mică.",
+      "practical": "Program pe cinemagia.ro sau pe pagina lor",
+      "url": "https://zilesinopti.ro/locuri/cinemateca-eforie/",
+      "id": "cinemateca-eforie"
+    },
+    {
+      "name": "Cinema Elvire Popesco",
+      "kind": "cinema",
+      "address": "Bd. Dacia 77, Institutul Francez",
+      "what": "Cel mai frecventat cinema de artă din România, cu filme europene și românești, parte din rețeaua Europa Cinemas.",
+      "practical": "Program și bilete pe eventbook.ro",
+      "url": "https://eventbook.ro/elvirepopesco",
+      "id": "cinema-elvire-popesco"
+    },
+    {
+      "name": "Cărturești Carusel",
+      "kind": "librărie",
+      "address": "Str. Lipscani 55",
+      "what": "Șase etaje de librărie în Centrul Vechi, cu bistro sus și o galerie de artă contemporană la etajul întâi. Merită și doar ca loc de stat.",
+      "url": "https://carturesti.ro/",
+      "id": "carturesti-carusel"
+    },
+    {
+      "name": "Librăria Humanitas de la Cișmigiu",
+      "kind": "librărie",
+      "address": "Bd. Regina Elisabeta 38",
+      "what": "Aproximativ 18.000 de titluri, plus lansări de carte și întâlniri cu scriitori, la parterul hotelului Cișmigiu.",
+      "practical": "Verifică programul evenimentelor: multe sunt gratuite",
+      "url": "https://humanitas.ro/librarii-humanitas",
+      "id": "libraria-humanitas-de-la-cismigiu"
+    },
+    {
+      "name": "Ateneul Român",
+      "kind": "sală de concert",
+      "address": "Str. Benjamin Franklin 1-3",
+      "what": "Sala Filarmonicii George Enescu și cea mai frumoasă clădire în care poți asculta muzică clasică în București. Se poate vizita și fără concert.",
+      "practical": "Concertele sunt în secțiunea Evenimente din aplicație",
+      "url": "https://filarmonicaenescu.ro/ro",
+      "id": "ateneul-roman"
+    }
+  ]
+}

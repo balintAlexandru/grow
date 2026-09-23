@@ -13,3 +13,4 @@ node_modules
 !.claude/skills/events-refresh/
 !.claude/skills/fashion-refresh/
 !.claude/skills/psychology-refresh/
+!.claude/skills/culture-refresh/

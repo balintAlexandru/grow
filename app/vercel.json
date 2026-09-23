@@ -6,5 +6,5 @@
       "destination": "/index.html"
     }
   ],
-  "ignoreCommand": "git log -1 --pretty=%s | grep -q '^journal:'"
+  "ignoreCommand": "git log -1 --pretty=%s | grep -qE '^(journal|data):'"
 }
