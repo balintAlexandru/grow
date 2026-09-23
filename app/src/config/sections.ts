@@ -50,8 +50,8 @@ export const sections: Section[] = [
     path: '/psychology',
     icon: Brain,
     accent: '#14b8a6',
-    tagline: 'Mintea și obiceiurile tale',
-    description: 'Concepte, reflecții și obiceiuri pentru o minte mai liniștită.',
+    tagline: 'Mintea ta, zi cu zi',
+    description: 'Jurnal, check-in zilnic, exerciții ghidate și articole verificate despre emoții, anxietate și relații.',
   },
   {
     id: 'culture',

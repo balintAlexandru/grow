@@ -4,6 +4,7 @@ import { sections, type Section } from './config/sections'
 import EventsPage from './features/events/EventsPage'
 import FashionPage from './features/fashion/FashionPage'
 import LearningPage from './features/learning/LearningPage'
+import PsychologyPage from './features/psychology/PsychologyPage'
 import AppLayout from './layouts/AppLayout'
 import HomePage from './pages/HomePage'
 import NotFoundPage from './pages/NotFoundPage'
@@ -14,6 +15,7 @@ const customPages: Record<string, ComponentType<{ section: Section }>> = {
   events: EventsPage,
   fashion: FashionPage,
   learning: LearningPage,
+  psychology: PsychologyPage,
 }
 
 export default function App() {

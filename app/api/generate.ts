@@ -6,7 +6,7 @@
  *   GITHUB_REPO            "owner/name"
  *   GITHUB_DISPATCH_TOKEN  fine-grained token for that repo only, permission Actions: read and write
  */
-const WORKFLOWS = { learning: 'learning-daily.yml', events: 'events-refresh.yml', fashion: 'fashion-refresh.yml' } as const
+const WORKFLOWS = { learning: 'learning-daily.yml', events: 'events-refresh.yml', fashion: 'fashion-refresh.yml', psychology: 'psychology-refresh.yml' } as const
 type Task = keyof typeof WORKFLOWS
 
 type Run = { id: number; status: string; conclusion: string | null; created_at: string; html_url: string }

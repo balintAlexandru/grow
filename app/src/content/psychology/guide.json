@@ -1,0 +1,465 @@
+{
+  "generatedAt": "2026-09-23",
+  "articles": [
+    {
+      "topicId": "emotii",
+      "title": "Cinci minute de respirație care chiar au dovezi",
+      "hook": "Un studiu de la Stanford a pus față în față trei tehnici de respirație și meditația mindfulness. Una a ieșit în față, și durează cinci minute pe zi.",
+      "coreIdea": "Suspinul ciclic, adică o inspirație urmată de una scurtă și o expirație lungă, a îmbunătățit starea de spirit mai mult decât meditația, în cinci minute pe zi timp de o lună.",
+      "sections": [
+        {
+          "heading": "Ce au măsurat",
+          "body": "Cercetătorii de la Stanford, între care David Spiegel și Andrew Huberman, au lucrat cu 111 voluntari, împărțiți pe patru practici: trei tipuri de respirație și meditație mindfulness, câte cinci minute pe zi, timp de 28 de zile. Rezultatele au apărut în 2023 în Cell Reports Medicine."
+        },
+        {
+          "heading": "De ce expirația lungă",
+          "body": "Grupurile care au respirat controlat au avut o creștere mai mare a stării de bine decât cele care au meditat, iar suspinul ciclic, cel cu expirația cea mai lungă, a ieșit primul. Expirația prelungită încetinește ritmul respirator, iar asta scade excitația fiziologică. Nu e magie: e cea mai ieftină pârghie pe care o ai asupra sistemului nervos."
+        },
+        {
+          "heading": "Ce nu spune studiul",
+          "body": "Studiul a durat o lună și a avut 111 participanți, deci nu e ultimul cuvânt. Nu spune că respirația înlocuiește terapia sau tratamentul, și nici că meditația nu e utilă: toate grupurile au raportat mai puțină anxietate. Spune doar că, pentru cinci minute pe zi, respirația cu expirație lungă a dat cel mai mare câștig de dispoziție. E o unealtă de primă intenție, nu o soluție pentru orice."
+        }
+      ],
+      "takeaways": [
+        "Cinci minute pe zi sunt suficiente ca să conteze într-o lună.",
+        "Expirația mai lungă decât inspirația e ingredientul activ.",
+        "A fost mai eficient decât meditația pentru starea de spirit, în acest studiu."
+      ],
+      "tryToday": "Fă exercițiul „Suspin ciclic” din tabul Exerciții, o singură dată, acum. Durează cinci minute.",
+      "sources": [
+        {
+          "title": "Brief structured respiration practices enhance mood and reduce physiological arousal (PubMed)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36630953/"
+        },
+        {
+          "title": "Stanford Medicine: cyclic sighing can help breathe away anxiety",
+          "url": "https://med.stanford.edu/news/insights/2023/02/cyclic-sighing-can-help-breathe-away-anxiety.html"
+        }
+      ],
+      "id": "cinci-minute-de-respiratie-care-chiar-au-dovezi",
+      "readingMinutes": 2
+    },
+    {
+      "topicId": "anxietate",
+      "title": "Amână grija: „ora de îngrijorare”",
+      "hook": "Grija nu se oprește pentru că îți spui „nu te mai gândi”. Dar se poate muta. Tehnica are 40 de ani și o meta-analiză recentă.",
+      "coreIdea": "Îți programezi 15 minute pe zi pentru griji, iar când apar în alt moment le notezi și le amâni până atunci; frecvența și durata grijilor scad.",
+      "sections": [
+        {
+          "heading": "Cum funcționează",
+          "body": "Tehnica, introdusă de Borkovec și colegii în 1983, se numește amânarea grijii. Alegi un interval fix, de exemplu 18:30–18:45. Când apare o grijă în timpul zilei, o scrii pe hârtie și îți spui că te ocupi de ea la ora stabilită. La ora aceea, o citești și decizi: e ceva de rezolvat sau doar gândire în cerc?"
+        },
+        {
+          "heading": "Ce arată datele",
+          "body": "O meta-analiză publicată în 2023 în International Journal of Cognitive Therapy a adunat studiile pe amânarea grijii și a găsit o reducere a frecvenței și duratei grijilor în viața de zi cu zi, după practică de o săptămână până la o lună. Un efect secundar util: descoperi că grija e controlabilă, iar multe griji își pierd urgența până seara."
+        },
+        {
+          "heading": "Când nu funcționează",
+          "body": "Dacă grija ta e despre ceva care se rezolvă în două minute, rezolvă-l, nu-l amâna. Tehnica e pentru gândirea în cerc, cea care se întoarce fără să producă nimic. Iar dacă la ora stabilită grijile te copleșesc constant, sau apar simptome fizice și insomnie de săptămâni întregi, e semnul că merită discutat cu un psiholog, nu gestionat singur cu o tehnică."
+        }
+      ],
+      "takeaways": [
+        "Grija amânată nu e grijă reprimată: o scrii, nu o ignori.",
+        "Intervalul fix testează credința că „nu pot să mă opresc din gândit”.",
+        "Funcționează după una-două săptămâni de exercițiu, nu din prima seară."
+      ],
+      "tryToday": "Stabilește-ți ora de îngrijorare de mâine și scrie-o în calendar. Când apare prima grijă, notează-o pe telefon și mergi mai departe.",
+      "sources": [
+        {
+          "title": "Effects of Worry Postponement on Daily Worry: a Meta-Analysis (Springer)",
+          "url": "https://link.springer.com/article/10.1007/s41811-023-00193-x"
+        },
+        {
+          "title": "Worry Postponement (Psychology Tools)",
+          "url": "https://www.psychologytools.com/resource/worry-postponement"
+        }
+      ],
+      "id": "amana-grija-ora-de-ingrijorare",
+      "readingMinutes": 2
+    },
+    {
+      "topicId": "obiceiuri",
+      "title": "Acțiunea vine înaintea cheflui, nu invers",
+      "hook": "Aștepți să ai chef ca să faci ceva și nu vine niciodată. Tratamentul numit activare comportamentală pornește de la ideea că ordinea e inversă.",
+      "coreIdea": "Starea de spirit se ridică după ce faci lucruri cu sens, nu înainte, așa că activitățile se programează, nu se așteaptă.",
+      "sections": [
+        {
+          "heading": "Cercul care te trage în jos",
+          "body": "Când ești fără chef, faci mai puține lucruri. Cu cât faci mai puține, cu atât ai mai puține ocazii ca ceva bun să se întâmple, iar starea coboară mai departe. Activarea comportamentală rupe cercul: reintroduci treptat activități, mai ales cele care îți dau sens sau plăcere, chiar dacă nu simți niciun impuls."
+        },
+        {
+          "heading": "De ce e luată în serios",
+          "body": "Nu e un truc motivațional. E un tratament pentru depresie recomandat în ghidurile clinice, inclusiv NICE în Marea Britanie, iar serviciile NHS îl folosesc ca intervenție de sine stătătoare. Cheia stă în gradare: alegi activitatea cea mai mică pe care o poți face azi, nu pe cea ideală."
+        },
+        {
+          "heading": "Cum alegi activitatea",
+          "body": "Nu alege ce „ar trebui” să faci, ci ce îți dădea energie înainte sau ce ține de ceva important pentru tine. Împarte-o până devine ridicol de mică: nu „alerg 5 km”, ci „mă îmbrac și ies pe ușă zece minute”. Notează starea înainte și după, pe o scară de la 1 la 10. După o săptămână, cifrele îți arată ce funcționează la tine, nu la alții."
+        }
+      ],
+      "takeaways": [
+        "Motivația vine după acțiune, nu înaintea ei.",
+        "Alege activitatea cea mai mică, nu pe cea corectă.",
+        "E o intervenție cu dovezi, nu doar sfat de bun-simț."
+      ],
+      "tryToday": "Alege o singură activitate mică pentru mâine, scrie ora la care o faci și fă-o indiferent de chef. Seara, notează în jurnal cum a fost înainte și după.",
+      "sources": [
+        {
+          "title": "Behavioural Activation (Greater Manchester Mental Health NHS)",
+          "url": "https://www.gmmh.nhs.uk/behavioural-activation/"
+        },
+        {
+          "title": "Behavioral Activation self-help guide (Psychology Tools)",
+          "url": "https://www.psychologytools.com/self-help/behavioral-activation"
+        }
+      ],
+      "id": "actiunea-vine-inaintea-cheflui-nu-invers",
+      "readingMinutes": 2
+    },
+    {
+      "topicId": "stima",
+      "title": "Autocompasiunea nu e răsfăț, e antrenament",
+      "hook": "Mulți bărbați cred că dacă își vorbesc dur devin mai performanți. Cercetarea lui Kristin Neff arată contrariul, și dă o formulă în trei pași.",
+      "coreIdea": "Să te tratezi cu aceeași înțelegere pe care i-ai oferi-o unui prieten se învață în trei pași și e asociat cu sănătate mintală mai bună decât autocritica.",
+      "sections": [
+        {
+          "heading": "Cele trei componente",
+          "body": "Neff descrie autocompasiunea ca având trei părți: mindfulness (recunoști că îți e greu), umanitate comună (nu ești singurul, oamenii pățesc asta) și bunătate față de tine (îți vorbești ca unui prieten). Exercițiul „pauza de autocompasiune” pune cele trei într-o formulă de un minut."
+        },
+        {
+          "heading": "Ce se schimbă",
+          "body": "Oamenii care trec printr-un program structurat de opt săptămâni de mindful self-compassion raportează niveluri mai mari de autocompasiune decât înainte și decât un grup de control. Ideea principală: autocritica nu te face mai disciplinat, ci te face să eviți lucrurile la care te temi că vei da greș."
+        },
+        {
+          "heading": "Ce nu înseamnă",
+          "body": "Autocompasiunea nu înseamnă să te scuzi, să te compari favorabil cu alții sau să te feliciți degeaba. Neff o separă explicit de stima de sine, care are nevoie de o comparație: ca să te simți bine, trebuie să fii mai bun decât cineva. Autocompasiunea nu cere asta, deci nu se prăbușește când dai greș. Practic, e diferența dintre „sunt un incapabil” și „am greșit aici, și e ceva ce pot repara”."
+        }
+      ],
+      "takeaways": [
+        "Autocompasiunea are trei pași care se pot învăța, nu e o trăsătură cu care te naști.",
+        "Nu înseamnă să te scuzi, ci să nu-ți mai adaugi o pedeapsă peste greșeală.",
+        "Funcționează mai ales exact în momentele în care ți se pare că nu o meriți."
+      ],
+      "tryToday": "Când faci azi o greșeală, oprește-te zece secunde și spune-ți în gând: „E greu acum. Se întâmplă oricui. Ce mi-ar spune un prieten bun?”.",
+      "sources": [
+        {
+          "title": "Self-Compassion Break (Greater Good in Action, UC Berkeley)",
+          "url": "https://ggia.berkeley.edu/practice/self_compassion_break"
+        },
+        {
+          "title": "Self-Compassion Research (Kristin Neff)",
+          "url": "https://self-compassion.org/the-research/"
+        }
+      ],
+      "id": "autocompasiunea-nu-e-rasfat-e-antrenament",
+      "readingMinutes": 2
+    },
+    {
+      "topicId": "relatii",
+      "title": "De ce bărbații pierd prieteni după 25 de ani",
+      "hook": "Nu ești tu de vină și nu e doar la tine: numărul bărbaților fără niciun prieten apropiat a crescut de câteva ori din 1990 încoace.",
+      "coreIdea": "Prietenia masculină se construiește „umăr la umăr”, în activități comune, deci se reface prin activități repetate, nu prin invitații la discuții.",
+      "sections": [
+        {
+          "heading": "Ce arată datele",
+          "body": "Analizele pe datele Gallup arată că ponderea bărbaților din Statele Unite fără niciun prieten apropiat a crescut de câteva ori față de 1990, iar un sfert dintre bărbații de 15–34 de ani raportează singurătate zilnic. Bărbații și femeile raportează singurătate la rate apropiate; diferența apare la calitatea prieteniilor și la cât de ușor cer sprijin."
+        },
+        {
+          "heading": "Ce se poate face concret",
+          "body": "Cercetătorul Geoffrey Greif descrie prietenia între bărbați ca fiind „umăr la umăr, nu față în față”: se leagă în timp ce faceți ceva împreună. De aici o concluzie practică: nu programezi „o discuție”, ci o activitate care se repetă, la oră fixă. Repetiția face prietenia, nu intensitatea unei singure întâlniri."
+        },
+        {
+          "heading": "Ce ține bărbații pe loc",
+          "body": "Cercetarea pe normele masculine descrie un tipar: băieții învață devreme că vulnerabilitatea e slăbiciune, iar mai târziu self-reliance, ideea că te descurci singur, îi împiedică să ceară sprijin sau să propună o întâlnire. Rezultatul e o singurătate pe care puțini o numesc. Primul pas nu e o discuție grea despre sentimente, ci o invitație banală la ceva concret."
+        }
+      ],
+      "takeaways": [
+        "Scăderea numărului de prieteni apropiați e un fenomen larg, nu un eșec personal.",
+        "Prietenia masculină crește din activități repetate, nu din întâlniri rare și lungi.",
+        "Ce contează e ritmul: același lucru, în aceeași zi, în fiecare săptămână."
+      ],
+      "tryToday": "Alege din secțiunea Evenimente o activitate care se repetă săptămânal și pune-ți-o în calendar de trei ori, nu o dată.",
+      "sources": [
+        {
+          "title": "Male loneliness and isolation: what the data shows (American Institute for Boys and Men)",
+          "url": "https://aibm.org/research/male-loneliness-and-isolation-what-the-data-shows/"
+        },
+        {
+          "title": "Masculinity norms, loneliness and social connectedness: a scoping review (PMC)",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11626675/"
+        }
+      ],
+      "id": "de-ce-barbatii-pierd-prieteni-dupa-25-de-ani",
+      "readingMinutes": 2
+    },
+    {
+      "topicId": "somn",
+      "title": "Regularitatea somnului contează mai mult decât durata",
+      "hook": "Te culci la 23:00 într-o zi și la 02:00 în alta, dar dormi „opt ore în medie”. Studiile recente spun că media te minte.",
+      "coreIdea": "Ora constantă de culcare și de trezire prezice mai bine riscul de depresie și anxietate decât numărul de ore dormite.",
+      "sections": [
+        {
+          "heading": "Ce s-a măsurat",
+          "body": "Studii pe zeci de mii de oameni, cu somnul măsurat cu accelerometru, nu declarat, au comparat regularitatea somnului cu durata lui. Regularitatea, adică să te culci și să te trezești cam la aceleași ore, a fost asociată mai puternic cu apariția depresiei și a anxietății decât durata somnului."
+        },
+        {
+          "heading": "Ce înseamnă pentru tine",
+          "body": "Nu ai nevoie de o rutină perfectă. Ai nevoie de o oră de trezire care variază puțin, inclusiv în weekend, pentru că ora de trezire trage după ea și ora la care ți se face somn. E schimbarea cu cel mai bun raport între efort și efect din tot ce ține de somn."
+        },
+        {
+          "heading": "Cum arată în practică",
+          "body": "Alege ora de trezire și ține-o șapte zile, inclusiv sâmbătă. Lumina de dimineață, la scurt timp după trezire, ajută ora să se fixeze. Dacă într-o seară te culci mult mai târziu, nu compensa dormind până la prânz: trezește-te la aceeași oră și culcă-te mai devreme în seara următoare. Un weekend cu ore complet diferite are, în date, același efect ca un mic decalaj de fus orar."
+        }
+      ],
+      "takeaways": [
+        "Consistența orelor bate numărul de ore, în datele recente.",
+        "Ora de trezire e pârghia: pe ea o controlezi cel mai ușor.",
+        "Weekendul cu trei ore diferență anulează o săptămână de disciplină."
+      ],
+      "tryToday": "Pune o oră de trezire pentru toate cele șapte zile ale săptămânii viitoare, cu maximum o oră diferență între zile.",
+      "sources": [
+        {
+          "title": "Regular sleep patterns, not just duration, critical for mental health (PubMed)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40814280/"
+        },
+        {
+          "title": "Irregular sleep is linked to poorer mental health: pooled analysis of eight studies (Sleep Health)",
+          "url": "https://www.sleephealthjournal.org/article/S2352-7218(24)00060-3/abstract"
+        }
+      ],
+      "id": "regularitatea-somnului-conteaza-mai-mult-decat-dur",
+      "readingMinutes": 2
+    },
+    {
+      "topicId": "sens",
+      "title": "Valorile bat obiectivele când nu mai ai chef",
+      "hook": "Obiectivele se termină sau eșuează. Valorile nu se termină niciodată, și exact de asta funcționează mai bine ca busolă.",
+      "coreIdea": "În terapia de acceptare și angajament, clarificarea valorilor, adică ce fel de om vrei să fii, susține acțiunea și sensul mai bine decât o listă de obiective.",
+      "sections": [
+        {
+          "heading": "Diferența dintre valoare și obiectiv",
+          "body": "Un obiectiv se bifează: „mă angajez ca AI engineer”. O valoare e o direcție: „vreau să învăț lucruri grele și să le explic altora”. Obiectivul, odată atins, te lasă fără combustibil, iar dacă eșuează, te lasă fără sens. Valoarea rămâne disponibilă în fiecare zi, inclusiv în zilele în care nu îți iese nimic."
+        },
+        {
+          "heading": "De ce contează pentru motivație",
+          "body": "În terapia de acceptare și angajament (ACT), clarificarea valorilor e unul dintre cele șase procese de bază, iar scopul întregii abordări e să acționezi în direcția valorilor tale chiar și când trăiești stări neplăcute. Literatura de specialitate descrie valorile ca pe un proces care susține sensul, starea de bine și calitatea vieții."
+        },
+        {
+          "heading": "Cum o faci concret",
+          "body": "Scrie trei domenii care contează pentru tine acum: muncă, relații, sănătate. Pentru fiecare, completează propoziția „vreau să fiu genul de om care…”. Apoi alege pentru fiecare o acțiune mică, de făcut săptămâna asta. Când nu ai chef, nu te întrebi dacă ai motivație, ci dacă acțiunea te duce în direcția aceea."
+        }
+      ],
+      "takeaways": [
+        "Obiectivul se termină, valoarea rămâne o direcție zilnică.",
+        "Valorile susțin acțiunea chiar și când starea e proastă.",
+        "Testul e simplu: „vreau să fiu genul de om care…”, urmat de un pas mic."
+      ],
+      "tryToday": "Scrie în jurnal trei propoziții care încep cu „vreau să fiu genul de om care…” și, sub fiecare, o acțiune de 15 minute pentru săptămâna asta.",
+      "sources": [
+        {
+          "title": "Valuing in ACT (Current Opinion in Psychology, ScienceDirect)",
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S2352250X15001062"
+        },
+        {
+          "title": "Acceptance and Commitment Therapy and Psychological Well-Being: A Narrative Review (PMC)",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11837766/"
+        }
+      ],
+      "id": "valorile-bat-obiectivele-cand-nu-mai-ai-chef",
+      "readingMinutes": 2
+    }
+  ],
+  "exercises": [
+    {
+      "name": "Suspin ciclic",
+      "forWhat": "stres și stare proastă",
+      "why": "O inspirație urmată de una scurtă și o expirație lungă încetinește respirația și scade excitația fiziologică. În studiul Stanford, cinci minute pe zi au ridicat starea de spirit mai mult decât meditația.",
+      "steps": [
+        {
+          "text": "Așază-te comod și respiră normal câteva secunde.",
+          "seconds": 20
+        },
+        {
+          "text": "Inspiră pe nas până simți plămânii aproape plini.",
+          "seconds": 6
+        },
+        {
+          "text": "Mai trage o gură scurtă de aer pe nas, peste prima.",
+          "seconds": 5
+        },
+        {
+          "text": "Expiră lung și lent pe gură, mai lung decât ai inspirat.",
+          "seconds": 10
+        },
+        {
+          "text": "Repetă ciclul în ritmul tău, fără să forțezi.",
+          "seconds": 240
+        },
+        {
+          "text": "Oprește-te și observă cum respiri acum, fără să schimbi nimic.",
+          "seconds": 30
+        }
+      ],
+      "minutes": 5,
+      "source": {
+        "title": "Brief structured respiration practices enhance mood and reduce physiological arousal (PubMed)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/36630953/"
+      },
+      "id": "suspin-ciclic"
+    },
+    {
+      "name": "5-4-3-2-1: revino în cameră",
+      "forWhat": "anxietate și panică",
+      "why": "Când mintea sare de la un gând anxios la altul, simțurile te aduc înapoi în prezent. E prima tehnică pe care o dau clinicile pentru episoade de anxietate.",
+      "steps": [
+        {
+          "text": "Respiră lent și adânc de câteva ori.",
+          "seconds": 30
+        },
+        {
+          "text": "Numește 5 lucruri pe care le vezi în jur."
+        },
+        {
+          "text": "Numește 4 lucruri pe care le poți atinge."
+        },
+        {
+          "text": "Numește 3 lucruri pe care le auzi."
+        },
+        {
+          "text": "Numește 2 lucruri pe care le miroși."
+        },
+        {
+          "text": "Numește 1 lucru pe care îl guști."
+        }
+      ],
+      "minutes": 3,
+      "source": {
+        "title": "5-4-3-2-1 Coping Technique for Anxiety (University of Rochester Medical Center)",
+        "url": "https://www.urmc.rochester.edu/behavioral-health-partners/bhp-blog/april-2018/5-4-3-2-1-coping-technique-for-anxiety"
+      },
+      "id": "5-4-3-2-1-revino-in-camera"
+    },
+    {
+      "name": "Ora de îngrijorare",
+      "forWhat": "griji care se învârt în cerc",
+      "why": "Nu îți interzici grija, o programezi. Meta-analiza pe amânarea grijii arată mai puține griji, ca frecvență și durată, după una-două săptămâni de practică.",
+      "steps": [
+        {
+          "text": "Scrie grija care te apasă acum, într-o singură frază."
+        },
+        {
+          "text": "Stabilește ora la care te ocupi de ea azi, 15 minute, nu seara târziu."
+        },
+        {
+          "text": "Spune-ți: „mă întorc la asta la ora …” și continuă ce făceai."
+        },
+        {
+          "text": "La ora stabilită, citește lista și taie ce nu mai e relevant.",
+          "seconds": 60
+        },
+        {
+          "text": "Pentru ce a rămas, scrie primul pas concret, nu soluția completă.",
+          "seconds": 120
+        }
+      ],
+      "minutes": 5,
+      "source": {
+        "title": "Worry Postponement (Psychology Tools)",
+        "url": "https://www.psychologytools.com/resource/worry-postponement"
+      },
+      "id": "ora-de-ingrijorare"
+    },
+    {
+      "name": "Pauza de autocompasiune",
+      "forWhat": "autocritică și eșec",
+      "why": "Formula în trei pași a lui Kristin Neff: recunoști durerea, o pui în context omenesc, apoi îți vorbești ca unui prieten. Un minut, oriunde.",
+      "steps": [
+        {
+          "text": "Adu-ți în minte situația care te apasă și unde o simți în corp.",
+          "seconds": 30
+        },
+        {
+          "text": "Spune-ți: „E un moment greu”.",
+          "seconds": 15
+        },
+        {
+          "text": "Spune-ți: „Momentele grele fac parte din viața oricui”.",
+          "seconds": 15
+        },
+        {
+          "text": "Pune-ți mâna pe piept și spune-ți ce i-ai spune unui prieten bun.",
+          "seconds": 45
+        },
+        {
+          "text": "Respiră normal și observă dacă s-a schimbat ceva.",
+          "seconds": 30
+        }
+      ],
+      "minutes": 3,
+      "source": {
+        "title": "Self-Compassion Break (Greater Good in Action, UC Berkeley)",
+        "url": "https://ggia.berkeley.edu/practice/self_compassion_break"
+      },
+      "id": "pauza-de-autocompasiune"
+    },
+    {
+      "name": "O acțiune mică (activare comportamentală)",
+      "forWhat": "lipsă de chef și apatie",
+      "why": "Starea vine după acțiune. Alegi cea mai mică activitate posibilă și o faci acum, fără să aștepți motivația. E miezul unei intervenții recomandate pentru depresie.",
+      "steps": [
+        {
+          "text": "Notează cum te simți acum, pe o scară de la 1 la 10."
+        },
+        {
+          "text": "Scrie trei activități care ți-au făcut bine în trecut."
+        },
+        {
+          "text": "Alege varianta cea mai mică dintre ele (5 minute, nu o oră)."
+        },
+        {
+          "text": "Fă-o acum. Dacă e prea mult, fă jumătate din ea.",
+          "seconds": 300
+        },
+        {
+          "text": "Notează din nou cum te simți, pe aceeași scară."
+        }
+      ],
+      "minutes": 8,
+      "source": {
+        "title": "Behavioural Activation (Greater Manchester Mental Health NHS)",
+        "url": "https://www.gmmh.nhs.uk/behavioural-activation/"
+      },
+      "id": "o-actiune-mica-activare-comportamentala"
+    },
+    {
+      "name": "Gândul pus pe hârtie",
+      "forWhat": "gânduri negre și interpretări dure",
+      "why": "Un gând scris poate fi verificat, unul ținut în cap nu. Asta fac terapeuții cognitivi cu „fișa gândului”: separi faptele de interpretare.",
+      "steps": [
+        {
+          "text": "Scrie situația, exact ce s-a întâmplat, fără interpretare."
+        },
+        {
+          "text": "Scrie gândul automat care ți-a trecut prin minte."
+        },
+        {
+          "text": "Scrie dovezile că gândul e adevărat."
+        },
+        {
+          "text": "Scrie dovezile că nu e adevărat sau nu e complet."
+        },
+        {
+          "text": "Formulează o variantă mai echilibrată a gândului."
+        },
+        {
+          "text": "Notează cum te simți acum față de început."
+        }
+      ],
+      "minutes": 10,
+      "source": {
+        "title": "Thought Record – Universal (Psychology Tools)",
+        "url": "https://www.psychologytools.com/resource/thought-record-universal"
+      },
+      "id": "gandul-pus-pe-hartie"
+    }
+  ]
+}

@@ -5,5 +5,7 @@
       "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
-  ]
+  ],
+  "_comment": "Journal saves commit to the repo; they change nothing in the site, so they skip the build (spec 0008).",
+  "ignoreCommand": "git log -1 --pretty=%s | grep -q '^journal:'"
 }

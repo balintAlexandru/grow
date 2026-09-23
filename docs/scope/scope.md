@@ -18,7 +18,7 @@ _These are recommendations to keep your build orderly, not requirements. Skip an
 | 5 | Evenimente page | Phase 1 | in-progress |
 | 6 | Learning page | Phase 1 | in-progress |
 | 7 | Fashion page | Phase 1 | in-progress |
-| 8 | Psychology page | Phase 1 | planned |
+| 8 | Psychology page | Phase 1 | in-progress |
 | 9 | Culture page | Phase 1 | planned |
 | 10 | Data model & local persistence | Phase 2 | planned |
 | 11 | Add and edit items | Phase 2 | planned |
@@ -94,10 +94,15 @@ Learn to dress from zero, in an urban minimalist style: the rules that matter, t
    - [ ] First run from the button
 Spec [0007](../specs/0007-fashion-style-guide.md) · code in `app/src/features/fashion/`, `app/src/content/fashion/`, `.claude/skills/fashion-refresh/`
 
-### 8. Psychology page · needs a decision
-Habits, concepts, and reflections for your mind (for example a gratitude journal or meditation streak).
-**Done when:** habits show their progress and concepts show a short summary, and an empty state renders.
-- [ ] Design it (spec): `/architect psychology page`
+### 8. Psychology page · in-progress
+Daily check-in (mood, gratitude, free writing), the whole journal with search, guided exercises with a timer, and evidence-based articles. The journal is stored in the private repo, so it survives deploys and devices; the button refreshes only the articles and exercises.
+**Done when:** an entry saves to the repo and comes back on another device, the journal is searchable, exercises run with the timer, and the button publishes new articles.
+- [x] Design it (spec): `/architect psychology page`
+- [ ] Build it: `/develop psychology page`
+   - [x] Journal API with offline queue, check-in, journal, exercise player, articles
+   - [x] First content: 7 articles, 6 exercises, sources verified
+   - [ ] Token gets Contents: read and write, then the first real save
+Spec [0008](../specs/0008-psychology-journal-and-tools.md) · code in `app/src/features/psychology/`, `app/api/journal.ts`, `.claude/skills/psychology-refresh/`
 
 ### 9. Culture page · needs a decision
 Films, exhibitions, music, books, and places that widen your horizon, as lists you work through.

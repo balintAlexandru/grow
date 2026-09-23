@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "content:check": "node scripts/check-content.mjs",
     "events:check": "node scripts/check-events.mjs",
-    "fashion:check": "node scripts/check-fashion.mjs"
+    "fashion:check": "node scripts/check-fashion.mjs",
+    "psychology:check": "node scripts/check-psychology.mjs"
   },
   "dependencies": {
     "@vercel/functions": "^3.9.9",
