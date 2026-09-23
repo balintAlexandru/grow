@@ -6,10 +6,12 @@ set -euo pipefail
 
 skill="${1:?folosire: run-skill.sh learning-daily|events-refresh|fashion-refresh [argumente]}"
 args="${2:-}"
+extra=""
 case "$skill" in
   learning-daily) check=content:check ;;
   events-refresh) check=events:check ;;
-  fashion-refresh) check=fashion:check ;;
+  # Fashion needs curl to read the photo url (og:image) out of a shop's product page.
+  fashion-refresh) check=fashion:check; extra=",Bash(curl:*)" ;;
   *) echo "Skill necunoscut: $skill" >&2; exit 2 ;;
 esac
 : "${CLAUDE_CODE_OAUTH_TOKEN:?lipsește CLAUDE_CODE_OAUTH_TOKEN (îl obții cu: claude setup-token)}"
@@ -19,7 +21,7 @@ npm ci --prefix app
 
 # Only what the skill needs: research, editing files, and its own check and build commands.
 claude -p "/$skill${args:+ $args}" \
-  --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(npm --prefix app run $check:*),Bash(npm --prefix app run build:*)"
+  --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(npm --prefix app run $check:*),Bash(npm --prefix app run build:*)$extra"
 
 npm --prefix app run "$check" -- --fix
 npm --prefix app run build

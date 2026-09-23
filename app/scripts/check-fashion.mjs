@@ -21,10 +21,20 @@ const slug = (s) =>
 async function urlStatus(url) {
   try {
     const res = await fetch(url, { redirect: 'follow', signal: AbortSignal.timeout(10000), headers: { 'user-agent': 'Mozilla/5.0 (fashion:check)' } })
-    return res.status
+    return { status: res.status, type: res.headers.get('content-type') ?? '' }
   } catch {
     return undefined // network problem or blocked: unknown, not dead
   }
+}
+
+const images = []
+/** A shop photo must still be a photo: a sold out product often redirects to an HTML page. */
+const checkImage = (image, at, fields) => {
+  for (const [field, value] of Object.entries(fields)) {
+    if (!isText(value)) errors.push(`${at}: ${field} lipsește`)
+    else if (field.endsWith('rl') && !isUrl(value)) errors.push(`${at}: ${field} trebuie să înceapă cu https://`)
+  }
+  if (isUrl(image)) images.push([at, image])
 }
 
 const data = JSON.parse(readFileSync(FILE, 'utf8'))
@@ -81,6 +91,7 @@ for (const [i, item] of data.wardrobe.entries()) {
   if (!Array.isArray(item.shopIds) || item.shopIds.length === 0) errors.push(`${at}: cel puțin un magazin`)
   for (const id of item.shopIds ?? []) if (!shopIds.has(id)) errors.push(`${at}: shopId necunoscut "${id}"`)
   if (!/\d/.test(item.price ?? '')) errors.push(`${at}: price trebuie să conțină cifre, ca „250–450 lei”`)
+  if (item.image !== undefined) checkImage(item.image.url, `${at} image`, { 'image.url': item.image.url, 'image.productUrl': item.image.productUrl })
   if (item.url !== undefined) {
     if (!isUrl(item.url)) errors.push(`${at}: url trebuie să înceapă cu https://`)
     else urls.push([at, item.url])
@@ -94,6 +105,14 @@ for (const [i, outfit] of data.outfits.entries()) {
   if (!occasionIds.includes(outfit.occasion)) errors.push(`${at}: occasion "${outfit.occasion}" nu e în occasions.ts`)
   if (!Array.isArray(outfit.pieces) || outfit.pieces.length < 3) errors.push(`${at}: cel puțin 3 piese`)
   if (outfit.avoid !== undefined && !isText(outfit.avoid)) errors.push(`${at}: avoid trebuie să fie text sau să lipsească`)
+  for (const id of outfit.itemIds ?? []) if (!data.wardrobe.some((w) => w.id === id)) errors.push(`${at}: itemId necunoscut "${id}"`)
+  if (outfit.photo !== undefined)
+    checkImage(outfit.photo.url, `${at} photo`, {
+      'photo.url': outfit.photo.url,
+      'photo.sourceUrl': outfit.photo.sourceUrl,
+      'photo.credit': outfit.photo.credit,
+      'photo.watch': outfit.photo.watch,
+    })
 }
 for (const id of occasionIds) if (!data.outfits.some((o) => o.occasion === id)) warnings.push(`nicio ținută pentru ocazia "${id}"`)
 
@@ -105,20 +124,26 @@ for (const [i, trend] of data.trends.entries()) {
   else urls.push([at, trend.source.url])
 }
 
-await Promise.all(
-  urls.map(async ([at, url]) => {
-    const status = await urlStatus(url)
-    if (status === 404 || status === 410) errors.push(`${at}: URL mort (${status}) ${url}`)
-    else if (status === undefined) warnings.push(`${at}: URL neverificat (rețea sau blocat) ${url}`)
+await Promise.all([
+  ...urls.map(async ([at, url]) => {
+    const res = await urlStatus(url)
+    if (res?.status === 404 || res?.status === 410) errors.push(`${at}: URL mort (${res.status}) ${url}`)
+    else if (res === undefined) warnings.push(`${at}: URL neverificat (rețea sau blocat) ${url}`)
   }),
-)
+  ...images.map(async ([at, url]) => {
+    const res = await urlStatus(url)
+    if (res === undefined) warnings.push(`${at}: poză neverificată (rețea) ${url}`)
+    else if (!res.type.startsWith('image/')) errors.push(`${at}: nu mai e o poză (${res.status} ${res.type}) ${url}`)
+  }),
+])
 
 if (FIX) {
   data.outfits.sort((a, b) => occasionIds.indexOf(a.occasion) - occasionIds.indexOf(b.occasion))
   writeFileSync(FILE, `${JSON.stringify(data, null, 2)}\n`)
 }
 
-console.log(`style.json: ${data.rules.length} reguli · ${data.wardrobe.length} piese · ${data.outfits.length} ținute · ${data.trends.length} trenduri · ${data.shops.length} magazine`)
+const withPhoto = data.outfits.filter((o) => o.photo).length
+console.log(`style.json: ${data.rules.length} reguli · ${data.wardrobe.length} piese · ${data.outfits.length} ținute · ${data.trends.length} trenduri · ${data.shops.length} magazine · ${images.length} poze (${withPhoto} ținute pe om)`)
 for (const w of warnings) console.log(`⚠  ${w}`)
 for (const e of errors) console.log(`✖  ${e}`)
 if (errors.length) process.exit(1)

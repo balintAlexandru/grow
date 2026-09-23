@@ -20,7 +20,15 @@ His answers: 29, 1.76 m, no fashion knowledge, urban minimalist taste (Carhartt 
 - **AC-5**: `npm run fashion:check -- --fix` validates shape, unknown `shopIds`, occasions, and dead URLs; it fills ids.
 - **AC-6**: The button starts `fashion-refresh.yml`, which commits only `app/src/content/fashion`.
 
-## Decision
+## Decision (revised 2026-09-23, after the owner saw the first version)
+
+The first version was text only and he could not picture anything from it. The section is now **photo first**: outfits open the page, each with a photo of the whole look on a person or, when there is none, a collage of its pieces; every piece card is a product photo. Text is one line per card.
+
+- **Photos come from shops** that serve them to other sites: footshop.ro (Carhartt WIP, adidas, Dr. Martens, plus its `/outfit/` pages of looks on people) and aboutyou.ro (shirts, wool trousers, knitwear). Carhartt's and Massimo Dutti's own sites render with JavaScript and give no photo in the HTML.
+- **They break, and that is handled**: `fashion:check` fails when a photo url stops being an image (sold out), and the page shows the piece's name instead of a broken icon.
+- Showing them is acceptable here because the site is private, behind the password from spec 0006, and each photo links back to the product page.
+
+## Earlier decisions
 
 - Advice is aimed at 1.76 m and a small palette (3 neutrals + one earth accent), because that is what makes a beginner's outfits work; the skill keeps that frame.
 - Prices are ranges, marked as orientative on the page: shop prices change faster than the content.
@@ -31,4 +39,5 @@ His answers: 29, 1.76 m, no fashion knowledge, urban minimalist taste (Carhartt 
 
 - [x] Types, occasions, page with 5 tabs, wishlist modal, check script, skill, workflow (tested in Chrome: wishlist survives a reload, filters work, no errors)
 - [x] First content: 6 rules, 14 pieces, 6 outfits, 5 trends (autumn 2026), 9 shops, all links live
+- [x] Rebuilt photo first: 16 photos (13 of 14 pieces, 3 looks on people), collage for outfits without a look photo, `/fashion-refresh` taught to fetch photos (og:image) and check them
 - [ ] First run from the site's button

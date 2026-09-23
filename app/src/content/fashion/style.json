@@ -57,7 +57,11 @@
         "answear",
         "aboutyou"
       ],
-      "url": "https://www.carhartt-wip.com/en-ro"
+      "url": "https://www.carhartt-wip.com/en-ro",
+      "image": {
+        "url": "https://static.ftshp.digital/img/p/1/9/5/1/4/8/6/1951486-thickbox.webp",
+        "productUrl": "https://www.footshop.ro/ro/tricouri/499825-carhartt-wip-s-s-work-pocket-t-shirt-unisex-black.html"
+      }
     },
     {
       "id": "camasa-oxford",
@@ -73,9 +77,14 @@
       ],
       "shopIds": [
         "massimo-dutti",
-        "answear"
+        "answear",
+        "aboutyou"
       ],
-      "url": "https://www.massimodutti.com/ro/barbati/camasi-n1000"
+      "url": "https://www.massimodutti.com/ro/barbati/camasi-n1000",
+      "image": {
+        "url": "https://cdn.aboutstatic.com/file/images/3ef06abecc10a6f5de88ea545e387f08.jpg?brightness=0.96&quality=75&trim=1&height=480&width=360",
+        "productUrl": "https://www.aboutyou.ro/p/u-s-polo-assn/cama-a-umarmin-27080870"
+      }
     },
     {
       "id": "camasa-flanel",
@@ -92,8 +101,13 @@
       "shopIds": [
         "carhartt",
         "sneaker-industry",
-        "op-shop"
-      ]
+        "op-shop",
+        "aboutyou"
+      ],
+      "image": {
+        "url": "https://cdn.aboutstatic.com/file/images/9eb714fe109673bc25a6112c04a48aae.png?bg=F4F4F5&quality=75&trim=1&height=480&width=360",
+        "productUrl": "https://www.aboutyou.ro/p/dan-fox-apparel/cama-a-efe-28426496"
+      }
     },
     {
       "id": "hanorac",
@@ -111,7 +125,11 @@
         "carhartt",
         "footshop",
         "answear"
-      ]
+      ],
+      "image": {
+        "url": "https://static.ftshp.digital/img/p/1/7/5/5/3/4/9/1755349-thickbox.jpg",
+        "productUrl": "https://www.footshop.ro/ro/hanorace-pentru-barbati/464059-carhartt-wip-hooded-nelson-sweat-unisex-black.html"
+      }
     },
     {
       "id": "pulover-lana",
@@ -128,7 +146,11 @@
       "shopIds": [
         "massimo-dutti",
         "aboutyou"
-      ]
+      ],
+      "image": {
+        "url": "https://static.ftshp.digital/img/p/1/9/0/0/1/3/5/1900135-thickbox.webp",
+        "productUrl": "https://www.footshop.ro/ro/pulovere/539998-napapijri-archive-knit-jumper-blu-marine.html"
+      }
     },
     {
       "id": "geaca-chore",
@@ -146,11 +168,15 @@
         "sneaker-industry",
         "op-shop"
       ],
-      "url": "https://www.carhartt-wip.com/en-ro"
+      "url": "https://www.carhartt-wip.com/en-ro",
+      "image": {
+        "url": "https://static.ftshp.digital/img/p/1/3/9/5/9/7/3/1395973-thickbox.jpg",
+        "productUrl": "https://www.footshop.ro/ro/geci/383764-carhartt-wip-detroit-jacket-unisex-black-black-rinsed.html"
+      }
     },
     {
       "id": "bomber",
-      "name": "Geacă bomber sau harrington neagră",
+      "name": "Geacă scurtă, la talie (bomber sau Eisenhower)",
       "layer": "strat 3",
       "why": "Alternativa mai curată la chore, pentru seară, restaurant sau întâlnire. Neagră, simplă, fără aplicații.",
       "lookFor": "Croială scurtă, exact la talie, fermoar metalic discret, material mat (nu lucios).",
@@ -164,7 +190,11 @@
         "footshop",
         "answear",
         "massimo-dutti"
-      ]
+      ],
+      "image": {
+        "url": "https://static.ftshp.digital/img/p/1/9/5/3/9/6/4/1953964-thickbox.webp",
+        "productUrl": "https://www.footshop.ro/ro/geci/554065-dickies-lined-eisenhower-jacket-brown.html"
+      }
     },
     {
       "id": "jeans-drept",
@@ -182,7 +212,11 @@
         "answear",
         "aboutyou",
         "op-shop"
-      ]
+      ],
+      "image": {
+        "url": "https://static.ftshp.digital/img/p/1/5/0/2/3/8/0/1502380-thickbox.jpg",
+        "productUrl": "https://www.footshop.ro/ro/blugi-barbati/409927-carhartt-wip-brandon-pant-blue-rinsed.html"
+      }
     },
     {
       "id": "pantaloni-work",
@@ -198,7 +232,11 @@
       "shopIds": [
         "carhartt",
         "sneaker-industry"
-      ]
+      ],
+      "image": {
+        "url": "https://static.ftshp.digital/img/p/1/9/5/4/0/2/7/1954027-thickbox.webp",
+        "productUrl": "https://www.footshop.ro/ro/pantaloni-si-blugi/554050-dickies-247-regular-work-pant-beige.html"
+      }
     },
     {
       "id": "pantaloni-stofa",
@@ -212,8 +250,13 @@
         "COS"
       ],
       "shopIds": [
-        "massimo-dutti"
-      ]
+        "massimo-dutti",
+        "aboutyou"
+      ],
+      "image": {
+        "url": "https://cdn.aboutstatic.com/file/images/720a72da30ddca0b10dba8ac0c424623.jpg?quality=75&height=480&width=360",
+        "productUrl": "https://www.aboutyou.ro/p/jack-jones/pantaloni-eleganti-jpstollie-connor-32058130"
+      }
     },
     {
       "id": "sneakers-albi",
@@ -229,7 +272,11 @@
         "footshop",
         "sneaker-industry"
       ],
-      "url": "https://www.footshop.ro/"
+      "url": "https://www.footshop.ro/",
+      "image": {
+        "url": "https://static.ftshp.digital/img/p/1/6/6/0/9/4/8/1660948-thickbox.jpg",
+        "productUrl": "https://www.footshop.ro/ro/sneakersi-pentru-barbati/465955-adidas-originals-samba-og-shoes-crystal-white-core-white-silver-metallic.html"
+      }
     },
     {
       "id": "dr-martens",
@@ -245,7 +292,11 @@
         "officeshoes",
         "answear",
         "aboutyou"
-      ]
+      ],
+      "image": {
+        "url": "https://static.ftshp.digital/img/p/1/2/5/6/5/4/8/1256548-thickbox.jpg",
+        "productUrl": "https://www.footshop.ro/ro/incalaminte-i-sneakeri-pentru-barbai/356092-dr-martens-1461-black-ambassador.html"
+      }
     },
     {
       "id": "geaca-iarna",
@@ -263,7 +314,11 @@
         "carhartt",
         "answear",
         "footshop"
-      ]
+      ],
+      "image": {
+        "url": "https://static.ftshp.digital/img/p/1/5/7/3/9/4/5/1573945-thickbox.jpg",
+        "productUrl": "https://www.footshop.ro/ro/puffer-jackets/443533-the-north-face-m-1996-retro-nuptse-jacket-tnf-black.html"
+      }
     },
     {
       "id": "accesorii",
@@ -295,7 +350,13 @@
         "Sneakers albi minimali"
       ],
       "why": "E ținuta pe care o poți repeta de trei ori pe săptămână fără să obosească pe nimeni: trei neutre, croieli curate, zero efort dimineața.",
-      "avoid": "Hanorac cu print mare sau sneakers foarte voluminoși: strică echilibrul."
+      "avoid": "Hanorac cu print mare sau sneakers foarte voluminoși: strică echilibrul.",
+      "itemIds": [
+        "tricou-greu",
+        "hanorac",
+        "jeans-drept",
+        "sneakers-albi"
+      ]
     },
     {
       "id": "birou-2",
@@ -308,7 +369,13 @@
         "Dr. Martens 1461 negri"
       ],
       "why": "Cămașa deschisă peste tricou e al treilea element și te face să pari pregătit, fără cravată și fără sacou. Bocancii dau greutate ținutei.",
-      "avoid": "Cămașa încheiată complet plus pantaloni de stofă: te duce spre „chelner”, nu spre „om cu stil”."
+      "avoid": "Cămașa încheiată complet plus pantaloni de stofă: te duce spre „chelner”, nu spre „om cu stil”.",
+      "itemIds": [
+        "tricou-greu",
+        "camasa-oxford",
+        "pantaloni-stofa",
+        "dr-martens"
+      ]
     },
     {
       "id": "oras-1",
@@ -321,7 +388,19 @@
         "Dr. Martens 1461 negri"
       ],
       "why": "Contrastul dintre ecru și olive e tot ce îi trebuie ținutei. Trei texturi diferite: bumbac fin, canvas rigid, piele.",
-      "avoid": "Prea multe accesorii. Cu bocanci și geacă de lucru, ținuta e deja „plină”."
+      "avoid": "Prea multe accesorii. Cu bocanci și geacă de lucru, ținuta e deja „plină”.",
+      "itemIds": [
+        "tricou-greu",
+        "geaca-chore",
+        "pantaloni-work",
+        "dr-martens"
+      ],
+      "photo": {
+        "url": "https://static.ftshp.digital/img/p/1/8/1/1/8/2/1/1811821.jpg",
+        "sourceUrl": "https://www.footshop.ro/ro/outfit/336073",
+        "credit": "Footshop · @krystianembradora",
+        "watch": "Geacă închisă la culoare peste tricou alb și jeans indigo: trei piese, două culori. Exact combinația ta, cu Detroit în loc de geaca din poză."
+      }
     },
     {
       "id": "restaurant-1",
@@ -334,7 +413,13 @@
         "Curea neagră de piele"
       ],
       "why": "Puloverul face aici ce ar face un sacou, dar rămâne relaxat. Sneakerii albi păstrează ținuta tânără, cu condiția să fie impecabili.",
-      "avoid": "Bocanci grei sub pantaloni de stofă: fac silueta să pară mai scundă."
+      "avoid": "Bocanci grei sub pantaloni de stofă: fac silueta să pară mai scundă.",
+      "itemIds": [
+        "pulover-lana",
+        "pantaloni-stofa",
+        "sneakers-albi",
+        "accesorii"
+      ]
     },
     {
       "id": "weekend-1",
@@ -348,7 +433,19 @@
         "Șapcă simplă"
       ],
       "why": "Straturi pe care le poți da jos când se încălzește. Cămașa descheiată e al treilea element care ține ținuta legată.",
-      "avoid": "Trening complet asortat: e confortabil, dar arată ca și cum nu ai ales nimic."
+      "avoid": "Trening complet asortat: e confortabil, dar arată ca și cum nu ai ales nimic.",
+      "itemIds": [
+        "tricou-greu",
+        "camasa-flanel",
+        "jeans-drept",
+        "sneakers-albi"
+      ],
+      "photo": {
+        "url": "https://static.ftshp.digital/img/p/1/8/2/2/4/3/8/1822438.jpg",
+        "sourceUrl": "https://www.footshop.ro/ro/outfit/336187",
+        "credit": "Footshop · @andriy.boguslavsky",
+        "watch": "Geacă olive peste negru: cum arată accentul de pământ lângă neutre. Pantalonii din poză sunt prea largi pentru tine, ia varianta dreaptă."
+      }
     },
     {
       "id": "intalnire-1",
@@ -361,7 +458,19 @@
         "Dr. Martens 1461 sau sneakers curați"
       ],
       "why": "Simplu, închis la culoare, croieli exacte. Când totul e simplu, te vede pe tine, nu hainele. Iar tu nu stai tot timpul cu gândul la ce porți.",
-      "avoid": "Parfum mult și haine noi-nouțe purtate prima dată: o cămașă necălcată sau un pantof care te roade se văd în cum stai."
+      "avoid": "Parfum mult și haine noi-nouțe purtate prima dată: o cămașă necălcată sau un pantof care te roade se văd în cum stai.",
+      "itemIds": [
+        "tricou-greu",
+        "bomber",
+        "jeans-drept",
+        "dr-martens"
+      ],
+      "photo": {
+        "url": "https://static.ftshp.digital/img/p/1/8/2/3/2/0/6/1823206.jpg",
+        "sourceUrl": "https://www.footshop.ro/ro/outfit/336220",
+        "credit": "Footshop · Outfit by Footshop AI",
+        "watch": "Tot negru, cu tricou alb care rupe blocul. Ia ideea, dar cu pantalon drept: în poză e mult mai lat decât îți recomand la 1,76 m."
+      }
     }
   ],
   "trends": [

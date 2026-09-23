@@ -24,6 +24,8 @@ export type WardrobeItem = {
   shopIds: string[]
   /** A page where it can be seen or bought. */
   url?: string
+  /** A photo of the piece, from a shop that allows it to be shown elsewhere. */
+  image?: { url: string; productUrl: string }
 }
 
 export type Outfit = {
@@ -35,6 +37,10 @@ export type Outfit = {
   why: string
   /** What would break it. */
   avoid?: string
+  /** Ids from `wardrobe`: the pieces shown as thumbnails under the outfit. */
+  itemIds?: string[]
+  /** A photo of the whole look on a person, with what to notice in it. */
+  photo?: { url: string; sourceUrl: string; credit: string; watch: string }
 }
 
 export type Trend = {
