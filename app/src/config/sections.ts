@@ -41,8 +41,8 @@ export const sections: Section[] = [
     path: '/fashion',
     icon: Shirt,
     accent: '#e85d9f',
-    tagline: 'Stilul tău personal',
-    description: 'Inspirație, ținute și idei pentru garderoba ta.',
+    tagline: 'Cum te îmbraci bine',
+    description: 'Regulile de bază, garderoba minimă, ținute pentru fiecare ocazie și de unde le cumperi.',
   },
   {
     id: 'psychology',

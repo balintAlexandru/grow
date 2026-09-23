@@ -17,7 +17,7 @@ _These are recommendations to keep your build orderly, not requirements. Skip an
 | 4 | App shell & sidebar navigation | Skeleton | done |
 | 5 | Evenimente page | Phase 1 | in-progress |
 | 6 | Learning page | Phase 1 | in-progress |
-| 7 | Fashion page | Phase 1 | planned |
+| 7 | Fashion page | Phase 1 | in-progress |
 | 8 | Psychology page | Phase 1 | planned |
 | 9 | Culture page | Phase 1 | planned |
 | 10 | Data model & local persistence | Phase 2 | planned |
@@ -84,10 +84,15 @@ A daily growth plan built from your answers: 3 short lessons a day (10–15 min)
    - [ ] Daily refresh running (feature 13)
 Spec [0005](../specs/0005-learning-daily-growth-plan.md) (refines 0003) · code in `app/src/features/learning/`, `app/src/content/learning/`, `.claude/skills/learning-daily/`
 
-### 7. Fashion page · needs a decision
-Style inspiration, outfit ideas, and a wishlist. Likely image heavy, so decide how images are shown.
-**Done when:** items render as a visual grid with a label per item, and an empty state renders.
-- [ ] Design it (spec): `/architect fashion page`
+### 7. Fashion page · in-progress
+Learn to dress from zero, in an urban minimalist style: the rules that matter, the base wardrobe, outfits for birou, oraș, restaurant, weekend and întâlniri, current trends with sources, and shops in București. A wishlist keeps pieces, links and pictures. The „Generează stil nou” button runs `/fashion-refresh`.
+**Done when:** each tab renders from JSON, every occasion has an outfit, the wishlist survives a reload, and the button publishes new content.
+- [x] Design it (spec): `/architect fashion page`
+- [ ] Build it: `/develop fashion page`
+   - [x] Page, wishlist, `npm run fashion:check`, `/fashion-refresh`, workflow
+   - [x] First content (6 rules, 14 pieces, 6 outfits, 5 trends, 9 shops)
+   - [ ] First run from the button
+Spec [0007](../specs/0007-fashion-style-guide.md) · code in `app/src/features/fashion/`, `app/src/content/fashion/`, `.claude/skills/fashion-refresh/`
 
 ### 8. Psychology page · needs a decision
 Habits, concepts, and reflections for your mind (for example a gratitude journal or meditation streak).

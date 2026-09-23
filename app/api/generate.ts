@@ -6,7 +6,7 @@
  *   GITHUB_REPO            "owner/name"
  *   GITHUB_DISPATCH_TOKEN  fine-grained token for that repo only, permission Actions: read and write
  */
-const WORKFLOWS = { learning: 'learning-daily.yml', events: 'events-refresh.yml' } as const
+const WORKFLOWS = { learning: 'learning-daily.yml', events: 'events-refresh.yml', fashion: 'fashion-refresh.yml' } as const
 type Task = keyof typeof WORKFLOWS
 
 type Run = { id: number; status: string; conclusion: string | null; created_at: string; html_url: string }
@@ -58,7 +58,7 @@ const fail = (error: unknown, status = 500) => Response.json({ error: error inst
 
 export async function GET(request: Request) {
   const task = new URL(request.url).searchParams.get('task')
-  if (!isTask(task)) return fail('task trebuie să fie learning sau events', 400)
+  if (!isTask(task)) return fail(`task trebuie să fie ${Object.keys(WORKFLOWS).join(', ')}`, 400)
   try {
     return Response.json(await toJson(await latestRun(task)), { headers: { 'Cache-Control': 'no-store' } })
   } catch (error) {
@@ -68,7 +68,7 @@ export async function GET(request: Request) {
 
 export async function POST(request: Request) {
   const body = (await request.json().catch(() => ({}))) as { task?: unknown }
-  if (!isTask(body.task)) return fail('task trebuie să fie learning sau events', 400)
+  if (!isTask(body.task)) return fail(`task trebuie să fie ${Object.keys(WORKFLOWS).join(', ')}`, 400)
   try {
     const current = await latestRun(body.task)
     if (current && current.status !== 'completed') return Response.json(await toJson(current), { status: 409 })

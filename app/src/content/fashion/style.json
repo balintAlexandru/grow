@@ -1,0 +1,490 @@
+{
+  "generatedAt": "2026-09-23",
+  "rules": [
+    {
+      "id": "fit",
+      "title": "Croiala bate orice altceva",
+      "body": "Un tricou de 80 de lei care ți se potrivește arată mai bine decât unul de 400 care nu ți se potrivește. Trei repere: cusătura umărului cade exact pe colțul umărului, mâneca tricoului se termină la mijlocul bicepsului, iar tivul de jos ajunge cam la jumătatea prohabului. Dacă tricoul îți acoperă fundul, e prea lung.",
+      "tip": "Probează și ridică brațele: dacă tricoul îți iese din pantaloni sau te strânge la umeri, nu e mărimea ta."
+    },
+    {
+      "id": "paleta",
+      "title": "O paletă mică: 3 neutre și un accent",
+      "body": "Stilul minimalist urban trăiește din culori care se combină între ele. Alege trei neutre pe care le porți des (negru, gri, ecru sau bleumarin) și una de pământ pentru accent (olive, maro ciocolatiu, ruginiu). Orice piesă nouă trebuie să meargă cu cel puțin trei pe care le ai deja.",
+      "tip": "Înainte să cumperi, întreabă-te cu ce trei lucruri din dulap porți piesa asta. Dacă nu găsești trei, las-o."
+    },
+    {
+      "id": "proportii",
+      "title": "Proporții pentru 1,76 m: arată talia",
+      "body": "La înălțimea ta, silueta se lungește când se vede unde e talia. Pantalonii cu talie normală sau înaltă, tivul care abia atinge pantoful (fără cute adunate) și straturile care se opresc în zona șoldului fac picioarele să pară mai lungi. Gecile foarte lungi și tricourile oversize taie silueta în două.",
+      "tip": "Fă un „French tuck”: bagă doar partea din față a tricoului în pantaloni. Se vede talia și ținuta pare intenționată."
+    },
+    {
+      "id": "texturi",
+      "title": "Textură în loc de imprimeuri",
+      "body": "Când hainele nu au desene, interesul vine din material: cord, lână boiled, denim brut, bumbac gros, piele. Trei texturi diferite într-o ținută simplă arată mai scump decât orice logo. De asta o ținută toată neagră arată bine doar când amesteci materialele.",
+      "tip": "Data viitoare când o ținută ți se pare plictisitoare, schimbă un material, nu culoarea."
+    },
+    {
+      "id": "incaltaminte",
+      "title": "Încălțămintea dă tonul întregii ținute",
+      "body": "Aceiași jeanși cu sneakers albi curați înseamnă relaxat, cu Dr. Martens 1461 negri înseamnă mai dur și mai serios. Două perechi bune acoperă aproape tot: un sneaker minimal (adidas Samba sau Stan Smith) și un bocanc sau pantof negru de piele.",
+      "tip": "Curăță-ți sneakerii albi o dată pe săptămână. Nimic nu strică o ținută mai repede decât talpa gri."
+    },
+    {
+      "id": "trei-piese",
+      "title": "Regula celor trei piese",
+      "body": "Tricou și pantaloni înseamnă că te-ai îmbrăcat. Adaugă un al treilea element vizibil, o cămașă deschisă, o geacă, un pulover sau o șapcă, și pare că ai ales ceva. Asta e diferența între „am ieșit repede” și „arată bine”, cu efort aproape zero.",
+      "tip": "Ține o geacă (chore sau bomber) lângă ușă. E al treilea element pe care îl iei în zece secunde."
+    }
+  ],
+  "wardrobe": [
+    {
+      "id": "tricou-greu",
+      "name": "Tricouri grele, albe și negre",
+      "layer": "bază",
+      "why": "Sunt fundația a jumătate din ținutele tale. Un tricou de bumbac gros stă drept, nu se vede prin el și nu se deformează după trei spălări.",
+      "lookFor": "Bumbac de 200–260 g/mp, umăr care cade exact pe colț, tiv la jumătatea prohabului. Fără logo pe piept.",
+      "price": "120–300 lei",
+      "brands": [
+        "Carhartt WIP",
+        "COS",
+        "Uniqlo U",
+        "Sunspel"
+      ],
+      "shopIds": [
+        "carhartt",
+        "answear",
+        "aboutyou"
+      ],
+      "url": "https://www.carhartt-wip.com/en-ro"
+    },
+    {
+      "id": "camasa-oxford",
+      "name": "Cămașă oxford albă sau bleu",
+      "layer": "strat 2",
+      "why": "O porți la birou, la restaurant și peste tricou ca al treilea element. E piesa care te scoate din „doar tricou” fără să pari aranjat excesiv.",
+      "lookFor": "Bumbac oxford, croială regular (nu slim strâmt), guler care stă ridicat. Umărul iar cade pe colț.",
+      "price": "200–450 lei",
+      "brands": [
+        "Massimo Dutti",
+        "Carhartt WIP",
+        "Uniqlo"
+      ],
+      "shopIds": [
+        "massimo-dutti",
+        "answear"
+      ],
+      "url": "https://www.massimodutti.com/ro/barbati/camasi-n1000"
+    },
+    {
+      "id": "camasa-flanel",
+      "name": "Cămașă groasă (flanel sau cord)",
+      "layer": "strat 3",
+      "why": "Iarna se poartă ca un strat peste tricou. Adaugă textura de care are nevoie o ținută simplă și ține de cald fără să fie geacă.",
+      "lookFor": "Un carou discret sau uni, în olive, maro sau gri. Suficient de lungă cât să stea bine descheiată.",
+      "price": "250–500 lei",
+      "brands": [
+        "Carhartt WIP",
+        "Dickies",
+        "Portuguese Flannel"
+      ],
+      "shopIds": [
+        "carhartt",
+        "sneaker-industry",
+        "op-shop"
+      ]
+    },
+    {
+      "id": "hanorac",
+      "name": "Hanorac crewneck gri sau negru",
+      "layer": "strat 2",
+      "why": "Uniforma ta de birou relaxat. Un crewneck simplu, fără glugă și fără scris, arată mult mai curat decât un hoodie cu print.",
+      "lookFor": "Bumbac gros, cu interior perie, umeri căzuți puțin, manșete care strâng. Gri melanj e cel mai versatil.",
+      "price": "250–500 lei",
+      "brands": [
+        "Carhartt WIP",
+        "adidas Originals",
+        "Uniqlo"
+      ],
+      "shopIds": [
+        "carhartt",
+        "footshop",
+        "answear"
+      ]
+    },
+    {
+      "id": "pulover-lana",
+      "name": "Pulover de lână merinos, bleumarin sau maro",
+      "layer": "strat 2",
+      "why": "E varianta „mai serioasă” a hanoracului: merge la birou, la restaurant și pe sub geacă, fără volum în plus.",
+      "lookFor": "Merinos sau amestec de lână, tricotaj fin, gât rotund sau jumătate de fermoar. Maro ciocolatiu e tendința sezonului și se poartă ca un neutru.",
+      "price": "300–600 lei",
+      "brands": [
+        "Massimo Dutti",
+        "COS",
+        "Uniqlo"
+      ],
+      "shopIds": [
+        "massimo-dutti",
+        "aboutyou"
+      ]
+    },
+    {
+      "id": "geaca-chore",
+      "name": "Geacă chore sau Detroit, olive ori maro",
+      "layer": "strat 3",
+      "why": "Piesa care îți definește stilul urban. Se poartă peste tricou primăvara și toamna, peste pulover iarna, și arată din ce în ce mai bine pe măsură ce se uzează.",
+      "lookFor": "Bumbac canvas rigid, buzunare pe față, lungime până la șold, umeri care îți permit un pulover dedesubt.",
+      "price": "600–1.100 lei",
+      "brands": [
+        "Carhartt WIP",
+        "Dickies"
+      ],
+      "shopIds": [
+        "carhartt",
+        "sneaker-industry",
+        "op-shop"
+      ],
+      "url": "https://www.carhartt-wip.com/en-ro"
+    },
+    {
+      "id": "bomber",
+      "name": "Geacă bomber sau harrington neagră",
+      "layer": "strat 3",
+      "why": "Alternativa mai curată la chore, pentru seară, restaurant sau întâlnire. Neagră, simplă, fără aplicații.",
+      "lookFor": "Croială scurtă, exact la talie, fermoar metalic discret, material mat (nu lucios).",
+      "price": "400–900 lei",
+      "brands": [
+        "adidas Originals",
+        "Carhartt WIP",
+        "Massimo Dutti"
+      ],
+      "shopIds": [
+        "footshop",
+        "answear",
+        "massimo-dutti"
+      ]
+    },
+    {
+      "id": "jeans-drept",
+      "name": "Jeans drepți, indigo închis",
+      "layer": "pantaloni",
+      "why": "Merg peste tot, de la birou la restaurant. Croiala dreaptă, nu skinny și nu foarte largă, e cea care se poartă acum și îți lungește silueta.",
+      "lookFor": "Denim brut sau spălat discret, talie normală, picior drept, tiv care abia atinge pantoful. Fără rupturi și fără spălări deschise.",
+      "price": "300–700 lei",
+      "brands": [
+        "Levi’s 501",
+        "Carhartt WIP",
+        "Nudie Jeans"
+      ],
+      "shopIds": [
+        "answear",
+        "aboutyou",
+        "op-shop"
+      ]
+    },
+    {
+      "id": "pantaloni-work",
+      "name": "Pantaloni work ecru sau bej",
+      "layer": "pantaloni",
+      "why": "Schimbă complet o ținută față de jeans, cu același efort. Ecru merge cu negru, olive și maro, adică exact cu restul garderobei tale.",
+      "lookFor": "Bumbac gros, buzunare simple, picior drept. Verifică să nu fie prea largi în talie, altfel cade prost.",
+      "price": "300–600 lei",
+      "brands": [
+        "Carhartt WIP",
+        "Dickies 874"
+      ],
+      "shopIds": [
+        "carhartt",
+        "sneaker-industry"
+      ]
+    },
+    {
+      "id": "pantaloni-stofa",
+      "name": "Pantaloni de stofă bleumarin sau gri",
+      "layer": "pantaloni",
+      "why": "Pentru restaurant, evenimente și zilele în care vrei să arăți îngrijit. Cu un tricou negru și sneakers albi, sunt smart casual fără să pari la costum.",
+      "lookFor": "Lână sau amestec cu textură, talie normală, fără cute adunate pe pantof. Tivul îl reglezi la croitor: 40–60 de lei, cea mai bună investiție.",
+      "price": "350–700 lei",
+      "brands": [
+        "Massimo Dutti",
+        "COS"
+      ],
+      "shopIds": [
+        "massimo-dutti"
+      ]
+    },
+    {
+      "id": "sneakers-albi",
+      "name": "Sneakers minimali (Samba, Stan Smith, Gazelle)",
+      "layer": "încălțăminte",
+      "why": "Cea mai folosită pereche din dulap. Piele albă sau neagră, talpă subțire, siluetă joasă: merg cu jeans, cu work pants și chiar cu stofă.",
+      "lookFor": "Piele, nu material sintetic lucios. Model clasic care nu se demodează. Cumpără din magazin ca să probezi mărimea.",
+      "price": "450–700 lei",
+      "brands": [
+        "adidas Originals"
+      ],
+      "shopIds": [
+        "footshop",
+        "sneaker-industry"
+      ],
+      "url": "https://www.footshop.ro/"
+    },
+    {
+      "id": "dr-martens",
+      "name": "Dr. Martens 1461 negri",
+      "layer": "încălțăminte",
+      "why": "Îi ai deja pe listă și sunt piesa care „durează” o ținută minimalistă: jeans drept plus 1461 arată intenționat, nu neglijent.",
+      "lookFor": "Pielea netedă (smooth) e cea mai ușor de purtat. Ia mărimea ta obișnuită și poartă-i cu șosete groase în primele săptămâni.",
+      "price": "800–1.100 lei",
+      "brands": [
+        "Dr. Martens"
+      ],
+      "shopIds": [
+        "officeshoes",
+        "answear",
+        "aboutyou"
+      ]
+    },
+    {
+      "id": "geaca-iarna",
+      "name": "Geacă de iarnă simplă, neagră sau olive",
+      "layer": "strat 3",
+      "why": "Iarna, geaca e ținuta ta: se vede cel mai mult. Una simplă, la lungimea potrivită, salvează tot ce e dedesubt.",
+      "lookFor": "Lungime până la șold sau puțin sub, fără logo-uri mari, glugă detașabilă. Verifică să încapă un pulover dedesubt.",
+      "price": "700–1.500 lei",
+      "brands": [
+        "Carhartt WIP",
+        "adidas Originals",
+        "Rains"
+      ],
+      "shopIds": [
+        "carhartt",
+        "answear",
+        "footshop"
+      ]
+    },
+    {
+      "id": "accesorii",
+      "name": "Curea de piele și o șapcă simplă",
+      "layer": "accesorii",
+      "why": "Cureaua neagră de piele leagă pantalonii de bocanci. O șapcă simplă, fără logo mare, e al treilea element cel mai ieftin din garderobă.",
+      "lookFor": "Curea din piele adevărată, cataramă mată, lățime 3–3,5 cm. Șapcă din bumbac, în negru, olive sau ecru.",
+      "price": "100–300 lei",
+      "brands": [
+        "Carhartt WIP",
+        "Massimo Dutti"
+      ],
+      "shopIds": [
+        "carhartt",
+        "massimo-dutti",
+        "humana"
+      ]
+    }
+  ],
+  "outfits": [
+    {
+      "id": "birou-1",
+      "occasion": "birou",
+      "name": "Uniforma de birou, varianta simplă",
+      "pieces": [
+        "Tricou alb gros",
+        "Hanorac crewneck gri (îl dai jos la birou)",
+        "Jeans drepți indigo",
+        "Sneakers albi minimali"
+      ],
+      "why": "E ținuta pe care o poți repeta de trei ori pe săptămână fără să obosească pe nimeni: trei neutre, croieli curate, zero efort dimineața.",
+      "avoid": "Hanorac cu print mare sau sneakers foarte voluminoși: strică echilibrul."
+    },
+    {
+      "id": "birou-2",
+      "occasion": "birou",
+      "name": "Birou, ziua în care ai o prezentare",
+      "pieces": [
+        "Tricou negru gros, băgat parțial în pantaloni",
+        "Cămașă oxford albă purtată deschisă",
+        "Pantaloni de stofă bleumarin",
+        "Dr. Martens 1461 negri"
+      ],
+      "why": "Cămașa deschisă peste tricou e al treilea element și te face să pari pregătit, fără cravată și fără sacou. Bocancii dau greutate ținutei.",
+      "avoid": "Cămașa încheiată complet plus pantaloni de stofă: te duce spre „chelner”, nu spre „om cu stil”."
+    },
+    {
+      "id": "oras-1",
+      "occasion": "oras",
+      "name": "Seară în oraș, bere cu prietenii",
+      "pieces": [
+        "Tricou negru",
+        "Geacă chore olive",
+        "Pantaloni work ecru",
+        "Dr. Martens 1461 negri"
+      ],
+      "why": "Contrastul dintre ecru și olive e tot ce îi trebuie ținutei. Trei texturi diferite: bumbac fin, canvas rigid, piele.",
+      "avoid": "Prea multe accesorii. Cu bocanci și geacă de lucru, ținuta e deja „plină”."
+    },
+    {
+      "id": "restaurant-1",
+      "occasion": "restaurant",
+      "name": "Restaurant, seara",
+      "pieces": [
+        "Pulover merinos bleumarin sau maro",
+        "Pantaloni de stofă gri",
+        "Sneakers albi de piele, curați",
+        "Curea neagră de piele"
+      ],
+      "why": "Puloverul face aici ce ar face un sacou, dar rămâne relaxat. Sneakerii albi păstrează ținuta tânără, cu condiția să fie impecabili.",
+      "avoid": "Bocanci grei sub pantaloni de stofă: fac silueta să pară mai scundă."
+    },
+    {
+      "id": "weekend-1",
+      "occasion": "weekend",
+      "name": "Weekend, plimbare sau drumeție ușoară",
+      "pieces": [
+        "Tricou alb",
+        "Cămașă groasă de flanel, descheiată",
+        "Jeans drepți",
+        "Sneakers sau bocanci, după vreme",
+        "Șapcă simplă"
+      ],
+      "why": "Straturi pe care le poți da jos când se încălzește. Cămașa descheiată e al treilea element care ține ținuta legată.",
+      "avoid": "Trening complet asortat: e confortabil, dar arată ca și cum nu ai ales nimic."
+    },
+    {
+      "id": "intalnire-1",
+      "occasion": "intalnire",
+      "name": "Întâlnire, prima dată",
+      "pieces": [
+        "Tricou negru gros, curat și călcat",
+        "Geacă bomber neagră",
+        "Jeans drepți indigo",
+        "Dr. Martens 1461 sau sneakers curați"
+      ],
+      "why": "Simplu, închis la culoare, croieli exacte. Când totul e simplu, te vede pe tine, nu hainele. Iar tu nu stai tot timpul cu gândul la ce porți.",
+      "avoid": "Parfum mult și haine noi-nouțe purtate prima dată: o cămașă necălcată sau un pantof care te roade se văd în cum stai."
+    }
+  ],
+  "trends": [
+    {
+      "id": "maro-ciocolatiu",
+      "title": "Maro ciocolatiu se poartă ca un neutru",
+      "body": "Toamna asta, maro ciocolatiu intră peste tot: piele, lână, cord, velur. E tratat ca o culoare de bază, nu ca un accent, și merge cu bleumarin, ecru și olive, adică exact cu paleta ta.",
+      "howToWear": "Cel mai simplu test: un pulover maro cu jeans indigo și sneakers albi. Dacă îți place, treci la o geacă maro.",
+      "source": {
+        "title": "OPUMO: The Autumn Menswear Trends You Should Know in 2026",
+        "url": "https://www.opumo.com/magazine/fall-fashion-the-autumn-menswear-trends-you-should-know-in-2026/"
+      }
+    },
+    {
+      "id": "denim-drept",
+      "title": "Denim brut, drept și cu talie mai înaltă",
+      "body": "Croiala momentului e dreaptă și lejeră în coapsă, cu talie mai înaltă, fără să se adune pe pantof. E opusul skinny-ului, dar și al pantalonilor uriași de acum câțiva ani.",
+      "howToWear": "La 1,76 m, ține tivul exact la pantof: lejer în picior, dar fără cute. Un tiv la croitor rezolvă mai mult decât o pereche nouă.",
+      "source": {
+        "title": "OPUMO: The Autumn Menswear Trends You Should Know in 2026",
+        "url": "https://www.opumo.com/magazine/fall-fashion-the-autumn-menswear-trends-you-should-know-in-2026/"
+      }
+    },
+    {
+      "id": "cord",
+      "title": "Cordul s-a întors",
+      "body": "Cordul (catifea reiată) e materialul care spune „toamnă” instantaneu: pantaloni, cămăși groase, geci. Aduce textură fără niciun imprimeu.",
+      "howToWear": "Începe cu o cămașă de cord maro sau olive, purtată descheiată peste tricou. E cel mai mic risc și cea mai mare schimbare de aspect.",
+      "source": {
+        "title": "OPUMO: The Autumn Menswear Trends You Should Know in 2026",
+        "url": "https://www.opumo.com/magazine/fall-fashion-the-autumn-menswear-trends-you-should-know-in-2026/"
+      }
+    },
+    {
+      "id": "quarter-zip",
+      "title": "Puloverul cu fermoar scurt, mai gros și mai lejer",
+      "body": "Jumătatea de fermoar revine în variantă groasă, din lână boiled, mai lejeră decât versiunile sport de acum câțiva ani. E piesa „între” hanorac și pulover clasic.",
+      "howToWear": "Îl porți la birou peste un tricou și cu pantaloni work ecru. Se vede că e ales, nu că e primul lucru din dulap.",
+      "source": {
+        "title": "OPUMO: The Autumn Menswear Trends You Should Know in 2026",
+        "url": "https://www.opumo.com/magazine/fall-fashion-the-autumn-menswear-trends-you-should-know-in-2026/"
+      }
+    },
+    {
+      "id": "geaca-ceruita",
+      "title": "Geaca cerată, olive sau maro",
+      "body": "Wax jacket-ul, geaca de bumbac cerat, e varianta de toamnă a gecii de lucru: rezistentă la ploaie măruntă și cu atât mai frumoasă cu cât o porți mai mult.",
+      "howToWear": "Aceeași logică cu geaca chore, dar mai potrivită pentru zile umede. Olive merge cu tot ce ai deja.",
+      "source": {
+        "title": "OPUMO: The Autumn Menswear Trends You Should Know in 2026",
+        "url": "https://www.opumo.com/magazine/fall-fashion-the-autumn-menswear-trends-you-should-know-in-2026/"
+      }
+    }
+  ],
+  "shops": [
+    {
+      "id": "footshop",
+      "name": "Footshop",
+      "kind": "magazin",
+      "address": "Str. Ion Câmpineanu 20, lângă Calea Victoriei",
+      "url": "https://www.footshop.ro/",
+      "what": "Sneakers și streetwear: adidas Originals, Nike, Asics, Salomon. Singurul magazin adidas Consortium din România."
+    },
+    {
+      "id": "sneaker-industry",
+      "name": "Sneaker Industry",
+      "kind": "magazin",
+      "address": "Str. Luterană 2",
+      "url": "https://sneakerindustry.ro/",
+      "what": "Sneakers și îmbrăcăminte, inclusiv Carhartt WIP."
+    },
+    {
+      "id": "carhartt",
+      "name": "Carhartt WIP (online România)",
+      "kind": "online",
+      "url": "https://www.carhartt-wip.com/en-ro",
+      "what": "Magazinul oficial: geci Detroit și chore, pantaloni work, tricouri grele."
+    },
+    {
+      "id": "answear",
+      "name": "Answear",
+      "kind": "online",
+      "url": "https://answear.ro/",
+      "what": "Carhartt WIP, Dr. Martens, adidas. Livrare gratuită peste un prag și retur 30 de zile."
+    },
+    {
+      "id": "aboutyou",
+      "name": "About You",
+      "kind": "online",
+      "url": "https://www.aboutyou.ro/",
+      "what": "Carhartt WIP, Dr. Martens și baza ieftină; util pentru comparat prețuri."
+    },
+    {
+      "id": "officeshoes",
+      "name": "Office Shoes (AFI Cotroceni)",
+      "kind": "magazin",
+      "address": "AFI Palace Cotroceni, Bd. Vasile Milea 4",
+      "url": "https://www.officeshoes.ro/",
+      "what": "Dr. Martens 1460 și 1461 de probat pe viu, plus alte mărci de încălțăminte."
+    },
+    {
+      "id": "massimo-dutti",
+      "name": "Massimo Dutti",
+      "kind": "magazin",
+      "address": "București Mall Vitan și Băneasa Shopping City",
+      "url": "https://www.massimodutti.com/ro/",
+      "what": "Cămăși, pulovere de lână și pantaloni de stofă, croieli curate, pentru partea „smart” a garderobei."
+    },
+    {
+      "id": "op-shop",
+      "name": "Op Shop (vintage)",
+      "kind": "magazin",
+      "address": "Calea Moșilor 106 și Str. Silfidelor 1",
+      "url": "https://opshopvintage.com/",
+      "what": "Vintage selectat, streetwear și piese de colecție. Bun pentru geci și denim la preț mic."
+    },
+    {
+      "id": "humana",
+      "name": "Humana",
+      "kind": "magazin",
+      "address": "Șos. Ștefan cel Mare 30 și Calea Moșilor 264, plus alte magazine",
+      "url": "https://humana-romania.ro/",
+      "what": "Second-hand ieftin, sortat. Merită răbdare: găsești lână, denim și cămăși bune."
+    }
+  ]
+}

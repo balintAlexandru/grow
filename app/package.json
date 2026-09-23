@@ -9,7 +9,8 @@
     "lint": "oxlint",
     "preview": "vite preview",
     "content:check": "node scripts/check-content.mjs",
-    "events:check": "node scripts/check-events.mjs"
+    "events:check": "node scripts/check-events.mjs",
+    "fashion:check": "node scripts/check-fashion.mjs"
   },
   "dependencies": {
     "@vercel/functions": "^3.9.9",
