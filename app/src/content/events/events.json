@@ -1,6 +1,6 @@
 {
   "city": "București",
-  "generatedAt": "2026-09-22",
+  "generatedAt": "2026-09-24",
   "events": [
     {
       "title": "Brâncuși. Sindromul",
@@ -383,6 +383,19 @@
       "url": "https://www.cbgshop.ro/events/general/676aef6d13665e530d7aa4f0",
       "source": "web",
       "id": "seara-de-board-games-2026-10-02"
+    },
+    {
+      "title": "Bucharest Chess Classic – U2400",
+      "categoryId": "chess",
+      "date": "2026-10-02",
+      "endDate": "2026-10-04",
+      "venue": "Clubul Sportiv Universitar de Șah",
+      "address": "Calea Șerban Vodă 176",
+      "price": "fond de premii 11.800 lei",
+      "description": "Turneu open de șah clasic, cu jucători din România și din străinătate, unii cu titluri (IM, FM). Nu e pentru începători, dar merită trecut pe acolo ca spectator, să vezi cum se joacă la nivel serios.",
+      "url": "https://www.csudesahbucuresti.ro/bucharest-chess-open-editia-1/",
+      "source": "web",
+      "id": "bucharest-chess-classic-u2400-2026-10-02"
     },
     {
       "title": "Drumeție în grup: Fereastra Zmeilor, creasta Făgărașului",
