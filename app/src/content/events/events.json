@@ -1,6 +1,6 @@
 {
   "city": "București",
-  "generatedAt": "2026-09-24",
+  "generatedAt": "2026-09-28",
   "events": [
     {
       "title": "Brâncuși. Sindromul",
@@ -541,6 +541,31 @@
       "url": "https://haisasocializam.ro/excursii-montane/drumetie-montana-pe-valea-lui-stan?ed=41",
       "source": "web",
       "id": "drumetie-usoara-pe-valea-lui-stan-2026-10-17"
+    },
+    {
+      "title": "Seminar de Introducere în Meditația Vipassana",
+      "categoryId": "growth",
+      "date": "2026-10-18",
+      "time": "10:00",
+      "venue": "The Legacy",
+      "address": "Str. Gazelei nr. 44",
+      "price": "gratuit (donații binevenite)",
+      "description": "Seminar de trei ore pentru cei care nu au mai meditat, organizat de comunitatea Dhamma. Deschis oricui, spre deosebire de întâlnirile săptămânale, care cer experiență anterioară.",
+      "url": "https://www.dhamma.ro/program-2026-bucuresti/",
+      "source": "web",
+      "id": "seminar-de-introducere-in-meditatia-vipassana-2026-10-18"
+    },
+    {
+      "title": "Cloud & AI Conference",
+      "categoryId": "growth",
+      "date": "2026-10-21",
+      "time": "09:30",
+      "venue": "Crowne Plaza Hotel",
+      "price": "gratuit (înscriere obligatorie)",
+      "description": "A noua ediție a conferinței despre AI în companii: de la copiloți la agenți, sisteme multi-agent și cine ar trebui să decidă despre AI în organizație. Utilă ca să vezi unde e piața, chiar dacă publicul e mai degrabă senior.",
+      "url": "https://www.mobzine.ro/2026/09/recomandare-cloud-ai-conference-21-octombrie-la-bucuresti/",
+      "source": "web",
+      "id": "cloud-ai-conference-2026-10-21"
     },
     {
       "title": "Drumeție ușoară: Țara Luanei, pe urmele legendelor",
