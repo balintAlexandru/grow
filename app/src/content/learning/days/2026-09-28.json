@@ -1,0 +1,127 @@
+{
+  "date": "2026-09-28",
+  "lessons": [
+    {
+      "id": "2026-09-28-social",
+      "areaId": "social",
+      "title": "100 de milisecunde: cât durează prima impresie",
+      "hook": "Intri într-o cameră plină de oameni pe care nu-i cunoști și, înainte să apuci să spui un cuvânt, cineva și-a făcut deja o părere despre tine. Cât de repede, mai exact? Un studiu a pus cronometrul pe asta.",
+      "coreIdea": "O primă impresie despre cât de sigur pe tine și de încredere ești se formează într-o zecime de secundă, din fața ta și din limbajul corpului, cu mult înainte să apuci să vorbești.",
+      "sections": [
+        {
+          "heading": "O sutime de secundă, atât a fost nevoie",
+          "body": "Psihologii Janine Willis și Alexander Todorov au arătat oameni fețe necunoscute timp de 100, 500 sau 1000 de milisecunde și le-au cerut să judece încrederea, simpatia sau competența persoanei din fotografie. Rezultatul, publicat în 2006 în Psychological Science: judecățile formate în 100 de milisecunde, sub o zecime de secundă, au fost aproape identice cu cele formate după o secundă întreagă de privit. Mai mult timp nu a schimbat verdictul, doar a crescut cât de sigur era privitorul pe el."
+        },
+        {
+          "heading": "Controlezi doar partea vizibilă, dar aia contează",
+          "body": "Din moment ce verdictul se formează înainte să deschizi gura, singurul lucru pe care îl controlezi în acea fracțiune de secundă e ce arăți: dacă faci contact vizual sau te uiți în pământ, dacă zâmbești sau ai o expresie neutră și încordată. Nu schimbi cum ești judecat prin ce spui primul, ci prin cum arăți chiar înainte să spui ceva. De-asta primul pas din orice interacțiune nouă nu e o replică isteață, e o privire și un zâmbet."
+        }
+      ],
+      "example": "La aparatul de cafea de la birou apare cineva nou din alt departament. Nu ai pregătit nimic de spus. Faci totuși contact vizual două secunde și zâmbești înainte să te întorci la cafea. Verdictul lui despre tine s-a format deja, favorabil, și abia acum urmează o eventuală conversație.",
+      "takeaways": [
+        "O primă impresie despre încredere se formează în sub o zecime de secundă, din față și limbaj corporal.",
+        "Mai mult timp de observare nu schimbă verdictul inițial, doar crește siguranța celui care judecă.",
+        "Contactul vizual și zâmbetul sunt singurele pârghii pe care le ai înainte să vorbești."
+      ],
+      "tryToday": "Fă contact vizual timp de 2 secunde și zâmbește la 3 necunoscuți azi, cu adevărat necunoscuți: la cozi, pe stradă, în lift. Nu trebuie să spui nimic. Dacă azi e prea mult: fă-o o singură dată, cu o singură persoană.",
+      "quiz": {
+        "question": "De ce nu contează cu ce începi să vorbești, dacă vrei să faci o primă impresie bună?",
+        "answer": "Pentru că verdictul despre cât de sigur și de încrezător pari se formează în sub 100 de milisecunde, din contact vizual și expresie, cu mult înainte să apuci să spui primul cuvânt."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "First Impressions: Making Up Your Mind After a 100-Ms Exposure to a Face (Willis & Todorov, 2006, Psychological Science)",
+          "url": "https://www.researchgate.net/publication/6919047_First_Impressions_Making_Up_Your_Mind_After_a_100-Ms_Exposure_to_a_Face"
+        },
+        {
+          "title": "Your trustworthiness is judged in a tenth of a second, or less (BPS Research Digest)",
+          "url": "https://www.bps.org.uk/research-digest/your-trustworthiness-judged-tenth-second-or-less"
+        }
+      ],
+      "readingMinutes": 3,
+      "step": 1
+    },
+    {
+      "id": "2026-09-28-ai-engineer",
+      "areaId": "ai-engineer",
+      "title": "Embeddings: cum transformi cuvintele în coordonate",
+      "hook": "Cauți în notițele tale „concediu” și nu găsești nimic, deși ai scris despre „zile libere” acum o lună. Un motor de căutare clasic vede două cuvinte diferite. Un model care înțelege embeddings vede aceeași idee.",
+      "coreIdea": "Un embedding transformă un text într-un vector, un șir de câteva sute sau mii de numere, poziționat astfel încât textele cu sens apropiat ajung la coordonate apropiate, iar apropierea aceea se poate calcula direct, cu matematică simplă.",
+      "sections": [
+        {
+          "heading": "De la propoziție la un punct în spațiu",
+          "body": "Un model de embeddings primește text și scoate un vector, de exemplu 1536 de numere pentru text-embedding-3-small de la OpenAI. Nu contează ce înseamnă fiecare număr individual, contează poziția relativă: „zile libere” și „concediu” ajung la vectori apropiați, „zile libere” și „baterie de telefon” ajung departe. Distanța se măsoară de obicei prin similaritate cosinus, unghiul dintre doi vectori, un număr între -1 și 1.",
+          "code": "const res = await fetch(\"https://api.openai.com/v1/embeddings\", {\n  method: \"POST\",\n  headers: { Authorization: `Bearer ${apiKey}`, \"Content-Type\": \"application/json\" },\n  body: JSON.stringify({ model: \"text-embedding-3-small\", input: \"zile libere\" }),\n})\nconst { data } = await res.json()\nconst vector = data[0].embedding // 1536 de numere"
+        },
+        {
+          "heading": "Motorul din spatele RAG-ului",
+          "body": "Când ai construit un sistem RAG, ai văzut deja embeddings fără să le numești: fiecare bucată din documentele tale a fost transformată o dată într-un vector și stocată. La fiecare întrebare, întrebarea însăși devine un vector, iar sistemul caută cele mai apropiate bucăți din bază, prin aceeași similaritate cosinus. Căutarea prin cuvinte cheie ratează sinonimele; căutarea prin embeddings le prinde, pentru că lucrează cu sens, nu cu litere."
+        }
+      ],
+      "example": "Construiești un asistent care caută în documentația internă a unei companii. Cineva întreabă „cum îmi iau zile libere”, dar documentul folosește termenul „concediu de odihnă”. Căutarea clasică, pe cuvinte, nu găsește nimic. Căutarea prin embeddings găsește documentul corect, pentru că cele două expresii au vectori apropiați.",
+      "takeaways": [
+        "Un embedding e un vector care poziționează un text după sensul lui, nu după cuvintele exacte.",
+        "Similaritatea cosinus măsoară cât de aproape sunt doi vectori, deci cât de apropiate sunt două sensuri.",
+        "RAG-ul rulează pe embeddings: documentele sunt vectorizate o dată, întrebarea e vectorizată la fiecare cerere."
+      ],
+      "tryToday": "Deschide cookbook-ul OpenAI despre embeddings (link în surse) și citește un exemplu de căutare semantică. Notează într-o propoziție un caz din munca ta unde căutarea pe cuvinte cheie ar rata ceva ce embeddings-urile ar prinde.",
+      "quiz": {
+        "question": "De ce găsește un sistem cu embeddings documentul despre „concediu” chiar dacă ai căutat „zile libere”?",
+        "answer": "Pentru că embeddings-urile poziționează textele după sens, nu după cuvintele exacte, iar „concediu” și „zile libere” ajung la vectori apropiați, pe care similaritatea cosinus îi recunoaște ca fiind înrudiți."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "Vector embeddings (OpenAI API Docs)",
+          "url": "https://developers.openai.com/api/docs/guides/embeddings"
+        },
+        {
+          "title": "Use cases for embeddings (OpenAI Cookbook)",
+          "url": "https://developers.openai.com/cookbook/articles/text_comparison_examples"
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "id": "2026-09-28-body",
+      "areaId": "body",
+      "title": "Squat-ul de bază: tehnica înainte de greutate",
+      "hook": "Stai pe scaun opt-nouă ore pe zi, apoi te miri că genunchii protestează când te ghemuiești să ridici ceva de jos. Șoldurile au uitat mișcarea. Squat-ul o reînvață, dar numai dacă tehnica e corectă de la greutatea corpului.",
+      "coreIdea": "Squat-ul cu propria greutate, făcut cu picioarele puțin mai late decât umerii, șoldurile împinse înapoi și genunchii aliniați cu vârful piciorului, e mișcarea de bază pe care o stăpânești înainte să adaugi orice greutate.",
+      "sections": [
+        {
+          "heading": "Poziția de start decide tot restul",
+          "body": "Antrenorii certificați ACE recomandă picioare puțin mai late decât lățimea umerilor, cu vârfurile ușor rotite spre exterior. Ridici pieptul și tragi omoplații ușor spre spate, ca să ții coloana dreaptă pe tot parcursul mișcării. De aici pornește coborârea, nu din genunchi împinși în față, ci din șolduri împinse în spate, ca și cum ai căuta un scaun aflat mai jos și mai în spate decât crezi."
+        },
+        {
+          "heading": "Coborârea și urcarea, cu aceleași repere",
+          "body": "Cobori până trunchiul și tibiile ajung, pe cât te lasă mobilitatea, aproape paralele, cu călcâiele lipite de podea tot timpul și genunchii care urmăresc direcția vârfurilor picioarelor, nu se apropie spre interior. Urci împingând prin toată talpa, nu doar prin degete, și conduci mișcarea cu pieptul în sus, nu cu șoldurile primele. Dacă simți genunchii, nu coapsele și fesierii, reduci adâncimea până corectezi tehnica."
+        }
+      ],
+      "example": "Înainte de primul apel de dimineață, faci două seturi de câte opt squat-uri cu propria greutate, lângă birou. Nu ridici nimic, doar exersezi tiparul: șolduri în spate, genunchi pe direcția vârfurilor, călcâie jos. Două minute, iar articulațiile pornesc ziua altfel.",
+      "takeaways": [
+        "Squat-ul pornește din șolduri împinse înapoi, nu din genunchi împinși în față.",
+        "Călcâiele rămân lipite de podea, iar genunchii urmăresc direcția vârfurilor picioarelor.",
+        "Stăpânești tehnica fără greutate înainte să adaugi orice încărcare."
+      ],
+      "tryToday": "Fă 2 seturi de 8 squat-uri cu propria greutate, cu picioarele puțin mai late decât umerii, urmărind în oglindă sau la cameră dacă genunchii țin direcția vârfurilor.",
+      "quiz": {
+        "question": "Care e cea mai frecventă greșeală de tehnică la squat pe care o corectează reperul „genunchii urmăresc vârful piciorului”?",
+        "answer": "Genunchii care cad spre interior în timpul coborârii sau urcării, ceea ce pune presiune inutilă pe articulație; reperul îi ține aliniați cu direcția tălpii."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "How to Squat Properly: Body Type Breakdown & Anatomy Considerations (ACE Fitness)",
+          "url": "https://www.acefitness.org/resources/pros/expert-articles/7356/how-to-squat-properly-body-type-breakdown-anatomy-considerations/"
+        },
+        {
+          "title": "Back Squat Exercise Guide (ACE Exercise Library)",
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/11/back-squat/"
+        }
+      ],
+      "readingMinutes": 2
+    }
+  ]
+}
