@@ -1347,6 +1347,166 @@
         }
       ],
       "readingMinutes": 3
+    },
+    {
+      "id": "library-body-34",
+      "areaId": "body",
+      "title": "De două ori pe săptămână bate o dată: frecvența în forță",
+      "hook": "Faci un „leg day” lung, luni, și apoi nu mai atingi picioarele o săptămână. Merită mai mult să repartizezi aceeași muncă pe două zile?",
+      "coreIdea": "Pentru masă musculară, antrenarea fiecărui grup muscular de cel puțin două ori pe săptămână dă rezultate mai bune decât o dată, iar când volumul total e egal diferența dispare.",
+      "sections": [
+        {
+          "heading": "Ce a găsit meta-analiza din 2016",
+          "body": "Schoenfeld, Ogborn și Krieger au sintetizat studiile de frecvență și au concluzionat, în Sports Medicine, că antrenarea grupelor mari de cel puțin două ori pe săptămână dă rezultate mai bune pentru hipertrofie decât o dată. Dacă trei ori bate două, rămânea de stabilit."
+        },
+        {
+          "heading": "Volumul contează, frecvența e uneltele",
+          "body": "O meta-analiză ulterioară (Schoenfeld și colab., 2019) arată că, atunci când volumul total pe săptămână e egalat, frecvența nu mai schimbă hipertrofia. Adică frecvența te ajută mai ales să faci volumul fără să obosești pe o singură sesiune: 12 seturi într-o zi sunt mai grele decât 6 + 6. Pentru un începător care stă mult la birou, două sesiuni scurte pe grupă sunt mai ușor de ținut decât una lungă."
+        }
+      ],
+      "example": "În loc de o sesiune de picioare de 45 de minute, faci luni și joi câte 20 de minute: squat-uri și punți pentru fese. Volumul e același, dar picioarele nu mai sunt secate într-o singură zi, iar obiceiul se ține mai ușor.",
+      "takeaways": [
+        "De două ori pe săptămână pe grupă bate o dată, pentru hipertrofie.",
+        "La volum egal, frecvența în sine nu mai contează.",
+        "Împarte volumul ca să-l poți ține, nu ca să-l crești."
+      ],
+      "tryToday": "Scrie pe hârtie un plan cu două sesiuni de 20 de minute pe săptămână (de exemplu luni și joi), cu 3 exerciții cu greutatea corpului. Programează-le în calendar.",
+      "quiz": {
+        "question": "Când nu mai contează frecvența antrenamentului pentru hipertrofie?",
+        "answer": "Când volumul total pe săptămână e egalat între programe; frecvența doar ajută să distribui volumul mai comod."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "Effects of Resistance Training Frequency on Measures of Muscle Hypertrophy: A Systematic Review and Meta-Analysis (Sports Medicine, 2016)",
+          "url": "https://link.springer.com/article/10.1007/s40279-016-0543-8"
+        },
+        {
+          "title": "How many times per week should a muscle be trained to maximize muscle hypertrophy? (PubMed, 2019)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30558493/"
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "id": "library-mind-35",
+      "areaId": "mind",
+      "title": "Nu sunt 21 de zile: cât durează, de fapt, un obicei",
+      "hook": "Ai auzit că un obicei se formează în 21 de zile. Un studiu a măsurat, iar cifra reală e mai mare și mult mai variabilă.",
+      "coreIdea": "Într-un studiu de la University College London, un obicei nou a devenit automat în medie după circa 66 de zile, cu variații de la 18 la 254, iar o singură zi ratată nu strică procesul.",
+      "sections": [
+        {
+          "heading": "Ce a măsurat studiul",
+          "body": "Phillippa Lally și colegii au urmărit 96 de voluntari, câte un comportament zilnic ales de fiecare, timp de 12 săptămâni: un fruct la prânz, un pahar cu apă, 15 minute de mers. Timpul până la automatism a variat între 18 și 254 de zile, cu o medie de aproximativ 66. Repetiția zilnică în același context a contat cel mai mult."
+        },
+        {
+          "heading": "O zi ratată nu contează",
+          "body": "Omiterea unei singure ocazii nu a afectat semnificativ procesul de formare. Deci nu ai de ce să renunți după o zi ratată. Lally sugerează, de asemenea, să analizezi de ce ai ratat zilele și să ajustezi ținta, dacă e nevoie: mai puțin, dar mai des."
+        }
+      ],
+      "example": "Vrei să înveți 20 de minute după job. Ratezi miercuri. Nu strici nimic: joi reiei, în același loc și la aceeași oră, fără să compensezi cu 40 de minute.",
+      "takeaways": [
+        "Media a fost de circa 66 de zile, dar între oameni a variat de la 18 la 254.",
+        "Repetiția în același context contează mai mult decât perfecțiunea.",
+        "O zi ratată nu resetează nimic."
+      ],
+      "tryToday": "Alege un obicei de 5 minute și un context fix („după prima cafea”). Notează în telefon data de azi ca ziua 1 și fă-l acum.",
+      "quiz": {
+        "question": "Care e cifra reală din studiul Lally și de ce nu e o regulă?",
+        "answer": "Media a fost de circa 66 de zile, dar timpul individual a variat între 18 și 254, deci depinde de persoană și de comportament."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "How are habits formed: Modelling habit formation in the real world (Lally et al., European Journal of Social Psychology)",
+          "url": "https://onlinelibrary.wiley.com/doi/abs/10.1002/ejsp.674"
+        },
+        {
+          "title": "How Long Does It Really Take to Form a Habit? (Scientific American)",
+          "url": "https://www.scientificamerican.com/article/how-long-does-it-really-take-to-form-a-habit/"
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "id": "library-money-36",
+      "areaId": "money",
+      "title": "Din 10.000 de lei brut rămân 5.870: citește oferta corect",
+      "hook": "Un recruiter îți spune „10.000”. Brut sau net? Diferența e de peste 4.000 de lei pe lună.",
+      "coreIdea": "În România, salariul se negociază în brut, iar din el se scad CAS 25%, CASS 10% și 10% impozit pe restul, așa că netul e sub 60% din brut.",
+      "sections": [
+        {
+          "heading": "Cum se calculează în 2026",
+          "body": "Conform ghidului Edenred, din brut se scad CAS (25%) și CASS (10%), iar impozitul de 10% se aplică la ce rămâne, după o deducere personală de 200 de lei. Exemplu: la 10.000 lei brut, CAS e 2.500, CASS 1.000, impozitul 630, iar netul 5.870 lei. Adică aproape 41% din brut se duce. Angajatorul mai plătește separat 2,25% (CAM)."
+        },
+        {
+          "heading": "Facilitățile pentru IT au dispărut",
+          "body": "Aceeași sursă notează că de la 1 ianuarie 2025 facilitățile fiscale specifice IT au fost eliminate complet, deci un programator plătește contribuțiile standard. Concluzia practică: nu compara o ofertă „net” dintr-o poveste veche cu una „brut” de acum; convertește mereu."
+        }
+      ],
+      "example": "Ai două oferte: 9.000 lei net și 10.500 lei brut. Fără conversie, prima pare mai bună. Cu formula, 10.500 brut înseamnă aproximativ 6.200 net, deci prima ofertă e mult peste.",
+      "takeaways": [
+        "Salariile se negociază în brut; întreabă mereu „brut sau net?”.",
+        "Din brut se scad CAS 25%, CASS 10% și 10% impozit pe restul.",
+        "Facilitățile IT sunt eliminate de la 1 ianuarie 2025."
+      ],
+      "tryToday": "Calculează cu formula de mai sus netul pentru salariul tău brut și pentru o cifră pe care ai vrea s-o ceri. Scrie cele două numere în notițe.",
+      "quiz": {
+        "question": "Din 10.000 lei brut, cât rămâne net conform exemplului și ce se scade?",
+        "answer": "5.870 lei: se scad CAS 25%, CASS 10% și impozitul de 10% pe ce rămâne după deducerea personală."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "Ghid salarii 2026: totul despre CAS, CASS și salariul net (Edenred)",
+          "url": "https://www.edenred.ro/ro/blog/legislatie-fiscalitate/ghid-contributii-salarii-ce-este-cas-cass-alte-taxe-platesti-salariu"
+        },
+        {
+          "title": "Contribuții salariu 2026: CAS, CASS, impozit pe venit (Up Romania)",
+          "url": "https://upromania.ro/media/blog/contributii-salariu-cas-cass-impozit-pe-venit/"
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "id": "library-ai-news-37",
+      "areaId": "ai-news",
+      "title": "Sonnet 5.5: mai ieftin pe sarcină, nu pe token",
+      "hook": "Pe 28 septembrie 2026, Anthropic a lansat Sonnet 5.5 cu prețul neschimbat. Și totuși, factura ta poate scădea. Cum?",
+      "coreIdea": "Sonnet 5.5 costă la fel per token ca Sonnet 5, dar Anthropic susține că sarcinile costă până la 30% mai puțin, pentru că modelul folosește mai puțini tokeni și mai puține apeluri de unelte.",
+      "sections": [
+        {
+          "heading": "Ce s-a anunțat",
+          "body": "Potrivit VentureBeat, Anthropic spune că Sonnet 5.5 generează răspunsuri cu peste 30% mai rapid decât Sonnet 5, iar costul pe sarcină scade cu până la 30%. Prețul API rămâne 2 dolari la un milion de tokeni de intrare și 10 la un milion de ieșire. ID-ul modelului este claude-sonnet-5-5."
+        },
+        {
+          "heading": "Ce e demonstrat și ce nu",
+          "body": "Cifrele de viteză și cost sunt măsurate de Anthropic. Ca dovezi externe apar mărturii ale clienților: Box (2,4 ori mai rapid, cu 12% mai puțini tokeni), Slack (circa 14% mai puțini tokeni de ieșire), Lovable (cam o treime mai puține apeluri de unelte). Sunt rezultate pe sarcinile lor, nu un test independent general. Pentru tine contează un lucru: măsoară pe sarcinile tale, nu crede procentul general."
+        }
+      ],
+      "example": "Ai un agent care rezolvă tickete. Muți modelul de la Sonnet 5 la 5.5, păstrezi același eval și compari costul mediu pe ticket, nu prețul pe token.",
+      "takeaways": [
+        "Prețul pe token a rămas la fel; economia vine din mai puțini tokeni și apeluri de unelte.",
+        "Cifrele generale sunt ale furnizorului; cele ale clienților sunt pe cazurile lor.",
+        "Compară costul pe sarcină pe evalurile tale."
+      ],
+      "tryToday": "Ia un eval sau un set de 5 exemple din proiectul tău și notează costul mediu pe exemplu cu modelul actual. Programează comparația cu claude-sonnet-5-5.",
+      "quiz": {
+        "question": "De ce poate scădea costul deși prețul pe token e același?",
+        "answer": "Pentru că modelul folosește mai puțini tokeni și mai puține apeluri de unelte pe sarcină, deci plătești pe mai puțin."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "Anthropic launches Claude Sonnet 5.5 with 30% cost reduction per-task (VentureBeat)",
+          "url": "https://venturebeat.com/technology/anthropic-launches-claude-sonnet-5-5-with-30-cost-reduction-per-task-due-to-faster-speeds-and-fewer-tool-calls"
+        },
+        {
+          "title": "Anthropic debuts Claude Sonnet 5.5 running 30% faster (SiliconANGLE)",
+          "url": "https://siliconangle.com/2026/09/28/anthropic-debuts-claude-sonnet-5-5-running-30-faster-than-the-previous-generation-ai-model/"
+        }
+      ],
+      "readingMinutes": 2
     }
   ]
 }

@@ -1,0 +1,123 @@
+{
+  "date": "2026-09-29",
+  "lessons": [
+    {
+      "id": "2026-09-29-social",
+      "areaId": "social",
+      "title": "Vorbitul cu necunoscuți: predici greșit cât de prost va merge",
+      "hook": "Dimineața, în autobuz, toată lumea stă cu ochii în telefon, inclusiv tu. Dacă ai vorbi cu vecinul de scaun, ar fi penibil sau ar fi bine? Cercetătorii au întrebat oamenii dinainte, apoi i-au pus s-o facă.",
+      "coreIdea": "Oamenii se așteaptă ca o conversație scurtă cu un necunoscut să fie neplăcută, dar când o fac, o trăiesc ca pe una mai plăcută decât liniștea.",
+      "sections": [
+        {
+          "heading": "Predicția și realitatea merg în direcții opuse",
+          "body": "Nicholas Epley și Juliana Schroeder au rugat navetiști din trenuri și autobuze din Chicago să facă una din trei lucruri: să vorbească cu un necunoscut, să stea în liniște sau să facă ce fac de obicei. Participanții au prezis că vorbitul va fi cea mai neplăcută variantă. Rezultatul, într-o serie de nouă experimente publicate în 2014: cei care au vorbit au raportat cea mai plăcută călătorie dintre cele trei grupuri."
+        },
+        {
+          "heading": "Treapta 2: o replică, nu o conversație",
+          "body": "Nu-ți cere nimeni să legi prietenii la casă. Treapta 2 înseamnă o replică scurtă, care nu cere răspuns lung: „Ce ai recomanda de aici?”, „Ce zi lungă, nu?”. Dacă omul răspunde scurt, ai terminat cu bine. Scopul e să aduni dovezi: prezisul tău („o să fie penibil”) se lovește de trăit („a fost okay, chiar plăcut”). Aici se subțiază frica, nu în teorie."
+        }
+      ],
+      "example": "Ești la coadă la brutărie. În loc să te uiți în telefon, îi spui vânzătoarei: „Ce merge cel mai bine dimineața?”. Îți răspunde într-o frază, zâmbește. Ai făcut treapta 2, iar creierul are acum un caz concret în care „penibil” nu s-a întâmplat.",
+      "takeaways": [
+        "Anticipăm conversațiile cu necunoscuții ca fiind mai proaste decât sunt trăite.",
+        "O replică scurtă e suficientă ca să aduni dovezi împotriva fricii.",
+        "Sperietura de dinainte spune despre tine, nu despre cum va merge."
+      ],
+      "tryToday": "Spune o replică scurtă (o întrebare sau un comentariu de o propoziție) la 2 persoane pe care nu le cunoști: casier, barista, cineva din lift. Notează după fiecare cât de penibil a fost, de la 0 la 10, față de cât te așteptai. Dacă azi e prea mult: spune doar „mulțumesc, o zi bună” privind persoana în ochi, o singură dată.",
+      "quiz": {
+        "question": "Ce au prezis participanții din studiul lui Epley despre vorbitul cu un necunoscut și ce au trăit de fapt?",
+        "answer": "Au prezis că va fi cea mai neplăcută variantă, dar cei care au vorbit au raportat cea mai plăcută călătorie, mai plăcută decât cei care au stat în liniște."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "Mistakenly Seeking Solitude (Epley & Schroeder, 2014, Journal of Experimental Psychology: General)",
+          "url": "https://faculty.haas.berkeley.edu/jschroeder/Publications/Epley&Schroeder2014.pdf"
+        },
+        {
+          "title": "Mom was wrong: You should talk to strangers (Chicago Booth)",
+          "url": "https://www.chicagobooth.edu/media-relations-and-communications/press-releases/mom-was-wrong-you-should-talk-to-strangers"
+        }
+      ],
+      "readingMinutes": 2,
+      "step": 2
+    },
+    {
+      "id": "2026-09-29-ai-engineer",
+      "areaId": "ai-engineer",
+      "title": "Structured outputs: JSON care chiar respectă schema",
+      "hook": "Ai cerut modelului „răspunde doar în JSON” și 1 din 50 de răspunsuri vine cu o virgulă în plus sau cu un „Iată JSON-ul tău:” înainte. Nu mai e nevoie să te rogi de model.",
+      "coreIdea": "Cu structured outputs treci o schemă JSON în cerere, iar modelul e constrâns să producă exact acea structură, deci nu mai parsezi cu speranță.",
+      "sections": [
+        {
+          "heading": "Schema devine contract, ca un tip TypeScript",
+          "body": "Pasezi o schemă în output_config.format, iar răspunsul respectă schema. Pentru TypeScript, SDK-ul Anthropic are un helper pentru Zod: definești schema o dată, primești un obiect parsat și validat în response.parsed_output. E aceeași idee ca la un API tipat în frontend: contractul stă în cod, nu în prompt.",
+          "code": "const Contact = z.object({\n  name: z.string(),\n  email: z.string(),\n  demo_requested: z.boolean(),\n})\n\nconst res = await client.messages.parse({\n  model: \"claude-opus-5-5\",\n  max_tokens: 1024,\n  messages: [{ role: \"user\", content: emailText }],\n  output_config: { format: zodOutputFormat(Contact) },\n})\nres.parsed_output // { name, email, demo_requested }"
+        },
+        {
+          "heading": "Ce nu merge: limite și prima cerere",
+          "body": "Documentația listează ce nu e suportat: scheme recursive, $ref extern, constrângeri numerice (minimum, maximum) și constrângeri pe șiruri. Prima folosire a unei scheme costă latență în plus, pentru că gramatica se compilează; rezultatul se ține în cache 24 de ore de la ultima folosire. Deci validările fine (o vârstă între 0 și 120) le verifici tot tu, în cod."
+        }
+      ],
+      "example": "Faci un formular care extrage date din emailuri de clienți. Înainte, codul tău de parsare avea try/catch și un al doilea apel „repară JSON-ul”. Cu schema Zod trecută în cerere, ajungi direct la obiectul tipat și scoți tot codul de reparat.",
+      "takeaways": [
+        "Schema din cerere face structura răspunsului garantată, nu doar cerută frumos.",
+        "Helper-ul Zod din SDK îți dă un obiect tipat în parsed_output.",
+        "Constrângerile numerice și pe șiruri nu sunt suportate: le validezi în cod."
+      ],
+      "tryToday": "Ia un prompt din proiectele tale care cere „răspunde în JSON” și rescrie-l cu o schemă Zod (max. 5 câmpuri), urmând exemplul din documentație. Notează ce cod de parsare poți șterge.",
+      "quiz": {
+        "question": "De ce e mai bine schema în cerere decât „răspunde doar în JSON” în prompt?",
+        "answer": "Pentru că schema constrânge efectiv răspunsul modelului, deci structura e garantată, iar prompt-ul singur doar o cere, fără garanție."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "Structured outputs (Claude Platform Docs)",
+          "url": "https://platform.claude.com/docs/en/build-with-claude/structured-outputs"
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "id": "2026-09-29-nutrition",
+      "areaId": "nutrition",
+      "title": "Creatina: singurul supliment cu dovezi solide",
+      "hook": "Suplimentele sunt cel mai zgomotos raft din orice magazin de nutriție, iar aproape toate promit mai mult decât dovezile. Există totuși unul pe care îl recomandă poziții oficiale de specialitate.",
+      "coreIdea": "Creatina monohidrat e cel mai eficient supliment pentru forță și masă musculară, cu un profil de siguranță foarte bun la adulții sănătoși.",
+      "sections": [
+        {
+          "heading": "Ce arată dovezile, și cât de solide sunt",
+          "body": "Poziția oficială a International Society of Sports Nutrition (ISSN, 2017) o numește cel mai eficient supliment nutritiv disponibil pentru capacitatea de efort de intensitate mare și masa slabă în timpul antrenamentului. Nu e un singur studiu: e o sinteză a literaturii, iar tema are decenii de cercetare în spate. Nivelul de dovadă e deci ridicat, spre deosebire de majoritatea suplimentelor."
+        },
+        {
+          "heading": "Siguranța și mitul rinichilor",
+          "body": "Aceeași poziție ISSN spune că suplimentarea pe termen scurt și lung (până la 30 g pe zi, timp de 5 ani) e sigură și bine tolerată la persoane sănătoase. Doza obișnuită de întreținere e de 3–5 g pe zi. Excepția: cine are afecțiuni renale sau e însărcinat ar trebui să întrebe un medic, pentru că pentru aceste grupuri dovezile lipsesc. Aceasta nu e un sfat medical, ci ce spun sursele."
+        }
+      ],
+      "example": "Faci forță de două ori pe săptămână și te întrebi dacă merită creatina. Citești eticheta la unul din produse și vezi „creatină monohidrat”, plus 6 alte ingrediente cu nume de laborator. Regula practică din dovezi: contează monohidratul, restul e marketing.",
+      "takeaways": [
+        "Creatina monohidrat are cea mai solidă bază de dovezi dintre suplimente.",
+        "Doza obișnuită de întreținere e de 3–5 g pe zi, la adulții sănătoși.",
+        "Cine are probleme renale ia decizia cu medicul, nu din articole."
+      ],
+      "tryToday": "Caută pe o etichetă de creatină (online sau într-un magazin) ce conține de fapt: notează dacă e doar monohidrat și câte grame are o porție. Nu cumpăra nimic azi; e doar observație.",
+      "quiz": {
+        "question": "De ce e creatina monohidrat diferită de majoritatea suplimentelor?",
+        "answer": "Pentru că are decenii de studii și o poziție oficială ISSN care o consideră eficientă și sigură la adulții sănătoși, adică dovezi mult mai solide decât la majoritatea suplimentelor."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "ISSN position stand: safety and efficacy of creatine supplementation in exercise, sport, and medicine (PMC)",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5469049/"
+        },
+        {
+          "title": "Effects of the recommended dose of creatine monohydrate on kidney function (Clinical Kidney Journal)",
+          "url": "https://academic.oup.com/ckj/article/4/1/23/376016"
+        }
+      ],
+      "readingMinutes": 2
+    }
+  ]
+}
