@@ -1507,6 +1507,158 @@
         }
       ],
       "readingMinutes": 2
+    },
+    {
+      "id": "library-body-38",
+      "areaId": "body",
+      "title": "Repetiții în rezervă: nu trebuie să te duci la cedare",
+      "hook": "Credeai că dacă nu cedezi la ultima repetare, antrenamentul nu a contat. Datele spun altceva.",
+      "coreIdea": "Pentru mușchi contează să te apropii de limită, dar nu trebuie să ajungi mereu la cedare: câteva repetări în rezervă (RIR) sunt suficiente.",
+      "sections": [
+        {
+          "heading": "Ce înseamnă RIR și ce a găsit meta-analiza",
+          "body": "RIR (repetitions in reserve) = câte repetări ai mai fi putut face. 0 RIR înseamnă cedare. Refalo și colegii (Sports Medicine, 2023) au pus cap la cap 15 studii despre apropierea de cedare și hipertrofie. Au găsit un avantaj mic pentru seturile mai aproape de cedare, fără dovezi că mereu 0 RIR e obligatoriu."
+        },
+        {
+          "heading": "De ce te interesează la birou",
+          "body": "Cedarea obosește mai tare și te lasă mai greu recuperat pentru următoarea sesiune. Pentru cineva care începe sau revine, 2–3 RIR e mai ușor de ținut și mai sigur la tehnică. Siguranța vine înaintea intensității; la exerciții cu bare grele, cedarea fără spotter e riscantă."
+        }
+      ],
+      "example": "Ești la a treia serie de flotări. La a 12-a simți că ai mai fi putut face 3. Te oprești, notezi „12, 3 RIR” și mâine încerci 13. Asta e supraîncărcare progresivă, fără să te forțezi până la cedare.",
+      "takeaways": [
+        "RIR măsoară cât de aproape ai fost de limită.",
+        "Avantajul cedării totale e mic în studiile adunate.",
+        "Pentru începători, 2–3 RIR e un punct bun de pornire."
+      ],
+      "tryToday": "Fă 3 serii de flotări (sau pe genunchi) oprindu-te când simți că mai poți face 2–3. Notează numărul de repetări și cât de ușor a fost. Fără echipament, 10 minute.",
+      "quiz": {
+        "question": "Ce înseamnă 2 RIR la o serie de 10 repetări?",
+        "answer": "Că te-ai oprit la 10, dar ai fi putut face încă 2 repetări corecte."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "Refalo et al. (2023): proximity to failure and hypertrophy (rezumat BioLayne)",
+          "url": "https://biolayne.com/reps/issue-32/the-failure-factor-the-relationship-between-proximity-to-failure-and-strength-and-hypertrophy/"
+        },
+        {
+          "title": "Studiul Refalo et al., depozit AUT",
+          "url": "https://openrepository.aut.ac.nz/bitstreams/9e3df52b-a8b3-4139-b172-feefd51e5334/download"
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "id": "library-nutrition-39",
+      "areaId": "nutrition",
+      "title": "Aceleași calorii pe farfurie, 500 în plus în stomac",
+      "hook": "Cercetătorii au pus două mese cu aceleași calorii declarate. La una, oamenii au mâncat cu 500 de calorii mai mult pe zi.",
+      "coreIdea": "Într-un studiu controlat, dieta ultraprocesată a dus la consum mai mare și la creștere în greutate, deși meniurile erau potrivite ca nutrienți.",
+      "sections": [
+        {
+          "heading": "Ce a făcut studiul NIH",
+          "body": "Kevin Hall (NIH) a publicat în Cell Metabolism, în 2019, un studiu cu 20 de adulți internați. Fiecare a ținut două diete, câte 14 zile, în ordine aleatorie: ultraprocesată și neprocesată. Meniurile erau potrivite la calorii prezentate, zahăr, grăsimi, sodiu, fibre și macronutrienți. Cu dieta ultraprocesată, oamenii au mâncat în medie cu aproximativ 500 kcal pe zi mai mult și au luat 0,9 kg."
+        },
+        {
+          "heading": "Cât să crezi",
+          "body": "E un studiu randomizat, deci puternic ca design, dar mic (20 de oameni) și scurt (două săptămâni). Nu arată mecanismul și nu spune că orice aliment procesat e problematic. Îți dă o direcție: mâncarea din ambalaje, ușor de mâncat repede, poate împinge consumul în sus fără să simți."
+        }
+      ],
+      "example": "Seara, la desktop, deschizi o pungă de biscuiți „doar unul”. După film, punga e goală. Nu e lipsă de voință: produsul e făcut să fie mâncat ușor și repede, iar studiul NIH arată că asta se vede și în consum.",
+      "takeaways": [
+        "Meniuri potrivite pe hârtie nu garantează aceeași cantitate mâncată.",
+        "Studiul e randomizat, dar mic și de scurtă durată.",
+        "Nu e un motiv să interzici alimente, ci să observi cât mănânci."
+      ],
+      "tryToday": "La următoarele 3 produse pe care le cumperi sau mănânci, citește lista de ingrediente și notează câte nu le-ai găsi într-o bucătărie obișnuită. E o observație, nu un verdict. 5 minute.",
+      "quiz": {
+        "question": "Ce a diferit între cele două diete din studiul lui Hall, în ceea ce privește consumul?",
+        "answer": "Cu dieta ultraprocesată, participanții au mâncat în medie cu ~500 kcal/zi mai mult și au luat ~0,9 kg, deși meniurile erau potrivite la calorii prezentate și nutrienți."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "NIH: heavily processed foods cause overeating and weight gain",
+          "url": "https://www.nih.gov/news-events/news-releases/nih-study-finds-heavily-processed-foods-cause-overeating-weight-gain"
+        },
+        {
+          "title": "Hall et al. 2019, Cell Metabolism (PDF)",
+          "url": "https://www.foodpolitics.com/wp-content/uploads/Kevin-Hall_Ultraprocessed_Cell-Metab_19.pdf"
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "id": "library-money-40",
+      "areaId": "money",
+      "title": "Un 1% pe an care nu se vede: costul fondurilor",
+      "hook": "Un cost de 1% pe an pare mărunt. Pe 20 de ani, exemplul SEC arată o diferență de zeci de mii de dolari.",
+      "coreIdea": "Costurile anuale ale unui fond (expense ratio) se compun ca dobânda, dar împotriva ta, deci contează să le citești înainte să alegi.",
+      "sections": [
+        {
+          "heading": "Exemplul oficial al SEC",
+          "body": "Investor.gov (SEC) dă un exemplu: 100.000 de dolari, creștere de 4% pe an, 20 de ani. Cu un cost anual de 0,25% rămân circa 208.000 de dolari; cu 0,50%, circa 198.000; cu 1,00%, circa 179.000. Diferența dintre extreme: aproximativ 29.000 de dolari, doar din cost. Exemplul e ipotetic și american, dar mecanismul e același oriunde."
+        },
+        {
+          "heading": "Unde găsești costul",
+          "body": "Costul total anual al unui fond apare ca „expense ratio” (în Europa, TER sau costuri curente) în documentul cu informații cheie al fondului. Nu recomand produse; principiul: compară costurile pentru instrumente similare și nu plăti mai mult fără motiv."
+        }
+      ],
+      "example": "Un coleg îți spune că a pus bani într-un fond „cu management activ”. Îl întrebi doar: „Cât e costul anual?”. Răspunde „nu știu”. Tu știi acum ce întrebare pune prima, înainte de randament.",
+      "takeaways": [
+        "Costul anual se aplică în fiecare an, peste ce ai deja.",
+        "Pe 20 de ani, 1% față de 0,25% înseamnă zeci de mii în exemplul SEC.",
+        "Citește costul în documentul fondului înainte să cumperi."
+      ],
+      "tryToday": "Alege un fond sau ETF pe care l-ai văzut recomandat și găsește costul anual în documentul cu informații cheie al emitentului. Notează-l și calculează cât înseamnă pe an la 10.000 de lei. 15 minute.",
+      "quiz": {
+        "question": "Cât a ieșit în exemplul SEC cu un cost de 1% față de 0,25%, după 20 de ani?",
+        "answer": "Circa 179.000 de dolari față de circa 208.000, deci o diferență de aproximativ 29.000."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "SEC Investor.gov: How fees and expenses affect your investment portfolio",
+          "url": "https://www.investor.gov/news-alerts/investor-bulletins/investor-bulletin-how-fees-expenses-affect-your-investment-portfolio"
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "id": "library-ai-news-41",
+      "areaId": "ai-news",
+      "title": "OpenAI DevDay: modelul mai ieftin și agenții care apasă butoane",
+      "hook": "Pe 2 octombrie, OpenAI a anunțat modele și API-uri noi. Ce e pe hârtie și ce poți construi chiar acum?",
+      "coreIdea": "OpenAI împinge agenții cu computer use și modele mai ieftine; pentru un AI engineer, miza e costul pe sarcină și cât de fiabili sunt agenții.",
+      "sections": [
+        {
+          "heading": "Ce s-a anunțat pe 2 octombrie",
+          "body": "Conform InfoQ, la DevDay 2026 OpenAI a prezentat GPT-6.1 Sol, aproape de GPT-6 Astra pe mai multe evaluări (după OpenAI) la o cincime din prețul standard, cu input cache de 0,10 dolari per milion de tokeni. Agents API a primit computer use (aplicația operează software prin interfețe grafice), plus unelte multi-agent și context compaction. Codex rulează acum și în cloud, iar Decisions API (preview limitat) rutează cereri."
+        },
+        {
+          "heading": "Anunțat nu înseamnă demonstrat",
+          "body": "Cifrele de performanță vin de la OpenAI; nu le-am văzut verificate independent. InfoQ notează că unii dezvoltatori se întreabă dacă sunt avansuri mari față de platformele de agenți existente. Pentru tine: testează pe sarcinile tale și compară costul pe sarcină terminată, nu doar prețul pe token."
+        }
+      ],
+      "example": "Ai un agent intern care completează formulare. Cu computer use, în loc să scrii un API, ar putea apăsa pe butoanele din UI. Înainte să te entuziasmezi, rulezi 20 de sarcini și măsori câte termină corect.",
+      "takeaways": [
+        "GPT-6.1 Sol e anunțat la o cincime din prețul Astra.",
+        "Agents API are acum computer use.",
+        "Performanța declarată trebuie verificată pe datele tale."
+      ],
+      "tryToday": "Alege o sarcină din proiectele tale și estimează costul ei la prețul actual al modelului pe care îl folosești, apoi notează ce ai vrea să testezi cu un model mai ieftin. 15 minute.",
+      "quiz": {
+        "question": "Ce înseamnă computer use în Agents API?",
+        "answer": "Aplicațiile pot opera software prin interfețe grafice, ca un utilizator."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "OpenAI DevDay 2026 Recap for Developers (InfoQ)",
+          "url": "https://www.infoq.com/news/2026/10/openai-devday-2026/"
+        }
+      ],
+      "readingMinutes": 2
     }
   ]
 }

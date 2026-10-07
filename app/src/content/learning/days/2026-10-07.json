@@ -1,0 +1,119 @@
+{
+  "date": "2026-10-07",
+  "lessons": [
+    {
+      "id": "2026-10-07-social",
+      "areaId": "social",
+      "title": "Cafeaua cu o replică: de ce interacțiunile mici contează",
+      "hook": "Poți comanda cafeaua în 8 secunde, fără o vorbă. Dar cercetătorii au măsurat ce se întâmplă cu dispoziția ta dacă faci altfel.",
+      "coreIdea": "O interacțiune scurtă cu un om pe care abia îl cunoști (zâmbet, contact vizual, o replică) îți ridică dispoziția și sentimentul de apartenență.",
+      "sections": [
+        {
+          "heading": "Barista contează mai mult decât crezi",
+          "body": "În 2014, Gillian Sandstrom și Elizabeth Dunn au publicat în Personality and Social Psychology Bulletin mai multe studii despre „legăturile slabe” (cunoscuți și necunoscuți). La cafenea, cei care au avut o interacțiune reală cu barista (zâmbet, contact vizual, o scurtă conversație) au ieșit mai bine dispuși decât cei care au fost cât mai eficienți. Efectul a trecut prin sentimentul de apartenență. În alt studiu, studenții erau mai fericiți în zilele în care vorbeau cu mai mulți colegi decât de obicei."
+        },
+        {
+          "heading": "Treapta 2: nu cauți conversație, doar o replică",
+          "body": "Nu ai nevoie de poveste de viață. Ai nevoie de un zâmbet, un „Bună ziua” cu ochii pe persoană și o propoziție: „Ce-mi recomanzi azi?”. Ține cont că studiile arată o corelație și un efect la cafenea, nu o garanție pentru fiecare zi. De aceea contează experimentul tău: vezi cum te simți tu după."
+        }
+      ],
+      "example": "Intri la cafenea înainte de job. Pui telefonul în buzunar, o privești pe barista și spui: „Ce-mi recomanzi, ceva mai puțin amar?”. Răspunde în două fraze. Pleci cu cafeaua și cu o mică dovadă că nu s-a întâmplat nimic rău.",
+      "takeaways": [
+        "Interacțiunile scurte cu necunoscuții cresc dispoziția și apartenența.",
+        "Efectul apare chiar dacă conversația durează sub un minut.",
+        "Eficiența perfectă la casă te costă ceva ce nu apare pe bon."
+      ],
+      "tryToday": "Fă o replică de o propoziție, cu contact vizual și zâmbet, la 2 persoane din serviciu azi (casier, barista, portar). După fiecare, notează dispoziția de la 0 la 10. Dacă azi e prea mult: privește persoana, zâmbește și spune „Mulțumesc”, o singură dată.",
+      "quiz": {
+        "question": "Ce au observat Sandstrom și Dunn la cei care au interacționat cu barista față de cei „eficienți”?",
+        "answer": "Cei care au zâmbit, au făcut contact vizual și au vorbit puțin au avut o dispoziție mai bună și un sentiment mai mare de apartenență."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "Sandstrom & Dunn (2014): social interactions and well-being, Personality and Social Psychology Bulletin",
+          "url": "https://repository.essex.ac.uk/15301/"
+        },
+        {
+          "title": "Why other people are the key to our happiness (Psychology Today)",
+          "url": "https://www.psychologytoday.com/us/blog/ulterior-motives/201407/why-other-people-are-the-key-our-happiness"
+        }
+      ],
+      "readingMinutes": 2,
+      "step": 2
+    },
+    {
+      "id": "2026-10-07-ai-engineer",
+      "areaId": "ai-engineer",
+      "title": "Reranking: de ce nu trimiți primele 5 rezultate la model",
+      "hook": "Căutarea ta vectorială găsește documentul bun, dar îl pune pe locul 12. Dacă trimiți doar primele 5 bucăți la LLM, ai pierdut răspunsul.",
+      "coreIdea": "Aduci multe candidate cu o căutare rapidă, apoi un reranker le reordonează și păstrezi doar cele mai bune, ca modelul să primească context relevant, nu zgomot.",
+      "sections": [
+        {
+          "heading": "Două etape: căutare largă, apoi sortare fină",
+          "body": "Anthropic descrie, în articolul despre Contextual Retrieval, un flux simplu: iei primele ~150 de bucăți candidate, un model de reranking le notează în raport cu întrebarea, iar tu păstrezi primele 20. Ei spun că trimiterea a 20 de bucăți funcționează mai bine decât 10 sau 5. Căutarea inițială e ieftină, dar aproximativă; rerankerul e mai lent, de aceea îl rulezi doar pe candidate.",
+          "code": "const candidates = await search(query, 150)\nconst ranked = await rerank(query, candidates)\nconst context = ranked.slice(0, 20)\nreturn answer(query, context)"
+        },
+        {
+          "heading": "Cât ajută, măsurat de Anthropic",
+          "body": "Pe testele lor, contextul adăugat la fiecare bucată plus BM25 a redus rata eșecurilor în primele 20 de bucăți de la 5,7% la 2,9%. Cu reranking peste, rata a scăzut la 1,9%, adică 67% mai puține eșecuri. Sunt rezultatele autorilor, pe seturile lor de date: măsoară-le pe ale tale, cu evals."
+        }
+      ],
+      "example": "La un interviu ți se cere: „RAG-ul nostru răspunde greșit la întrebări despre politica de concedii. Cum depanezi?”. Răspunzi: verific mai întâi dacă bucata corectă e în top 150, apoi unde ajunge după reranking. Ai împărțit problema în două etape măsurabile.",
+      "takeaways": [
+        "Retrieval-ul rapid și rerankerul fac lucruri diferite.",
+        "Mai multe bucăți bune (20) bat puține bucăți (5).",
+        "Orice cifră publicată trebuie verificată pe datele tale."
+      ],
+      "tryToday": "Deschide un proiect RAG (sau schița unuia) și scrie pe hârtie pașii în două etape, cu cifre: câte candidate aduci și câte trimiți la model. Dacă ai deja un RAG, măsoară cât de des e răspunsul corect în top 5 față de top 20 pe 10 întrebări. 15 minute.",
+      "quiz": {
+        "question": "De ce rulezi rerankerul doar pe cele ~150 de candidate, nu pe tot corpusul?",
+        "answer": "Pentru că e mai lent și mai scump decât căutarea inițială; căutarea rapidă restrânge setul, iar rerankerul îl sortează fin."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "Introducing Contextual Retrieval (Anthropic)",
+          "url": "https://www.anthropic.com/news/contextual-retrieval"
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "id": "2026-10-07-mind",
+      "areaId": "mind",
+      "title": "Ai ratat o zi? Autocritica nu te ajută să revii",
+      "hook": "Ai sărit peste antrenament sau peste învățat și te ceri singur la raport. Se pare că tocmai asta îți scade șansele să revii.",
+      "coreIdea": "După o greșeală, o atitudine blândă față de tine (autocompasiunea) crește motivația de a te corecta, nu o scade.",
+      "sections": [
+        {
+          "heading": "Blândețea nu înseamnă lene",
+          "body": "În 2012, Juliana Breines și Serena Chen au publicat în Personality and Social Psychology Bulletin patru experimente. Cei puși să-și trateze eșecul cu autocompasiune, față de grupuri de control, au petrecut mai mult timp învățând pentru un test dificil după un eșec inițial. Au fost și mai motivați să repare o slăbiciune sau o greșeală. Concluzia autorilor: acceptarea eșecului poate crește motivația, paradoxal."
+        },
+        {
+          "heading": "Cum arată asta după o zi ratată",
+          "body": "Autocompasiunea are trei gesturi: numești ce s-a întâmplat fără dramă („n-am făcut sesiunea de azi”), recunoști că o ratează și alții, apoi alegi cel mai mic pas următor. Nu-ți spui „sunt leneș” (verdict), ci „azi n-a mers; mâine fac 10 minute”. Studiile sunt pe experimente scurte; nu promit că dispar toate recăderile."
+        }
+      ],
+      "example": "E joi seară. Ai vrut să faci un curs de AI după job, dar ai ieșit din ședință la 20:00 epuizat. În loc de „iar mi-am stricat săptămâna”, scrii: „Azi n-a mers. Mâine, după cafea, 10 minute din curs.” Mâine chiar deschizi cursul.",
+      "takeaways": [
+        "Autocritica dură nu e un motor de motivație.",
+        "Autocompasiunea ajută să te apuci din nou de lucru după un eșec.",
+        "Pasul următor trebuie să fie mic și concret."
+      ],
+      "tryToday": "Alege ceva ce ai ratat recent. Scrie 3 propoziții: ce s-a întâmplat, ce i-ai spune unui prieten în aceeași situație, care e cel mai mic pas de mâine (sub 10 minute). Pune-l în calendar. Aproximativ 5 minute.",
+      "quiz": {
+        "question": "Ce au făcut participanții autocompasivi după un eșec la test, comparativ cu controlul?",
+        "answer": "Au petrecut mai mult timp studiind pentru testul dificil."
+      },
+      "videos": [],
+      "sources": [
+        {
+          "title": "Self-compassion increases self-improvement motivation (Breines & Chen, 2012, PubMed)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/22645164/"
+        }
+      ],
+      "readingMinutes": 2
+    }
+  ]
+}
