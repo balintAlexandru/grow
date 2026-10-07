@@ -1,6 +1,6 @@
 {
   "city": "București",
-  "generatedAt": "2026-09-28",
+  "generatedAt": "2026-10-07",
   "events": [
     {
       "title": "Brâncuși. Sindromul",
@@ -26,17 +26,6 @@
       "id": "grup-3-lupescu-naghi-niculae-obrijanu-2026-09-19"
     },
     {
-      "title": "Seara de socializare la board games",
-      "categoryId": "boardgames",
-      "date": "2026-09-22",
-      "venue": "La Fabrica (Parcul Carol)",
-      "price": "50 lei",
-      "description": "Seară de jocuri de societate cu oameni noi, potrivită și pentru începători; jocurile sunt explicate pe loc.",
-      "url": "https://www.cbgshop.ro/events/general/67d82e37e29e42169df9a0a9",
-      "source": "web",
-      "id": "seara-de-socializare-la-board-games-2026-09-22"
-    },
-    {
       "title": "#PotSăZbor: antrenamente de alergare 321Sport",
       "categoryId": "sport",
       "date": "2026-09-22",
@@ -50,41 +39,6 @@
       "url": "https://vladcarbune.ro/calendar-evenimente-alergare-2026/",
       "source": "web",
       "id": "potsazbor-antrenamente-de-alergare-321sport-2026-09-22"
-    },
-    {
-      "title": "Toastmasters: English Public Speaking Meeting",
-      "categoryId": "growth",
-      "date": "2026-09-22",
-      "time": "18:45",
-      "venue": "Toastmasters București",
-      "address": "Str. Lânăriei 77",
-      "description": "Ședință de public speaking în engleză: discursuri pregătite, improvizație și feedback structurat. Vizitatorii sunt bineveniți.",
-      "url": "https://www.meetup.com/toastmasters-bucuresti/events/315786914",
-      "source": "web",
-      "id": "toastmasters-english-public-speaking-meeting-2026-09-22"
-    },
-    {
-      "title": "Bucharest International Piano Festival",
-      "categoryId": "classical",
-      "date": "2026-09-22",
-      "endDate": "2026-09-26",
-      "time": "19:00",
-      "venue": "Ateneul Român",
-      "description": "Cinci seri de recitaluri de pian: Mădălina Pașol, Cătălin Șerban, David Kadouch, Mihai Ritivoiu și gala de închidere cu Khatia Buniatishvili pe 26 septembrie.",
-      "url": "https://www.onevent.ro/evenimente/bucharest-international-piano-festival-22-26-09-2026/",
-      "source": "web",
-      "id": "bucharest-international-piano-festival-2026-09-22"
-    },
-    {
-      "title": "Seara de Rummy",
-      "categoryId": "boardgames",
-      "date": "2026-09-23",
-      "venue": "La Nice Touch (Parcul Carol)",
-      "price": "50 lei",
-      "description": "Seară de rummy organizată de Creative Board Gaming.",
-      "url": "https://www.cbgshop.ro/events/general/6a29ac5a2a7b586e02884157",
-      "source": "web",
-      "id": "seara-de-rummy-2026-09-23"
     },
     {
       "title": "Runners of Bucharest: alergare în grup",
@@ -117,17 +71,6 @@
       "id": "share-your-run-in-parcul-ior-2026-09-23"
     },
     {
-      "title": "Amadeus",
-      "categoryId": "theatre",
-      "date": "2026-09-24",
-      "time": "18:30",
-      "venue": "Teatrul Nottara, Sala Horia Lovinescu",
-      "description": "Rivalitatea dintre Salieri și Mozart. Premiera oficială, pe 11 octombrie, e deja sold out, așa că asta e o ocazie bună.",
-      "url": "https://nottara.ro/program/",
-      "source": "web",
-      "id": "amadeus-2026-09-24"
-    },
-    {
       "title": "Întâlnirile de joi: șah și socializare",
       "categoryId": "chess",
       "date": "2026-09-24",
@@ -144,18 +87,6 @@
       "id": "intalnirile-de-joi-sah-si-socializare-2026-09-24"
     },
     {
-      "title": "Cabaret",
-      "categoryId": "theatre",
-      "date": "2026-09-24",
-      "time": "19:00",
-      "venue": "Teatrul Odeon, Sala Majestic",
-      "price": "60–120 lei",
-      "description": "Musicalul Cabaret pe scena mare a Odeonului, aproape trei ore de spectacol. Recomandat 16+.",
-      "url": "https://teatrul-odeon.ro/program/?lang=en",
-      "source": "web",
-      "id": "cabaret-2026-09-24"
-    },
-    {
       "title": "Celebrăm The Met",
       "categoryId": "art",
       "date": "2026-09-25",
@@ -166,39 +97,6 @@
       "url": "https://mnar.ro/descopera/expozitii-temporare",
       "source": "web",
       "id": "celebram-the-met-2026-09-25"
-    },
-    {
-      "title": "Blood on the Clocktower",
-      "categoryId": "boardgames",
-      "date": "2026-09-25",
-      "venue": "La Nice Touch (Parcul Carol)",
-      "price": "30 lei",
-      "description": "Joc de deducție socială în grup mare, în stilul Mafia, cu un povestitor care conduce partida.",
-      "url": "https://www.cbgshop.ro/events/general/676afe284a196ea85fc7e777",
-      "source": "web",
-      "id": "blood-on-the-clocktower-2026-09-25"
-    },
-    {
-      "title": "Sonată de toamnă",
-      "categoryId": "theatre",
-      "date": "2026-09-25",
-      "time": "19:30",
-      "venue": "Teatrul Nottara, Sala George Constantin",
-      "description": "Adaptare după filmul lui Ingmar Bergman: o mamă pianistă și fiica ei, față în față după ani de tăcere.",
-      "url": "https://nottara.ro/program/",
-      "source": "web",
-      "id": "sonata-de-toamna-2026-09-25"
-    },
-    {
-      "title": "Drumeție în grup: Vârful Caraiman și Crucea Eroilor",
-      "categoryId": "sport",
-      "date": "2026-09-26",
-      "venue": "Munții Bucegi, cu plecare din București",
-      "price": "270 lei",
-      "description": "Excursie de o zi cu „Hai să socializăm”, grup construit tocmai ca să cunoști oameni noi. Dificultate medie.",
-      "url": "https://haisasocializam.ro/excursii-montane/drumetie-in-bucegi-pe-varful-caraiman-si-crucea-eroilor?ed=3",
-      "source": "web",
-      "id": "drumetie-in-grup-varful-caraiman-si-crucea-eroilor-2026-09-26"
     },
     {
       "title": "g(u)ard-ian: vernisaj la Jecza Gallery",
@@ -214,17 +112,6 @@
       "id": "g-u-ard-ian-vernisaj-la-jecza-gallery-2026-09-26"
     },
     {
-      "title": "Drumeție în grup: Cheile Râșnoavei și Cabana Poiana Secuilor",
-      "categoryId": "sport",
-      "date": "2026-09-27",
-      "venue": "Cheile Râșnoavei (Brașov)",
-      "price": "250 lei",
-      "description": "Drumeție de o zi cu comunitatea „În drumeție”. Detaliile de plecare sunt pe pagina drumeției.",
-      "url": "https://www.terapieindrumetie.ro/toamna-prin-cheile-rasnoavei-cabana-poiana-secuilor.html",
-      "source": "web",
-      "id": "drumetie-in-grup-cheile-rasnoavei-si-cabana-poiana-secuilor-2026-09-27"
-    },
-    {
       "title": "Run to Sip: alergare și cafea",
       "categoryId": "sport",
       "date": "2026-09-27",
@@ -238,107 +125,6 @@
       "url": "https://www.nwradu.ro/2026/08/imi-place-ideea-run-to-sip/",
       "source": "web",
       "id": "run-to-sip-alergare-si-cafea-2026-09-27"
-    },
-    {
-      "title": "Svejk",
-      "categoryId": "theatre",
-      "date": "2026-09-27",
-      "time": "19:00",
-      "venue": "Teatrul Odeon, Sala Majestic",
-      "price": "40–80 lei",
-      "description": "Aventurile bravului soldat Švejk, satira clasică despre absurdul războiului și al birocrației.",
-      "url": "https://teatrul-odeon.ro/program/?lang=en",
-      "source": "web",
-      "id": "svejk-2026-09-27"
-    },
-    {
-      "title": "Republica Melania",
-      "categoryId": "theatre",
-      "date": "2026-09-27",
-      "time": "19:30",
-      "venue": "Teatrul Odeon, Sala Studio",
-      "price": "30–60 lei",
-      "description": "Spectacol de studio, de aproximativ o oră și un sfert, într-o sală mică și apropiată de public.",
-      "url": "https://teatrul-odeon.ro/program/?lang=en",
-      "source": "web",
-      "id": "republica-melania-2026-09-27"
-    },
-    {
-      "title": "Concurs de Catan",
-      "categoryId": "boardgames",
-      "date": "2026-09-28",
-      "venue": "La Fabrica (Parcul Carol)",
-      "price": "50 lei",
-      "description": "Turneu de Catan; în aceeași seară există și o masă amicală, dacă vrei doar să joci.",
-      "url": "https://www.cbgshop.ro/events/catan/668d492647495320d49d9947",
-      "source": "web",
-      "id": "concurs-de-catan-2026-09-28"
-    },
-    {
-      "title": "Liliom (Festivalul Teatrelor Maghiare)",
-      "categoryId": "theatre",
-      "date": "2026-09-28",
-      "time": "19:00",
-      "venue": "Teatrul Odeon, Sala Majestic",
-      "description": "Piesa lui Molnár Ferenc, jucată în cadrul festivalului de teatru maghiar găzduit de Odeon.",
-      "url": "https://teatrul-odeon.ro/program/?lang=en",
-      "source": "web",
-      "id": "liliom-festivalul-teatrelor-maghiare-2026-09-28"
-    },
-    {
-      "title": "Martha Argerich, Magdalena Kožená și Iddo Bar-Shai",
-      "categoryId": "classical",
-      "date": "2026-09-29",
-      "venue": "Ateneul Român",
-      "description": "Recitalul care deschide stagiunea camerală a Filarmonicii George Enescu: o legendă a pianului alături de mezzosoprana Magdalena Kožená.",
-      "url": "https://www.romania-muzical.ro/stire/filarmonica-george-enescu-a-anunat-evenimentele-stagiunii-2026-2027/3937291/49/5",
-      "source": "web",
-      "id": "martha-argerich-magdalena-kozena-si-iddo-bar-shai-2026-09-29"
-    },
-    {
-      "title": "Puzzle Speed Challenge",
-      "categoryId": "boardgames",
-      "date": "2026-09-29",
-      "venue": "Paparazzi (Timpuri Noi)",
-      "price": "50 lei",
-      "description": "Concurs de puzzle contra cronometru, organizat de Creative Board Gaming.",
-      "url": "https://www.cbgshop.ro/events/general/687b61b85f7ea8e1b7a722ea",
-      "source": "web",
-      "id": "puzzle-speed-challenge-2026-09-29"
-    },
-    {
-      "title": "Toastmasters: ședință de vorbit în public",
-      "categoryId": "growth",
-      "date": "2026-09-29",
-      "time": "18:45",
-      "venue": "Toastmasters București",
-      "address": "Str. Lânăriei 77",
-      "description": "Ședința săptămânală în română: exersezi discursuri scurte și improvizație și primești feedback concret.",
-      "url": "https://www.meetup.com/toastmasters-bucuresti/events/315786915",
-      "source": "web",
-      "id": "toastmasters-sedinta-de-vorbit-in-public-2026-09-29"
-    },
-    {
-      "title": "Seara de Table",
-      "categoryId": "boardgames",
-      "date": "2026-09-30",
-      "venue": "La Nice Touch (Parcul Carol)",
-      "price": "50 lei",
-      "description": "Seară de table, cu parteneri noi de joc.",
-      "url": "https://www.cbgshop.ro/events/general/6880611f363c9d991127c4c3",
-      "source": "web",
-      "id": "seara-de-table-2026-09-30"
-    },
-    {
-      "title": "Livada de vișini (Festivalul Teatrelor Maghiare)",
-      "categoryId": "theatre",
-      "date": "2026-09-30",
-      "time": "18:30",
-      "venue": "Teatrul Odeon, Sala Majestic",
-      "description": "Cehov în lectura unei trupe maghiare invitate la festival.",
-      "url": "https://teatrul-odeon.ro/program/?lang=en",
-      "source": "web",
-      "id": "livada-de-visini-festivalul-teatrelor-maghiare-2026-09-30"
     },
     {
       "title": "Deschiderea stagiunii simfonice: Pletniov și Argerich",
@@ -455,6 +241,28 @@
       "id": "toastmasters-english-public-speaking-meeting-2026-10-06"
     },
     {
+      "title": "Seara de Rummy",
+      "categoryId": "boardgames",
+      "date": "2026-10-07",
+      "venue": "La Nice Touch (Parcul Carol)",
+      "price": "50 lei",
+      "description": "Seară de rummy organizată de Creative Board Gaming.",
+      "url": "https://www.cbgshop.ro/events/general/6a29ac5a2a7b586e02884157",
+      "source": "web",
+      "id": "seara-de-rummy-2026-10-07"
+    },
+    {
+      "title": "Concurs de Rentz",
+      "categoryId": "boardgames",
+      "date": "2026-10-09",
+      "venue": "La KALI Caffe (Centrul Vechi)",
+      "price": "50 lei",
+      "description": "Turneu de rentz, jocul de cărți românesc, organizat de Creative Board Gaming.",
+      "url": "https://www.cbgshop.ro/events/rentz/66a40a66d377e9a1aeafb7bd",
+      "source": "web",
+      "id": "concurs-de-rentz-2026-10-09"
+    },
+    {
       "title": "Board Games & VR Night",
       "categoryId": "boardgames",
       "date": "2026-10-09",
@@ -500,6 +308,28 @@
       "id": "drumetie-usoara-o-zi-prin-satele-din-piatra-craiului-2026-10-10"
     },
     {
+      "title": "Concurs de Catan",
+      "categoryId": "boardgames",
+      "date": "2026-10-12",
+      "venue": "La Fabrica (Parcul Carol)",
+      "price": "50 lei",
+      "description": "Turneu de Catan; în aceeași seară există și o seară amicală de Catan, dacă vrei doar să joci.",
+      "url": "https://www.cbgshop.ro/events/catan/668d492647495320d49d9947",
+      "source": "web",
+      "id": "concurs-de-catan-2026-10-12"
+    },
+    {
+      "title": "Seara de Socializare la Whist&Rentz",
+      "categoryId": "boardgames",
+      "date": "2026-10-13",
+      "venue": "La Paparazzi (Timpuri Noi)",
+      "price": "50 lei",
+      "description": "Seară de socializare cu jocuri de cărți (whist și rentz), organizată de Creative Board Gaming.",
+      "url": "https://www.cbgshop.ro/events/general/68f7332884ecceb8c1413b2a",
+      "source": "web",
+      "id": "seara-de-socializare-la-whist-rentz-2026-10-13"
+    },
+    {
       "title": "Toastmasters: ședință de vorbit în public",
       "categoryId": "growth",
       "date": "2026-10-13",
@@ -512,6 +342,17 @@
       "id": "toastmasters-sedinta-de-vorbit-in-public-2026-10-13"
     },
     {
+      "title": "Seara de Table",
+      "categoryId": "boardgames",
+      "date": "2026-10-14",
+      "venue": "La Nice Touch (Parcul Carol)",
+      "price": "50 lei",
+      "description": "Seară de table, cu parteneri noi de joc.",
+      "url": "https://www.cbgshop.ro/events/general/6880611f363c9d991127c4c3",
+      "source": "web",
+      "id": "seara-de-table-2026-10-14"
+    },
+    {
       "title": "Xavier de Maistre: harfă franceză la Sala Radio",
       "categoryId": "classical",
       "date": "2026-10-14",
@@ -522,6 +363,17 @@
       "id": "xavier-de-maistre-harfa-franceza-la-sala-radio-2026-10-14"
     },
     {
+      "title": "Seara de Board Games",
+      "categoryId": "boardgames",
+      "date": "2026-10-16",
+      "venue": "La KALI Caffe (Centrul Vechi)",
+      "price": "50 lei",
+      "description": "Seară de jocuri de societate în Centrul Vechi, cu jocuri explicate de organizatori.",
+      "url": "https://www.cbgshop.ro/events/general/676aef6d13665e530d7aa4f0",
+      "source": "web",
+      "id": "seara-de-board-games-2026-10-16"
+    },
+    {
       "title": "Orchestra Națională Radio: Uvertura 1812 și Tablouri dintr-o expoziție",
       "categoryId": "classical",
       "date": "2026-10-16",
@@ -530,6 +382,17 @@
       "url": "https://www.rador.ro/2026/09/21/se-lanseaza-noua-stagiune-la-sala-radio/",
       "source": "web",
       "id": "orchestra-nationala-radio-uvertura-1812-si-tablouri-dintr-o-2026-10-16"
+    },
+    {
+      "title": "Blood on the Clocktower",
+      "categoryId": "boardgames",
+      "date": "2026-10-17",
+      "venue": "La Nice Touch (Parcul Carol)",
+      "price": "30 lei",
+      "description": "Joc de deducție socială în grup mare, în stilul Mafia, cu un povestitor care conduce partida.",
+      "url": "https://www.cbgshop.ro/events/general/676afe284a196ea85fc7e777",
+      "source": "web",
+      "id": "blood-on-the-clocktower-2026-10-17"
     },
     {
       "title": "Drumeție ușoară pe Valea lui Stan",
@@ -554,6 +417,17 @@
       "url": "https://www.dhamma.ro/program-2026-bucuresti/",
       "source": "web",
       "id": "seminar-de-introducere-in-meditatia-vipassana-2026-10-18"
+    },
+    {
+      "title": "Puzzle Speed Challenge",
+      "categoryId": "boardgames",
+      "date": "2026-10-20",
+      "venue": "La Paparazzi (Timpuri Noi)",
+      "price": "65 lei",
+      "description": "Concurs de puzzle contra cronometru, organizat de Creative Board Gaming.",
+      "url": "https://www.cbgshop.ro/events/general/687b61b85f7ea8e1b7a722ea",
+      "source": "web",
+      "id": "puzzle-speed-challenge-2026-10-20"
     },
     {
       "title": "Cloud & AI Conference",
@@ -589,6 +463,17 @@
       "url": "https://teatrul-odeon.ro/program/?lang=en",
       "source": "web",
       "id": "lysistrata-2026-10-25"
+    },
+    {
+      "title": "Seara de Socializare la Board Games",
+      "categoryId": "boardgames",
+      "date": "2026-10-27",
+      "venue": "La Fabrica (Parcul Carol)",
+      "price": "60 lei",
+      "description": "Seară de jocuri de societate cu oameni noi, potrivită și pentru începători; jocurile sunt explicate pe loc.",
+      "url": "https://www.cbgshop.ro/events/general/67d82e37e29e42169df9a0a9",
+      "source": "web",
+      "id": "seara-de-socializare-la-board-games-2026-10-27"
     },
     {
       "title": "Valentin Șerban și Cvartetul Arcadia",
